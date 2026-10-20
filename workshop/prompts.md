@@ -30,7 +30,8 @@ First plan the 3-4 most important screens (one of them an empty state), describe
 Data: 20 made-up sample records that look realistic. No real data.
 Tech: the simplest thing that runs in a browser and starts with one command. English UI, short friendly copy, clean light design.
 Write a README: how to start it, what is in it, what is not (no real backend).
-Work on your own and only ask if you are stuck. At the end, start it and give me the link.
+Work on your own and only ask if you are stuck. When it runs locally, deploy it to Vercel as a public production deployment (vercel deploy --prod --yes) and check that the link opens without a login. Then make a QR code of that link as a PNG and open it. The data is made up, so the link is safe to share.
+At the end, give me the local link, the public link and the QR file.
 
 ---
 
@@ -97,7 +98,7 @@ Check: anything not in the notes goes under open questions, do not make it up.
 
 ### 3b. Red team (slide 32, the most valuable step)
 
-Review this spec through four pairs of eyes: 1) a skeptical engineer, 2) the customer who says no and would never pay, 3) an investor, 4) the person who will handle support. Each writes the 3 biggest gaps or risks. Then update the spec and list what changed.
+Review this spec through four pairs of eyes: 1) a skeptical engineer, 2) the customer who says no and would never pay, 3) an investor, 4) a bank's risk and compliance officer (customer data, regulation, fraud). Each writes the 3 biggest gaps or risks. Then update the spec and list what changed.
 
 ### 3c. Tasks (only if there is time)
 
@@ -115,7 +116,7 @@ Build a clickable mobile prototype (a single HTML page) from the spec:
 - settings, if the feature needs them,
 - an empty state.
 Use the attached screenshots as the visual reference: spacing, type sizes, density, tone. Do not copy their brand.
-Make 3 variants side by side on one page (A, B, C) that differ in layout, not just colour.
+Make three variants side by side on one page (A, B, C) that differ in layout, not just colour.
 This is a prototype for user testing, not production code.
 
 ### 4b. Iterate with the room
@@ -133,9 +134,8 @@ From the chosen variant, write a short design-rules.md: colours (with hex), font
 
 From the final spec, write a launch kit:
 1. Release note (max 60 words)
-2. Help article (steps + 4 FAQs)
-3. Three versions of a push or email subject line (max 60 characters)
-4. A support reply template for the most likely question
+2. Three versions of a push or email subject line (max 60 characters)
+(If there is time: a help article with steps and 4 FAQs, and a support reply for the most likely question.)
 Tone: friendly, short sentences, no hype.
 
 ### 5b. Measurement (CUT in v14, in the prompt pack only)

@@ -61,10 +61,10 @@ When real users and real money depend on it: security, data, payments, scaling. 
 It replaced the waiting and the cheap parts: boilerplate, first drafts. Taste, judgment, architecture and knowing what not to build became more valuable. Small teams that use it well will outrun bigger ones that don't.
 
 **18. How do I get design that doesn't look like every other AI app?**
-Don't describe it in adjectives. Show it real reference screens, ask for three variants, pick one, and write your rules down in one file that every request uses (slides 23-24).
+Don't describe it in adjectives. Show it real reference screens, ask for three variants, pick one, and write your rules down in one file that every request uses (slides 33-34).
 
 **19. How do your overnight runs work? Can I do that without a terminal?**
-One command in the evening starts a loop; each lap is a fresh session that leaves a log, and in the morning there's a result to review. Without a terminal: scheduled tasks in Claude Cowork or ChatGPT, with connectors. (Mention only; don't promise to share the internal tool.)
+One command in the evening starts a loop; each lap is a fresh session that leaves a log, and in the morning there's a result to review. Without a terminal: scheduled tasks in Claude Cowork or ChatGPT, with connectors. The relay skill is linked from the repo's skills page, but start with scheduled tasks if you don't use a terminal.
 
 ## Money
 
