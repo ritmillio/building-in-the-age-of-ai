@@ -90,8 +90,8 @@ Format: `[Title](url) — why it's useful (author/org)`
 - [Building agents with the Claude Agent SDK](https://claude.com/resources/articles/building-agents-with-the-claude-agent-sdk) — The gather-context / act / verify loop (Anthropic)
 - [Agent SDK overview](https://code.claude.com/docs/en/agent-sdk/overview) — Build your own agents on the Claude Code harness (Anthropic)
 - [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/) — Lightweight Python framework for multi-agent workflows (OpenAI)
-- [Introducing AgentKit](https://openai.com/index/introducing-agentkit/) — Agent Builder, ChatKit and evals for agents (OpenAI)
-- [Introducing ChatGPT agent](https://openai.com/index/introducing-chatgpt-agent/) — Consumer agent that browses and acts on your behalf (OpenAI)
+- [Introducing AgentKit](https://openai.com/index/introducing-agentkit/) — Agent Builder, ChatKit and evals for agents (OpenAI). Note: OpenAI is shutting Agent Builder down on 2026-11-30 ([deprecations](https://developers.openai.com/api/docs/deprecations)); read it for the ideas, not as a platform to start on
+- [ChatGPT agent → ChatGPT Work](https://help.openai.com/en/articles/11752874-chatgpt-agent) — ChatGPT's agent that browses and acts for you is now part of ChatGPT Work (paid plans, since 2026-07); the original [launch post](https://openai.com/index/introducing-chatgpt-agent/) explains the idea (OpenAI)
 - [Agent Development Kit (ADK)](https://adk.dev/) — Google's open-source agent framework (Google)
 - [12-Factor Agents](https://github.com/humanlayer/12-factor-agents) — Engineering principles for reliable LLM software (HumanLayer)
 - [Measuring AI Ability to Complete Long Tasks](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/) — The "task length doubles about every 7 months" chart (METR)
