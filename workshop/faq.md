@@ -10,7 +10,7 @@ Any of the big three is good enough to start. Pick one, and build one Project (o
 It changes every few months, so don't marry one. Keep your context in plain files (rules, docs, prompts) so switching is cheap. We use different models for different jobs.
 
 **3. Where do I start in my own company?**
-With the task you hate most (slide 35). You know it inside out, so you can judge the output; it comes back every week, so it pays back; and you feel the win on day one. Not with a strategy deck.
+With the task you hate most (slide 36). You know it inside out, so you can judge the output; it comes back every week, so it pays back; and you feel the win on day one. Not with a strategy deck.
 
 **4. How do I get my team to actually use it?**
 Show a win on a real task, not a demo. Get everyone to level 2: one shared Project with the team's context. Give them two weeks on one hated task each, then compare notes. People adopt what saves them pain, not what they're told to use.
@@ -21,13 +21,13 @@ Mostly no. The wording matters far less than the context. Brief it like a smart 
 ## Trust and quality
 
 **6. How do I stop it making things up?**
-Ask for sources and links, explicitly allow "no data" as an answer, verify every number, law and quote yourself, and know where the frontier is (slide 24). Local law, tax and fresh rules are where it is most confidently wrong.
+Ask for sources and links, explicitly allow "no data" as an answer, verify every number, law and quote yourself, and know where the frontier is (slide 25). Local law, tax and fresh rules are where it is most confidently wrong.
 
 **7. Can I trust AI research for validating an idea?**
 It is a fast first pass over what people already said in public: reviews, forums, competitors. It does not replace talking to customers. Use it to find the questions worth asking, then go and ask real people.
 
 **8. What happens when it's wrong in front of a customer?**
-That's why anything that sends, pays or deletes waits for a human (slide 34). The AI drafts, you decide. Start with internal work before anything customer-facing.
+That's why anything that sends, pays or deletes waits for a human (slide 35). The AI drafts, you decide. Start with internal work before anything customer-facing.
 
 **9. How do you check AI-written code?**
 The same way you check a junior colleague's code: tests, review, and a human makes the merge decision. Our overnight runs end with a result to review, not a deploy.
@@ -61,7 +61,7 @@ When real users and real money depend on it: security, data, payments, scaling. 
 It replaced the waiting and the cheap parts: boilerplate, first drafts. Taste, judgment, architecture and knowing what not to build became more valuable. Small teams that use it well will outrun bigger ones that don't.
 
 **18. How do I get design that doesn't look like every other AI app?**
-Don't describe it in adjectives. Show it real reference screens, ask for three variants, pick one, and write your rules down in one file that every request uses (slides 22-23).
+Don't describe it in adjectives. Show it real reference screens, ask for three variants, pick one, and write your rules down in one file that every request uses (slides 23-24).
 
 **19. How do your overnight runs work? Can I do that without a terminal?**
 One command in the evening starts a loop; each lap is a fresh session that leaves a log, and in the morning there's a result to review. Without a terminal: scheduled tasks in Claude Cowork or ChatGPT, with connectors. (Mention only; don't promise to share the internal tool.)
@@ -88,7 +88,7 @@ Only what a memory feature or a Project puts back on the desk. Keep the importan
 **What's a sub-agent?**
 A helper the agent starts with its own clean desk: it reads the big pile and brings back only the answer, so the main conversation stays sharp.
 
-## How I build (slides 21-23)
+## How I build (slides 22-24)
 
 **Can I get your skills?**
 Yes, they are in the repo on the last slide, rewritten generic, plus the third-party ones I use, credited to their authors, with install steps for Claude Code, claude.ai and plain ChatGPT/Gemini.

@@ -12,9 +12,9 @@ Pick the task you hate most. Hand it to an AI assistant with [prompt 7](workshop
 
 | | |
 |---|---|
-| [`workshop/slides.pdf`](workshop/slides.pdf) | The deck (38 slides). Part 1, the talk: how building changed, context, how I build, raising money. Part 2: the live build, then where to start |
+| [`workshop/slides.pdf`](workshop/slides.pdf) | The deck (39 slides). Part 1, the talk: how building changed, context, how I build, raising money. Part 2: the live build, then where to start |
 | [`workshop/prompts.md`](workshop/prompts.md) | Every prompt from the live build, in order: research real customer words, business case, one-page spec, red team, prototype with references, design rules, launch kit, ops automation |
-| [`workshop/prompt-pack.pdf`](workshop/prompt-pack.pdf) | The 3-page handout |
+| [`workshop/prompt-pack.pdf`](workshop/prompt-pack.pdf) | The 4-page handout |
 | [`workshop/faq.md`](workshop/faq.md) | The questions people ask, with short answers |
 | [`guides/context.md`](guides/context.md) | Context windows, tokens, context rot, why a million tokens is not a better memory, and what to do about it. Sourced. |
 | [`guides/how-i-build.md`](guides/how-i-build.md) | My setup: rules file, skills, memory, the plan → shred → build → verify loop, parallel agents, small tricks |
@@ -23,6 +23,7 @@ Pick the task you hate most. Hand it to an AI assistant with [prompt 7](workshop
 | [`skills/`](skills/) | My skills, rewritten for anyone to use, plus a credited catalogue of other people's skills and install steps for Claude Code, claude.ai, ChatGPT and Gemini |
 | [`templates/`](templates/) | `AGENTS.md` rules file, `design-rules.md`, a handoff prompt, a memory index |
 | [`resources.md`](resources.md) | Hundreds of links I'd actually send a friend: official guides, agents, skills, MCP, prototyping, design, ops automation, evals, security, research, newsletters, books, free courses |
+| [`open-source.md`](open-source.md) | Open-source projects for building with AI, licence-checked: coding agents, agent frameworks, MCP, local models, app builders, RAG, evals, browser agents, UI kits. Non-OSI licences and archived repos flagged |
 
 ## The ideas in one screen
 
