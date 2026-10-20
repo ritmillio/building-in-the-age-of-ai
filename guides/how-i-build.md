@@ -1,5 +1,7 @@
 # How I build with AI agents
 
+The tools and services behind all of this: [my-stack.md](my-stack.md).
+
 The setup behind slides 19-23 of the workshop. I'm a founder running a small team, and AI agents do most of the typing. None of this needs a big team or a special tool; most of it is habits.
 
 ## 1. Teach it once, not every day
