@@ -69,9 +69,12 @@ Repos verified to ship a `.claude-plugin/marketplace.json` (2026-10-20): `anthro
 
 ### A3. `npx skills` (cross-agent installer by Vercel) — **exists, verified**
 
+Ran on 2026-10-20: `npx skills@latest --help` and `npx skills add ritmillio/skills --list` both work as shown.
+
 ```bash
 npx skills add vercel-labs/agent-skills                     # pick skills + agents interactively; project scope by default
-npx skills add coreyhaines31/marketingskills --skill copywriting pricing -a claude-code
+npx skills add coreyhaines31/marketingskills --skill copywriting -a claude-code   # one skill; --skill '*' for all
+npx skills add ritmillio/skills --list                      # see what a repo offers without installing
 npx skills add mattpocock/skills -g                         # -g = global (all projects)
 npx skills find landing page                                # search the skills.sh directory
 npx skills list | check | update | remove
