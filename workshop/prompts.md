@@ -138,7 +138,7 @@ From the final spec, write a launch kit:
 (If there is time: a help article with steps and 4 FAQs, and a support reply for the most likely question.)
 Tone: friendly, short sentences, no hype.
 
-### 5b. Measurement (CUT in v14, in the prompt pack only)
+### 5b. Measurement (optional, not run live)
 
 1. Success metrics: 1 main + 3 supporting, and what counts as success after 4 weeks.
 2. Event tracking plan in a table: event name, when it fires, properties.
@@ -162,7 +162,9 @@ Anything that sends, pays or deletes waits for my approval.
 
 ---
 
-## 7. The task you hate most (slide 34, the audience does this)
+## 7. The task you hate most
+
+Slide 34. Everyone in the room does this one.
 
 I want to hand a task I hate to AI. The task: [describe it in 2-3 sentences].
 Interview me with 5 short questions, one at a time, about how I do it today, what good output looks like, and what must never go wrong.
