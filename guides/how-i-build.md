@@ -1,6 +1,6 @@
 # How I build with AI agents
 
-The tools and services behind all of this: [my-stack.md](my-stack.md).
+The tools and services behind all of this: [my-stack.md](my-stack.md). How a new product starts (from a template, never a blank page): [scaffolding.md](scaffolding.md).
 
 The setup behind slides 19-24 of the workshop. I'm a founder running a small team, and AI agents do most of the typing. None of this needs a big team or a special tool; most of it is habits.
 

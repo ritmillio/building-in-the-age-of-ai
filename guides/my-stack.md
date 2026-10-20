@@ -1,6 +1,6 @@
 # My stack: every tool and service I actually use
 
-What a small team building an AI product runs on, day to day. No affiliate links, no sponsorships. This changes every few months; the date of this version is 2026-10-20. How I combine these is in [how-i-build.md](how-i-build.md).
+What a small team building an AI product runs on, day to day. No affiliate links, no sponsorships. This changes every few months; the date of this version is 2026-10-20. How I combine these is in [how-i-build.md](how-i-build.md); how a new project starts from a template is in [scaffolding.md](scaffolding.md).
 
 ## How a day looks
 

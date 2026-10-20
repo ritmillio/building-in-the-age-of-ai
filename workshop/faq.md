@@ -88,7 +88,13 @@ Only what a memory feature or a Project puts back on the desk. Keep the importan
 **What's a sub-agent?**
 A helper the agent starts with its own clean desk: it reads the big pile and brings back only the answer, so the main conversation stays sharp.
 
-## How I build (slides 22-24)
+## How I build (slides 21-24)
+
+**Should I start from a template or from scratch?**
+From a template, almost always. Pick the one closest to the shape of your product (a chat app, a SaaS, a bot), deploy it on day one, add your rules, then spend your time on the one thing only you know. We started our product from Vercel's open-source chatbot template. Which template for what, and the commands: guides/scaffolding.md.
+
+**Won't a template lock me in?**
+No, you own the code from the first commit. Swap what you won't keep (auth, models, analytics) in the first days, while it's a ten-minute job for an agent.
 
 **Can I get your skills?**
 Yes, they are in the repo on the last slide, rewritten generic, plus the third-party ones I use, credited to their authors, with install steps for Claude Code, claude.ai and plain ChatGPT/Gemini.

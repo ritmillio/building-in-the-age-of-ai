@@ -17,6 +17,7 @@ Pick the task you hate most. Hand it to an AI assistant with [prompt 7](workshop
 | [`workshop/prompt-pack.pdf`](workshop/prompt-pack.pdf) | The 4-page handout |
 | [`workshop/faq.md`](workshop/faq.md) | The questions people ask, with short answers |
 | [`guides/context.md`](guides/context.md) | Context windows, tokens, context rot, why a million tokens is not a better memory, and what to do about it. Sourced. |
+| [`guides/scaffolding.md`](guides/scaffolding.md) | Never start from a blank page: which template fits which product (Vercel Chatbot, next-forge, eve, Chat SDK, create-next-app, Turborepo, Expo, Tauri…), deploy first, make it yours, give the agent its hands. Every command checked. |
 | [`guides/how-i-build.md`](guides/how-i-build.md) | My setup: rules file, skills, memory, the plan → shred → build → verify loop, parallel agents, small tricks |
 | [`guides/my-stack.md`](guides/my-stack.md) | Every tool and service I use: agents, MCP servers, where I find designs, and what the product runs on (Vercel, Neon, Turbopuffer, Trigger.dev, Expo…) |
 | [`guides/fundraising.md`](guides/fundraising.md) | Raising money in the AI era, the "thin wrapper" problem, what counts as a moat now. Sourced. |
