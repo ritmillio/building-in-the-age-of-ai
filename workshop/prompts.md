@@ -34,7 +34,7 @@ Work on your own and only ask if you are stuck. At the end, start it and give me
 
 ---
 
-## 1. Research: real customer words (starts during the talk, read it at slide 26)
+## 1. Research: real customer words (starts during the talk, read it at slide 30)
 
 Role: a senior product researcher.
 Context: the idea above.
@@ -76,7 +76,7 @@ Turn the assumptions table and the calculation into a Google Sheets layout with 
 
 ---
 
-## 3. Spec from the room (after the break)
+## 3. Spec from the room
 
 Ask 3-4 people one question each and type (or dictate) their answers as raw notes:
 1) Who hurts most from this?  2) What is the minimum without which it is worthless?  3) What could go wrong?  4) How will we know it works?
@@ -95,7 +95,7 @@ Task: from the notes above and the chosen idea, write a one-page spec:
 - Open questions, and who can decide them
 Check: anything not in the notes goes under open questions, do not make it up.
 
-### 3b. Red team (slide 28, the most valuable step)
+### 3b. Red team (slide 31, the most valuable step)
 
 Review this spec through four pairs of eyes: 1) a skeptical engineer, 2) the customer who says no and would never pay, 3) an investor, 4) the person who will handle support. Each writes the 3 biggest gaps or risks. Then update the spec and list what changed.
 
@@ -105,7 +105,7 @@ Break it into tasks as CSV: title, description, acceptance criterion, size (S/M/
 
 ---
 
-## 4. Prototype with references (slide 29)
+## 4. Prototype with references (slide 32)
 
 Paste 2-3 screenshots of apps the room admires (or from Mobbin) into the chat first.
 
@@ -123,7 +123,7 @@ This is a prototype for user testing, not production code.
 Ask: "Which one, and what should we change?" Type what they say:
 We pick variant [A/B/C]. Change: [the room's request]. Show only that variant from now on.
 
-### 4c. Write the taste down (slide 30)
+### 4c. Write the taste down (slide 33)
 
 From the chosen variant, write a short design-rules.md: colours (with hex), font family and sizes, spacing scale, corner radius for controls and for cards, what is banned (for example gradients, heavy shadows), and a rule that every screen has an empty state. At most 15 lines. I will attach this file to every future design request.
 
@@ -148,7 +148,7 @@ Then: reveal the background build in the second window. "This wasn't a question,
 
 ---
 
-## 6. Ops automation example (slide 31, show, don't run)
+## 6. Ops automation example (slide 34, show, don't run)
 
 Shown as a scheduled task (Claude Cowork scheduled task, or a ChatGPT scheduled task with connectors):
 

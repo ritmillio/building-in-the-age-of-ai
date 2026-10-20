@@ -27,7 +27,7 @@ Ask for sources and links, explicitly allow "no data" as an answer, verify every
 It is a fast first pass over what people already said in public: reviews, forums, competitors. It does not replace talking to customers. Use it to find the questions worth asking, then go and ask real people.
 
 **8. What happens when it's wrong in front of a customer?**
-That's why anything that sends, pays or deletes waits for a human (slide 31). The AI drafts, you decide. Start with internal work before anything customer-facing.
+That's why anything that sends, pays or deletes waits for a human (slide 34). The AI drafts, you decide. Start with internal work before anything customer-facing.
 
 **9. How do you check AI-written code?**
 The same way you check a junior colleague's code: tests, review, and a human makes the merge decision. Our overnight runs end with a result to review, not a deploy.

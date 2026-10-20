@@ -1,6 +1,6 @@
 # Raising money in the age of AI, and the "thin wrapper" problem
 
-The guide behind slides 32-34 of the workshop. Your prototype took an afternoon; so did everyone else's. What does an investor pay for now?
+The guide behind slides 26-28 of the workshop. A prototype takes an afternoon now, for everyone. What does an investor pay for now?
 
 Compiled 2026-10-20. Every figure below was read on the cited page unless marked otherwise. Most market data is US-centric (Carta, PitchBook) or global (Crunchbase); CEE data is thinner and flagged as such.
 

@@ -12,7 +12,7 @@ Pick the task you hate most. Hand it to an AI assistant with [prompt 7](workshop
 
 | | |
 |---|---|
-| [`workshop/slides.pdf`](workshop/slides.pdf) | The deck (38 slides): how building changed, context, how I build, the live build, raising money, where to start |
+| [`workshop/slides.pdf`](workshop/slides.pdf) | The deck (38 slides). Part 1, the talk: how building changed, context, how I build, raising money. Part 2: the live build, then where to start |
 | [`workshop/prompts.md`](workshop/prompts.md) | Every prompt from the live build, in order: research real customer words, business case, one-page spec, red team, prototype with references, design rules, launch kit, ops automation |
 | [`workshop/prompt-pack.pdf`](workshop/prompt-pack.pdf) | The 3-page handout |
 | [`workshop/faq.md`](workshop/faq.md) | The questions people ask, with short answers |
