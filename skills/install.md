@@ -77,7 +77,7 @@ npx skills add coreyhaines31/marketingskills --skill copywriting -a claude-code 
 npx skills add ritmillio/skills --list                      # see what a repo offers without installing
 npx skills add mattpocock/skills -g                         # -g = global (all projects)
 npx skills find landing page                                # search the skills.sh directory
-npx skills list | check | update | remove
+npx skills list | update | remove                         # also: use <repo>@<skill> (try one without installing), init <name>
 ```
 
 - Requires Node.js 22.20+. For Claude Code it installs to `.claude/skills/` (project) or `~/.claude/skills/` (global); for Codex, Cline, Zed and others to `.agents/skills/` / `~/.agents/skills/`. Supports 79+ agents.
