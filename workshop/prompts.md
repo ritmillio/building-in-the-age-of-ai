@@ -35,7 +35,7 @@ At the end, give me the local link, the public link and the QR file.
 
 ---
 
-## 1. Research: real customer words (starts during the talk, read it at slide 31)
+## 1. Research: real customer words (starts during the talk, read it at slide 29)
 
 Role: a senior product researcher.
 Context: the idea above.
@@ -96,7 +96,7 @@ Task: from the notes above and the chosen idea, write a one-page spec:
 - Open questions, and who can decide them
 Check: anything not in the notes goes under open questions, do not make it up.
 
-### 3b. Red team (slide 32, the most valuable step)
+### 3b. Red team (slide 30, the most valuable step)
 
 Review this spec through four pairs of eyes: 1) a skeptical engineer, 2) the customer who says no and would never pay, 3) an investor, 4) a bank's risk and compliance officer (customer data, regulation, fraud). Each writes the 3 biggest gaps or risks. Then update the spec and list what changed.
 
@@ -106,7 +106,7 @@ Break it into tasks as CSV: title, description, acceptance criterion, size (S/M/
 
 ---
 
-## 4. Prototype with references (slide 33)
+## 4. Prototype with references (slide 31)
 
 Paste 2-3 screenshots of apps the room admires (or from Mobbin) into the chat first.
 
@@ -124,7 +124,7 @@ This is a prototype for user testing, not production code.
 Ask: "Which one, and what should we change?" Type what they say:
 We pick variant [A/B/C]. Change: [the room's request]. Show only that variant from now on.
 
-### 4c. Write the taste down (slide 34)
+### 4c. Write the taste down (slide 32)
 
 From the chosen variant, write a short design-rules.md: colours (with hex), font family and sizes, spacing scale, corner radius for controls and for cards, what is banned (for example gradients, heavy shadows), and a rule that every screen has an empty state. At most 15 lines. I will attach this file to every future design request.
 
@@ -148,7 +148,7 @@ Then: reveal the background build in the second window. "This wasn't a question,
 
 ---
 
-## 6. Ops automation example (slide 35, show, don't run)
+## 6. Ops automation example (slide 33, show, don't run)
 
 Shown as a scheduled task (Claude Cowork scheduled task, or a ChatGPT scheduled task with connectors):
 
@@ -162,7 +162,7 @@ Anything that sends, pays or deletes waits for my approval.
 
 ---
 
-## 7. The task you hate most (slide 36, the audience does this)
+## 7. The task you hate most (slide 34, the audience does this)
 
 I want to hand a task I hate to AI. The task: [describe it in 2-3 sentences].
 Interview me with 5 short questions, one at a time, about how I do it today, what good output looks like, and what must never go wrong.

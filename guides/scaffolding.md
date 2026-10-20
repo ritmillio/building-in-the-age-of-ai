@@ -1,6 +1,6 @@
 # Never start from a blank page: how I scaffold a new product
 
-Slide 21 of the workshop, written out. Every command below was checked against the official docs on 2026-10-20. Templates get renamed and CLIs change flags, so if something fails, open the linked page first.
+Slide 20 of the workshop, written out. Every command below was checked against the official docs on 2026-10-20. Templates get renamed and CLIs change flags, so if something fails, open the linked page first.
 
 ## The idea
 

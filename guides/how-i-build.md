@@ -2,7 +2,7 @@
 
 The tools and services behind all of this: [my-stack.md](my-stack.md). How a new product starts (from a template, never a blank page): [scaffolding.md](scaffolding.md).
 
-The setup behind slides 19-24 of the workshop. I'm a founder running a small team, and AI agents do most of the typing. None of this needs a big team or a special tool; most of it is habits.
+The setup behind slides 19-22 of the workshop. I'm a founder running a small team, and AI agents do most of the typing. None of this needs a big team or a special tool; most of it is habits.
 
 ## 1. Teach it once, not every day
 
@@ -16,7 +16,7 @@ Three things an agent reads so you don't have to repeat yourself:
 
 The one habit: **corrected the same thing twice? Write it down.** Into the rules file if it's always true, into a skill if it's a procedure, into memory if it's a fact or a decision.
 
-No terminal? A claude.ai Project, a ChatGPT Project or custom GPT, or a Gemini Gem is the same idea: the instructions box is your rules file, the uploaded files are its context, and claude.ai lets you upload skills too ([install guide](../skills/install.md)).
+No terminal? A claude.ai Project, a ChatGPT Project, or a Gemini Gem (Google is turning Gems into skills; OpenAI is retiring custom GPTs) is the same idea: the instructions box is your rules file, the uploaded files are its context, and claude.ai lets you upload skills too ([install guide](../skills/install.md)).
 
 ## 2. Never trust "done"
 

@@ -4,13 +4,13 @@
 ## Getting started
 
 **1. Which tool should I start with: ChatGPT, Claude or Gemini?**
-Any of the big three is good enough to start. Pick one, and build one Project (or GPT / Gem) with your own context: product, customers, rules, templates. The context you write down matters more than the model, and you can take it with you if you switch.
+Any of the big three is good enough to start. Pick one, and build one Project (in Claude or ChatGPT, or a Gem in Gemini) with your own context: product, customers, rules, templates. The context you write down matters more than the model, and you can take it with you if you switch.
 
 **2. Which model is the best right now?**
 It changes every few months, so don't marry one. Keep your context in plain files (rules, docs, prompts) so switching is cheap. We use different models for different jobs.
 
 **3. Where do I start in my own company?**
-With the task you hate most (slide 36). You know it inside out, so you can judge the output; it comes back every week, so it pays back; and you feel the win on day one. Not with a strategy deck.
+With the task you hate most (slide 34). You know it inside out, so you can judge the output; it comes back every week, so it pays back; and you feel the win on day one. Not with a strategy deck.
 
 **4. How do I get my team to actually use it?**
 Show a win on a real task, not a demo. Get everyone to level 2: one shared Project with the team's context. Give them two weeks on one hated task each, then compare notes. People adopt what saves them pain, not what they're told to use.
@@ -21,13 +21,13 @@ Mostly no. The wording matters far less than the context. Brief it like a smart 
 ## Trust and quality
 
 **6. How do I stop it making things up?**
-Ask for sources and links, explicitly allow "no data" as an answer, verify every number, law and quote yourself, and know where the frontier is (slide 25). Local law, tax and fresh rules are where it is most confidently wrong.
+Ask for sources and links, explicitly allow "no data" as an answer, verify every number, law and quote yourself, and know where the frontier is (slide 23). Local law, tax and fresh rules are where it is most confidently wrong.
 
 **7. Can I trust AI research for validating an idea?**
 It is a fast first pass over what people already said in public: reviews, forums, competitors. It does not replace talking to customers. Use it to find the questions worth asking, then go and ask real people.
 
 **8. What happens when it's wrong in front of a customer?**
-That's why anything that sends, pays or deletes waits for a human (slide 35). The AI drafts, you decide. Start with internal work before anything customer-facing.
+That's why anything that sends, pays or deletes waits for a human (slide 33). The AI drafts, you decide. Start with internal work before anything customer-facing.
 
 **9. How do you check AI-written code?**
 The same way you check a junior colleague's code: tests, review, and a human makes the merge decision. Our overnight runs end with a result to review, not a deploy.
@@ -61,10 +61,10 @@ When real users and real money depend on it: security, data, payments, scaling. 
 It replaced the waiting and the cheap parts: boilerplate, first drafts. Taste, judgment, architecture and knowing what not to build became more valuable. Small teams that use it well will outrun bigger ones that don't.
 
 **18. How do I get design that doesn't look like every other AI app?**
-Don't describe it in adjectives. Show it real reference screens, ask for three variants, pick one, and write your rules down in one file that every request uses (slides 33-34).
+Don't describe it in adjectives. Show it real reference screens, ask for three variants, pick one, and write your rules down in one file that every request uses (slides 31-32).
 
 **19. How do your overnight runs work? Can I do that without a terminal?**
-One command in the evening starts a loop; each lap is a fresh session that leaves a log, and in the morning there's a result to review. Without a terminal: scheduled tasks in Claude Cowork or ChatGPT, with connectors. The relay skill is linked from the repo's skills page, but start with scheduled tasks if you don't use a terminal.
+One command in the evening starts a loop; each lap is a fresh session that leaves a log, and in the morning there's a result to review. Without a terminal: scheduled tasks in Claude (Cowork) or ChatGPT, with connectors. The relay skill is linked from the repo's skills page, but start with scheduled tasks if you don't use a terminal.
 
 ## Money
 
@@ -88,7 +88,7 @@ Only what a memory feature or a Project puts back on the desk. Keep the importan
 **What's a sub-agent?**
 A helper the agent starts with its own clean desk: it reads the big pile and brings back only the answer, so the main conversation stays sharp.
 
-## How I build (slides 21-24)
+## How I build (slides 20-22)
 
 **Should I start from a template or from scratch?**
 From a template, almost always. Pick the one closest to the shape of your product (a chat app, a SaaS, a bot), deploy it on day one, add your rules, then spend your time on the one thing only you know. We started our product from Vercel's open-source chatbot template. Which template for what, and the commands: guides/scaffolding.md.
