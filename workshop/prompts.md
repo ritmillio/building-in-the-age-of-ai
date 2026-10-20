@@ -28,9 +28,9 @@ Create a new project called "idea-prototype" in this folder.
 Goal: a clickable, multi-screen web prototype for user testing of this idea: [the room's idea].
 First plan the 3-4 most important screens (one of them an empty state), describe each in one line, then build them.
 Data: 20 made-up sample records that look realistic. No real data.
-Tech: the simplest thing that runs in a browser and starts with one command. English UI, short friendly copy, clean light design.
+Tech: plain HTML, CSS and JavaScript in a few files, no npm install, no build step; it starts with `python3 -m http.server`. English UI, short friendly copy, clean light design.
 Write a README: how to start it, what is in it, what is not (no real backend).
-Work on your own and only ask if you are stuck. When it runs locally, deploy it to Vercel as a public production deployment (vercel deploy --prod --yes) and check that the link opens without a login. Then make a QR code of that link as a PNG and open it. The data is made up, so the link is safe to share.
+Work on your own and only ask if you are stuck. When it runs locally, deploy it to Vercel as a public production deployment (vercel deploy --prod --yes) and check that the link opens without a login. Then make a QR code of that link as a PNG (with the qrencode tool already installed on this machine) and open it. The data is made up, so the link is safe to share.
 At the end, give me the local link, the public link and the QR file.
 
 ---
@@ -40,17 +40,17 @@ At the end, give me the local link, the public link and the QR file.
 Role: a senior product researcher.
 Context: the idea above.
 Task:
-1. Search public sources for what real users say about the problem and about the existing solutions: app store reviews, G2 / Capterra reviews, Reddit and forum threads.
+1. Search public sources for what real users say about the problem and about the existing solutions: app store reviews, G2 / Capterra reviews, Reddit and forum threads. Prefer reviews of existing products. Leave out posts and comments from people building or selling a tool; count them separately as "vendor".
 2. Group the complaints into 5-7 themes.
-3. For every theme: how often it came up in what you found, 2 verbatim quotes, each with its link.
+3. For every theme: how often it came up (the number of separate posts or reviews you opened, no percentages), 2 verbatim quotes of at most 20 words, each with its link. Mark each quote (opened) if you read it on the page itself, or (snippet) if it only came from a search result. Sites that refuse to open: write "blocked". Aim for 8-12 quotes in total.
 4. Name the 3-5 existing solutions people mention, and what they like and hate about each.
 5. Top 3 opportunities: what I would build first and why (frequency × pain).
-Format: one table of themes, then at most 10 bullets.
+Format: one table of themes, then at most 10 bullets, then a 3-line summary I can read aloud.
 Check: only use what you actually found. Every quote needs a link. If something cannot be found, write "no data". Do not invent numbers.
 
 ### 1b. Verify (open 2-3 links live)
 
-List every quote behind the top theme with its link. Mark any you could not open again.
+List every quote behind the theme you ranked first in the opportunities, with its link. Mark any you could not open again.
 
 ### 1c. Ideas with evidence
 
@@ -68,10 +68,11 @@ Task: write a simple business case.
 3. Assumptions table: assumption | pessimistic | base | optimistic | how we would validate it.
 4. Estimated result for the 3 scenarios, with the calculation steps shown.
 5. Risks (including data protection) and what we would measure in a 2-week test.
+6. Verdict: Go, Narrow or Stop, and the one test result that would change it.
 Format: tables + at most 8 bullets.
 Check: clearly mark what is an assumption and what is a fact from the research. Do not invent market data; where it would be needed, write "to validate".
 
-### 2b. Spreadsheet
+### 2b. Spreadsheet (optional, not in the timed flow)
 
 Turn the assumptions table and the calculation into a Google Sheets layout with formulas, so I can change any assumption and the result updates.
 
@@ -86,7 +87,7 @@ Notes from the room:
 [raw notes here]
 
 Role: an experienced product manager.
-Task: from the notes above and the chosen idea, write a one-page spec:
+Task: from the notes above and the chosen idea, write a one-page spec. Start with the v0.1 scope in one line, and what was cut.
 - Problem and who it hurts (quote the notes)
 - Goal and success metric
 - In scope / out of scope
@@ -94,11 +95,17 @@ Task: from the notes above and the chosen idea, write a one-page spec:
 - Acceptance criteria in Given / When / Then
 - Edge cases (at least 6)
 - Open questions, and who can decide them
-Check: anything not in the notes goes under open questions, do not make it up.
+Check: anything not in the notes goes under open questions. You may propose concrete values for acceptance criteria and edge cases; mark each one (proposed) and repeat it under open questions.
 
 ### 3b. Red team (slide 30, the most valuable step)
 
 Review this spec through four pairs of eyes: 1) a skeptical engineer, 2) the customer who says no and would never pay, 3) an investor, 4) a bank's risk and compliance officer (customer data, regulation, fraud). Each writes the 3 biggest gaps or risks. Then update the spec and list what changed.
+
+### 0b. Update the background build (second window, right after 3b)
+
+Here is the final spec after the red team:
+[paste the updated spec]
+Update the prototype in idea-prototype to match it, deploy again to the same project, and list in at most 5 bullets what changed.
 
 ### 3c. Tasks (only if there is time)
 
@@ -115,9 +122,9 @@ Build a clickable mobile prototype (a single HTML page) from the spec:
 - a detail view,
 - settings, if the feature needs them,
 - an empty state.
-Use the attached screenshots as the visual reference: spacing, type sizes, density, tone. Do not copy their brand.
+Use the attached screenshots as the visual reference: spacing, type sizes, density, tone. Do not copy their brand. If no screenshots are attached, say so and go light and calm.
 Make three variants side by side on one page (A, B, C) that differ in layout, not just colour.
-This is a prototype for user testing, not production code.
+Share the data and the CSS across the three variants; keep the whole page under 400 lines. This is a prototype for user testing, not production code.
 
 ### 4b. Iterate with the room
 
@@ -126,7 +133,7 @@ We pick variant [A/B/C]. Change: [the room's request]. Show only that variant fr
 
 ### 4c. Write the taste down (slide 32)
 
-From the chosen variant, write a short design-rules.md: colours (with hex), font family and sizes, spacing scale, corner radius for controls and for cards, what is banned (for example gradients, heavy shadows), and a rule that every screen has an empty state. At most 15 lines. I will attach this file to every future design request.
+From the chosen variant, write a short design-rules.md. Read every value from the variant's code and add nothing that is not there: colours (with hex), font family and sizes, spacing scale, corner radius for controls and for cards, what is banned (for example gradients, heavy shadows), and a rule that every screen has an empty state. At most 15 lines. I will attach this file to every future design request.
 
 ---
 
@@ -137,6 +144,7 @@ From the final spec, write a launch kit:
 2. Three versions of a push or email subject line (max 60 characters)
 (If there is time: a help article with steps and 4 FAQs, and a support reply for the most likely question.)
 Tone: friendly, short sentences, no hype.
+Check: only what the prototype does today. No data-protection or security claims unless the room decided them.
 
 ### 5b. Measurement (optional, not run live)
 
