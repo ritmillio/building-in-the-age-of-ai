@@ -4,7 +4,7 @@ What a small team building an AI product runs on, day to day. No affiliate links
 
 ## How a day looks
 
-- **Agents do most of the typing.** [Claude Code](https://claude.com/product/claude-code) is the main one. [Codex](https://developers.openai.com/codex) and [Kimi Code](https://www.kimi.com/code) run on the same project with the same instructions: one `AGENTS.md` rules file (Claude Code's `CLAUDE.md` is a symlink to it) and one shared skills folder that every agent reads. One setup, three agents, no copies that drift apart.
+- **Agents do most of the typing.** [Claude Code](https://claude.com/product/claude-code) is the main one. [Codex](https://learn.chatgpt.com/docs) and [Kimi Code](https://www.kimi.com/code) run on the same project with the same instructions: one `AGENTS.md` rules file (Claude Code's `CLAUDE.md` is a symlink to it) and one shared skills folder that every agent reads. One setup, three agents, no copies that drift apart.
 - **Several sessions at once**, each in its own git worktree, each with its own task.
 - **Long jobs run overnight** as a chain of fresh sessions (the `relay` skill), with a ledger committed to git and a draft pull request to review in the morning.
 - **Every decision comes to me as clickable options** with a recommendation first. It's a line in the rules file.
@@ -17,7 +17,7 @@ What a small team building an AI product runs on, day to day. No affiliate links
 | What | Tool |
 |---|---|
 | Main coding agent | [Claude Code](https://claude.com/product/claude-code) (terminal + desktop app) |
-| Second opinions, parallel lanes | [Codex](https://developers.openai.com/codex), [Kimi Code](https://www.kimi.com/code), sometimes [Cursor](https://cursor.com) |
+| Second opinions, parallel lanes | [Codex](https://learn.chatgpt.com/docs), [Kimi Code](https://www.kimi.com/code), sometimes [Cursor](https://cursor.com) |
 | Terminal | [Ghostty](https://ghostty.org), [Warp](https://www.warp.dev) |
 | Launcher | [Raycast](https://www.raycast.com) |
 | Dictation (talk instead of type) | [Wispr Flow](https://wisprflow.ai) |

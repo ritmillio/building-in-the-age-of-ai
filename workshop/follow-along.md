@@ -33,7 +33,7 @@ Tips while you go:
 
 ## The background build (optional, needs a coding agent)
 
-On stage, a coding agent builds a full prototype in the background while we talk ([prompt 0](prompts.md#0-background-build-second-window-claude-code)). To run it yourself you need [Claude Code](https://code.claude.com/docs/en/quickstart), [Codex](https://developers.openai.com/codex) or a similar agent, an empty folder, and a paid plan for the agent. Starting a real product instead of a prototype? Use the template prompt in [guides/scaffolding.md](../guides/scaffolding.md#prompt-start-from-a-template-claude-code).
+On stage, a coding agent builds a full prototype in the background while we talk ([prompt 0](prompts.md#0-background-build-second-window-claude-code)). To run it yourself you need [Claude Code](https://code.claude.com/docs/en/quickstart), [Codex](https://learn.chatgpt.com/docs) or a similar agent, an empty folder, and a paid plan for the agent. Starting a real product instead of a prototype? Use the template prompt in [guides/scaffolding.md](../guides/scaffolding.md#prompt-start-from-a-template-claude-code).
 
 ## Afterwards
 
