@@ -8,6 +8,38 @@ No coding needed to use most of this. If you write code, there's more for you in
 
 Pick the task you hate most. Hand it to an AI assistant with [prompt 7](workshop/prompts.md#7-the-task-you-hate-most), try it for two weeks, keep it or drop it. You know that task inside out, so you can judge the output, and you'll feel the win on day one.
 
+## Start here, by role
+
+Pick the row closest to you and do the five steps in order. None of them needs more than an evening.
+
+**Founder, not technical**
+1. Do [the one thing](#if-you-only-do-one-thing) above, on the task you hate most.
+2. Before you build anything, test the idea with customers: [succeed.md §1](guides/succeed.md#1-validate-before-you-build) (interviews, review mining, a landing page with prices).
+3. Run the live-build prompts on your own idea, in order: [prompts.md](workshop/prompts.md). Were you in the room? [follow-along.md](workshop/follow-along.md) has the order.
+4. Learn why long chats get worse and what to do instead: [context.md §7](guides/context.md#7-practical-rules-for-the-audience-one-slide), then [tricks 1 and 8 to 13](guides/tricks.md#prompting-and-talking-to-the-agent).
+5. Before you talk to investors: [fundraising.md](guides/fundraising.md) on the "thin wrapper" question, and [succeed.md §7](guides/succeed.md#7-the-few-numbers-that-matter-early) for the numbers that matter early.
+
+**Product person or operator**
+1. Brief it like a smart new hire (role, context, task, format, check): copy the shape from [prompts 1 to 3](workshop/prompts.md#1-research-real-customer-words-starts-during-the-talk-read-it-at-slide-29).
+2. Make it ask with options, report briefly and stop at the scope you named: [tricks 8 to 10](guides/tricks.md#prompting-and-talking-to-the-agent).
+3. Red team your spec before anyone builds it: [prompt 3b](workshop/prompts.md#3b-red-team-slide-30-the-most-valuable-step).
+4. Design from real screens and written-down taste: [tricks 50 to 54](guides/tricks.md#design) and [design-rules.md](templates/design-rules.md).
+5. Decide, price and sell with evidence: [succeed.md §2 to §5](guides/succeed.md#2-decide-with-a-number-not-a-feeling).
+
+**Developer**
+1. One rules file and one skills folder for every tool: [AGENTS.md template](templates/AGENTS.md), [tricks 19 to 24](guides/tricks.md#rules-files-and-skills).
+2. Start from a template that runs and deploy it before you change anything: [scaffolding.md](guides/scaffolding.md).
+3. Plan, shred the plan, build, verify: [how-i-build.md §2](guides/how-i-build.md#2-never-trust-done) and the [`verify`](skills/verify/SKILL.md) skill.
+4. Before you run agents in parallel, read [war stories 1 to 5](guides/war-stories.md#when-agents-share-a-checkout) and [tricks 28 to 39](guides/tricks.md#agents-and-parallel-work).
+5. Install the skills you want: [skills/install.md](skills/install.md) covers Claude Code, claude.ai, Codex, ChatGPT and Gemini.
+
+**Team lead**
+1. One shared rules file, every hard rule with the incident behind it: [tricks 19 and 25](guides/tricks.md#rules-files-and-skills).
+2. Agents work on branches and open pull requests, a human merges, nobody's agent touches production: [trick 36](guides/tricks.md#agents-and-parallel-work), [tricks 55 to 58](guides/tricks.md#shipping-and-ops).
+3. "Done" means seen working, and "not verified" is said out loud: [tricks 41 to 49](guides/tricks.md#verification).
+4. One record per unit of work, one task list: [tricks 60 to 64](guides/tricks.md#team-and-process) and the [`log-work`](skills/log-work/SKILL.md) skill.
+5. Pick models on your own data and measure cost per task: [tricks 65 to 67](guides/tricks.md#money-and-models) and [the cheapest model story](guides/war-stories.md#one-more-about-money). Then hand the team [war-stories.md](guides/war-stories.md) as a checklist.
+
 ## What's in here
 
 | | |
