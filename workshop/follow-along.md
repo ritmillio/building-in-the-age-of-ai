@@ -5,7 +5,7 @@ In the second half of the workshop we build the room's idea live, prompt by prom
 ## Before it starts (five minutes)
 
 1. Open one assistant: [Claude](https://claude.ai), [ChatGPT](https://chatgpt.com) or [Gemini](https://gemini.google.com). The free plans are enough for the prompts; web search must be on for prompt 1.
-2. Make a fresh **Project** for today (Claude and ChatGPT both have Projects; in Gemini, a new chat is fine). Name it after the idea.
+2. Make a fresh **Project** for today and name it after the idea. Claude and ChatGPT call it a Project; Gemini calls it a [notebook](https://support.google.com/gemini/answer/16972047) (Menu, then **New notebook**). Google is rolling notebooks out gradually (checked 2026-10-21), so if you don't see it yet, a new chat is fine.
 3. Use a private or test account. **No customer data, nothing confidential.** Everything today is about a made-up product.
 
 ## When the room has picked the idea
@@ -38,4 +38,7 @@ On stage, a coding agent builds a full prototype in the background while we talk
 ## Afterwards
 
 - Do [prompt 7](prompts.md#7-the-task-you-hate-most) on a task from your own week.
+- Prompts 8-12 are for the rest of the week: [sales call follow-up](prompts.md#8-after-a-sales-call-the-follow-up), [investor update](prompts.md#9-the-monthly-investor-update), [competitor teardown](prompts.md#10-competitor-teardown), [meeting notes into decisions](prompts.md#11-meeting-notes-into-decisions-and-owners) and [a contract's first read](prompts.md#12-contract-first-read-not-legal-advice).
+- Building with an agent from here on? [guides/tricks.md](../guides/tricks.md) has the habits that save us the most time, each with the prompt or file and when it fails.
+- Turning the idea into a business (interviews, pricing, the first ten customers): [guides/succeed.md](../guides/succeed.md).
 - Everything else (guides, skills, templates, links) is in the [repo's README](../README.md).
