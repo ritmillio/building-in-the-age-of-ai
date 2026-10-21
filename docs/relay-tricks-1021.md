@@ -56,11 +56,18 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 - Skills repo check: `npx skills add <owner/repo> --list` in an empty `git init` dir under /tmp; it uses local git credentials, so it does not prove public access.
 - Print HTML (prompt pack, handout): wrap each heading with its block in a `break-inside: avoid` div, or Chrome leaves a heading alone at the page foot. Prompt pack is 5 pages now; `README.md` (repo + Desktop) state the page count.
 - Inventory coverage is complete (T19): every publishable inventory item is in tricks.md, war-stories.md or a template. New tricks from now on come from fresh sources, not the inventory. Prefer folding a small habit into an existing trick over renumbering.
+- When the ledger script inserts text before a heading, anchor on `\n## Heading\n`, not the bare heading text: the "How to read this" line names every section in backticks.
 
 ## Backlog
 
-Ordered by value to the mission. T1-T14 and T16-T19 are done. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
+Ordered by value to the mission. T1-T14 and T16-T19 are done; T20-T25 come from the iteration 21 hunt. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
 
+- [ ] **T20 Stale slide counts.** Repo `README.md:47` says "The deck (37 slides)" but `workshop/slides.pdf` is 40 pages (pdfinfo; 38-40 are Q&A backups). Desktop `rehearsal.html:33` says "deck v15 (37 slides)" and the 2:40 Q&A row (line 54) never mentions backups 38-40. Fix both, re-render `rehearsal.pdf`, view every page.
+- [ ] **T21 tricks.md "Fails when", batch 1 (tricks 3-27).** The intro promises every trick says **when it fails**; a regex over `**n. ...**` lines finds 63 of 73 with no `Fails when:`. Missing here: 3, 6, 7, 9, 11, 12, 13, 16, 17, 18, 19, 20, 21, 22, 24, 25, 26, 27. Add one real failure mode each (from war-stories.md or the memory notes, generalised), no renumbering.
+- [ ] **T22 tricks.md "Fails when", batch 2 (tricks 28-49).** Missing: 28-36, 38-49. Same rule as T21.
+- [ ] **T23 tricks.md "Fails when", batch 3 (tricks 50-73).** Missing: every trick 50-73. Same rule; after this batch the regex must report 0 missing (or soften the intro claim for the ones where no honest failure mode exists).
+- [ ] **T24 follow-along.md afterwards + Gemini Projects.** "Afterwards" points only to prompt 7; add prompts 8-12, tricks.md and succeed.md. Line 8 says "in Gemini, a new chat is fine": press reports (Android Authority, dataconomy 2026-04-07) say Gemini Projects (maybe renamed Notebooks) was in limited testing; no Google announcement found by search. Check the Google help page, date it, fix the line if Projects shipped.
+- [ ] **T25 Cross-links.** `guides/context.md` and `guides/scaffolding.md` never link tricks.md (grep empty): context.md §7 should point to tricks 1-7, scaffolding.md to trick 35 (fresh worktree has no `.env`) and 55-58. README `skills/` row says install steps for "Claude Code, claude.ai, ChatGPT and Gemini" but install.md also covers Codex (§D) and other agents (§E). Anchor-check every link added.
 - [ ] **T15 Final read-through.** Last iteration only: README → guides as a first-time visitor, fix the three worst confusions, Desktop README up to date.
 
 ## Iteration log
@@ -74,6 +81,7 @@ Ordered by value to the mission. T1-T14 and T16-T19 are done. T15 is for the las
 - f6b21d4 + Desktop 341950c T16: prompt-pack.html gets "After the workshop: five more prompts" (8-12 verbatim from prompts.md, Elad Gil credited as plain text) on new pages 4-5 before "Where to start". First render orphaned a heading; wrapped each h3+prompt in `.keep` (break-inside: avoid), re-rendered: 5 pages, all viewed at -r 60, pages 1-3 unchanged. PDF copied to repo; README rows (repo + Desktop) say 5 pages. Gate 0.
 - 2f05a40 T19: all 99 inventory items mapped to tricks.md; only 43 (monorepo worktree borrowing node_modules), 50 (forgotten caffeinate) and 71 (sans for reading text) were publishable and missing. Folded into tricks 35, 39, 53 so numbering (README roles, slide notes #8/#28/#40) stays put; still 73 tricks. Wording checked against the memory notes; `caffeinate -t 1`, `-i true`, `-w <pid>` all ran EXIT 0; banned grep empty; gate 0.
 - Desktop 62d0760 T17: handout back-page pointer now names templates/ (AGENTS.md starter, never list, review prompt for a fresh session). Rendered: 2 pages (pdfinfo), page 1 unchanged, page 2 viewed at -r 110, line wraps in the footer with room to spare. No repo copy of the handout, so no repo file changed. Gate 0.
+- hunt (iteration 21): backlog was only T15, so hunted. Evidence: pdfinfo slides.pdf 40 pages vs README "37 slides"; rehearsal.html still "v15 (37 slides)"; tricks.md regex 63/73 without `Fails when:` against an intro that promises it; follow-along afterwards stops at prompt 7; context.md/scaffolding.md grep for tricks.md empty; Gemini Projects status via WebSearch (testing, unconfirmed). Prompts and faq/qa pairs diff clean. Gate 0. Added T20-T25.
 
 ## Landed
 
