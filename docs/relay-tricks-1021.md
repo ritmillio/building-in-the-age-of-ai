@@ -25,6 +25,7 @@
 - Ledger file `docs/relay-tricks-1021.md` lives in the repo branch; delete it (or squash it out) before flipping the repo public.
 - ChatGPT plan details (skills on Plus/Pro, custom GPT shutdown date for personal plans, ChatGPT Work by plan) could only be checked through search results, because OpenAI pages block bots. Before the event, open Plugins → Skills in a Plus account once and fix `skills/install.md` §F1 if it differs.
 - `handout.pdf` (Desktop) is new and printable: skim both pages; the print count is "one per seat plus ten" because the seat count is not in any file. Its QR 404s until the repo is public.
+- Trick 57's new *Fails when* uses Vercel's documented behaviour (env changes reach only new deployments, so damage shows at the next build). It does not tell the outage story, but it is the lesson behind it: cut that sentence if even the generalised version is too close.
 
 ## Health
 
@@ -61,9 +62,8 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 
 ## Backlog
 
-Ordered by value to the mission. T1-T14 and T16-T22 are done. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
+Ordered by value to the mission. T1-T14 and T16-T23 are done. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
 
-- [ ] **T23 tricks.md "Fails when", batch 3 (tricks 50-73).** Missing: every trick 50-73. Same rule; after this batch the regex must report 0 missing (or soften the intro claim for tricks with no honest failure mode).
 - [ ] **T24 follow-along.md afterwards + Gemini Projects.** "Afterwards" (line 38) points only to prompt 7; add prompts 8-12, tricks.md and succeed.md. Line 8 says "in Gemini, a new chat is fine": press reports (Android Authority, dataconomy 2026-04-07) say Gemini Projects (maybe renamed Notebooks) was in limited testing; no Google announcement found by search. Check the Google help page, date it, fix the line if Projects shipped.
 - [ ] **T25 Cross-links.** `guides/context.md` and `guides/scaffolding.md` never link tricks.md (grep 0): context.md §7 → tricks 1-7, scaffolding.md → trick 35 (fresh worktree has no `.env`) and 55-58. README `skills/` row (line 60) lists "Claude Code, claude.ai, ChatGPT and Gemini" but install.md also covers Codex (§D) and other agents (§E). Anchor-check every link added.
 - [ ] **T15 Final read-through.** Last iteration only: README → guides as a first-time visitor, fix the three worst confusions, Desktop README up to date.
@@ -76,6 +76,7 @@ Ordered by value to the mission. T1-T14 and T16-T22 are done. T15 is for the las
 - 58f8b6a + Desktop 03c91da T20: repo README deck row now "37 slides plus 3 Q&A backup slides" (slides.pdf is 40 pages); rehearsal.html header says v16 (37 + 3 backups) and the 2:40 Q&A row says when to show 38-40 (titles from `backup` in slides.mjs). rehearsal.pdf re-rendered, still 2 pages, both viewed at -r 70. grep for "37 slides" now only hits correct lines (README, Desktop README, script.html, rehearsal). Gate 0.
 - 33cb94a T21: tricks 3, 6, 7, 9, 11-13, 16-22, 24-27 get one *Fails when:* each (18), grounded in war stories and memory notes (versions, English keys, model price). Regex now 45 missing (28-36, 38-73), exactly T22+T23. New claims sourced: git-config core.symlinks (200, anchor id present) on 19, Claude Code skills page (200, "description helps Claude decide when to load") on 24; war-stories anchor slug ok; no em dash, banned grep empty; gate 0.
 - 40c94c3 T22: tricks 28-36, 38-49 get one *Fails when:* each (21), grounded in memory notes (branch print that committed anyway, shared stash, pkill fleet, stale server reload, CI skipping a suite). Regex now 24 missing (50-73 = T23). Checked by running: worktree doc `#_refs` says all `refs/` shared (stash too); GitHub `#require-status-checks-before-merging` 200 + id present; `false | cat` in a Makefile and an npm script both EXIT 0 (trick 43); `pgrep -fl` runs on macOS. Gate 0.
+- 8b15581 T23: tricks 50-73 get one *Fails when:* each (23 new, trick 68's voice-fallback line reworded into one). Regex now reports 0 missing of 73, so the intro's "when it fails" promise holds. Grounded in memory notes (sketch pick rejected, wrong type system, unforced tool, uncited numbers, suggestion chips vs acting). New links 200 and wording read on the page: Postgres `ADD COLUMN IF NOT EXISTS`, Vercel "env changes apply only to new deployments", Anthropic batch "expire ... within 24 hours". No em dash; gate 0.
 
 ## Landed
 
