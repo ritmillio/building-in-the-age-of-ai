@@ -30,9 +30,11 @@ Format: 1) problems ranked by how often they came up and what they cost, each wi
 Check: quote, don't paraphrase. Mark anything I seem to want to hear but nobody actually said. If fewer than 3 people said it, say so.
 ```
 
+*Fails when:* you mention your idea before the end. From then on they are being polite about your idea instead of telling you about their life, and the notes fill up with compliments.
+
 **Mine what customers already wrote.** Reviews, forum threads and support complaints about the tools your customers use today are interviews someone else already did. Prompt 1 of the live build ([Research: real customer words](../workshop/prompts.md#1-research-real-customer-words-starts-during-the-talk-read-it-at-slide-29)) does this with web search on, quotes with links, and "no data" allowed. *Fails when:* you let it summarise without quotes; you get its opinion, not theirs.
 
-**Test the promise before the product.** Before writing Buffer, Joel Gascoigne put up a page describing it, then added a pricing page between the description and the email sign-up, so each visitor had to pick a plan first ([Buffer: idea to paying customers in 7 weeks](https://buffer.com/resources/idea-to-paying-customers-in-7-weeks-how-we-did-it/)). People kept signing up and a few clicked paid plans: enough evidence to build. With AI the page takes minutes; the slow part is sending real people to it.
+**Test the promise before the product.** Before writing Buffer, Joel Gascoigne put up a page describing it, then added a pricing page between the description and the email sign-up, so each visitor had to pick a plan first ([Buffer: idea to paying customers in 7 weeks](https://buffer.com/resources/idea-to-paying-customers-in-7-weeks-how-we-did-it/)). People kept signing up and a few clicked paid plans: enough evidence to build. With AI the page takes minutes; the slow part is sending real people to it. *Fails when:* the only visitors are friends and followers. A sign-up from someone who likes you is a compliment, not a commitment; send people who have the problem and don't know you.
 
 ```text
 Role: a conversion copywriter.
@@ -46,7 +48,7 @@ Check: no feature that does not exist in the spec; no invented testimonials or n
 
 ## 2. Decide with a number, not a feeling
 
-**Write the business case as scenarios.** Pessimistic, base, optimistic, each assumption with how you would validate it, ending in Go, Narrow or Stop and the one test result that would change the verdict. That is prompt 2 in [prompts.md](../workshop/prompts.md#2-business-case). The point is not the forecast; it is the list of assumptions you now know to test.
+**Write the business case as scenarios.** Pessimistic, base, optimistic, each assumption with how you would validate it, ending in Go, Narrow or Stop and the one test result that would change the verdict. That is prompt 2 in [prompts.md](../workshop/prompts.md#2-business-case). The point is not the forecast; it is the list of assumptions you now know to test. *Fails when:* the base case becomes the plan and nobody runs the tests. The numbers are the least reliable part of the output.
 
 **Ask the product-market-fit question early.** Superhuman asked its users "How would you feel if you could no longer use Superhuman?" with three answers (very, somewhat, not disappointed). Sean Ellis, who benchmarked nearly a hundred startups with this survey, found that companies where at least 40% answered "very disappointed" were the ones that grew ([First Round Review](https://review.firstround.com/how-superhuman-built-an-engine-to-find-product-market-fit/)). Superhuman added three questions: who benefits most, what the main benefit is, how to improve it. You can run it with ten users.
 
@@ -57,6 +59,8 @@ Task: 1) the share answering "very disappointed"; 2) describe the people who ans
 Format: one table + 5 bullets.
 Check: show the counts behind every percentage. Under 10 answers, say the number is not reliable yet.
 ```
+
+*Fails when:* you survey everyone who ever signed up. Superhuman polled only users who had recently used the core of the product (Ellis's rule: at least twice in the last two weeks), then segmented by who answered "very disappointed" ([First Round Review](https://review.firstround.com/how-superhuman-built-an-engine-to-find-product-market-fit/)). A score that mixes tourists and the wrong segment tells you nothing.
 
 ## 3. Price it
 
@@ -74,11 +78,13 @@ Format: table: plan | who it's for | what's included | price | why this price.
 Check: every competitor price has a link and a date. Price from the customer's value and today's cost, not from my cost. List what I should ask in the next 3 sales conversations to test it.
 ```
 
+*Fails when:* the person you test the price on is not the one who pays, or you change price, plans and wording at the same time and can't tell which one moved conversion.
+
 **If you sell an AI product, know your cost per task.** Your margin moves with usage, and a cheap per-token model can be an expensive task. Measure it ([trick 66](tricks.md#money-and-models)) before you set a flat price.
 
 ## 4. The first ten customers
 
-**Do it by hand.** Paul Graham, [Do Things that Don't Scale](https://paulgraham.com/ds.html): "The most common unscalable thing founders have to do at the start is to recruit users manually." His example is the Collison brothers at Stripe, who would say "Right then, give me your laptop" and set the product up on the spot.
+**Do it by hand.** Paul Graham, [Do Things that Don't Scale](https://paulgraham.com/ds.html): "The most common unscalable thing founders have to do at the start is to recruit users manually." His example is the Collison brothers at Stripe, who would say "Right then, give me your laptop" and set the product up on the spot. *Fails when:* you wait for a launch to bring them. In the same essay: "You can't wait for users to come to you", and the Big Launch "usually doesn't work".
 
 **Start with your network, then go where they already are.** Lenny Rachitsky looked at how fast-growing B2B companies found their [first ten customers](https://www.lennysnewsletter.com/p/how-todays-fastest-growing-b2b-businesses): almost all combined their personal network (former colleagues, investors, friends) with going to where their customers already spend time (communities, forums, door to door). His verdict on press: "Getting press is rarely the way to get started." The consumer version is [How the biggest consumer apps got their first 1,000 users](https://www.lennysnewsletter.com/p/how-the-biggest-consumer-apps-got).
 
@@ -118,7 +124,9 @@ Format: the monthly growth rate you used and how you got it; a month-by-month ta
 Check: show every calculation step. Use only the growth in my numbers, never a guessed or "typical" rate. If a number is missing, write "missing" instead of estimating. With fewer than 3 months of revenue, say the growth rate is not reliable yet.
 ```
 
-**Hire the work to agents before you hire people.** Teams are smaller than they used to be, and some reach real revenue with a few dozen people ([fundraising.md, smaller teams](fundraising.md#smaller-teams-faster-revenue)). Start with the task you hate most ([prompt 7](../workshop/prompts.md#7-the-task-you-hate-most)), give it two weeks, keep or drop it. Repeat. Anything that sends, pays or deletes still waits for a human.
+*Fails when:* the next round is the plan. Graham: founders "assume it will be easy to raise more money. But that assumption is often false". Leave money you have not raised out of the cash line.
+
+**Hire the work to agents before you hire people.** Teams are smaller than they used to be, and some reach real revenue with a few dozen people ([fundraising.md, smaller teams](fundraising.md#smaller-teams-faster-revenue)). Start with the task you hate most ([prompt 7](../workshop/prompts.md#7-the-task-you-hate-most)), give it two weeks, keep or drop it. Repeat. Anything that sends, pays or deletes still waits for a human. *Fails when:* nobody reads the output during the two weeks, so "keep" only means nobody noticed. Read a sample every few days.
 
 **Raising is a choice.** Some founders raise once, get profitable and keep control. Read [fundraising.md](fundraising.md) before you decide.
 
@@ -132,7 +140,7 @@ Before revenue is large, a handful of numbers tell you more than any dashboard:
 - **Revenue per customer and gross margin,** with model costs included ([fundraising.md, margins](fundraising.md#margins-and-inference-cost)).
 - **Months of runway** at current spend: the default alive test.
 
-a16z's [16 Startup Metrics](https://a16z.com/16-startup-metrics/) defines the standard ones precisely if an investor asks.
+a16z's [16 Startup Metrics](https://a16z.com/16-startup-metrics/) defines the standard ones precisely if an investor asks. *Fails when:* "active" has no definition. a16z: companies have "almost unlimited definitions for what 'active' means", and downloads are "really just a vanity metric". Pick the one action that means real use, write it down, and keep it the same every week.
 
 ```text
 Role: my weekly operating analyst.
