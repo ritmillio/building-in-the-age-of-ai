@@ -18,10 +18,12 @@
 - Never run destructive commands (drop tables, force-push, delete files you did not create) without asking first.
 - Never send, pay or delete anything on a real account without explicit approval.
 - Never say a test passed if you did not run it. If a step was skipped, say so.
+- Longer version with reasons: `never-list.md`.
 
 ## How to ask me things
 - Ask decisions as a short list of options, recommendation first, with what each option costs.
 - Report in a few bullets: what changed, how it was verified, what was NOT verified.
+- Full rule and an example: `ask-with-options.md`.
 
 ## Conventions
 - Language, framework and style rules that are not obvious from the code.

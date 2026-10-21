@@ -28,7 +28,7 @@ New to all this? Read [how-i-build.md](how-i-build.md) first (the loop), then co
 
 ## Prompting and talking to the agent
 
-**8. Make it ask with options, not paragraphs.** Rules file line: "Ask every decision as two to four options, recommendation first and labelled, each saying what it costs or unblocks." *Why:* a decision buried in prose gets skipped; four options get answered in one round. We once had a plan with many open decisions that were never put to us; asked as options, all of them were answered in one go. *Fails when:* the options are vague ("option A: do it well").
+**8. Make it ask with options, not paragraphs.** Rules file line: "Ask every decision as two to four options, recommendation first and labelled, each saying what it costs or unblocks." *Why:* a decision buried in prose gets skipped; four options get answered in one round. We once had a plan with many open decisions that were never put to us; asked as options, all of them were answered in one go. *Fails when:* the options are vague ("option A: do it well"). Template: [ask-with-options.md](../templates/ask-with-options.md).
 
 **9. "When reporting to me, be extremely concise."** Put it in the rules file, word for word. *Why:* long reports hide the one line you needed, usually the one about what was not checked.
 

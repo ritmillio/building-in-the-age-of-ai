@@ -12,7 +12,7 @@ The prompts use the same five-part brief as the live build ([prompts.md](../work
 
 **Talk about their life, not your idea.** Rob Fitzpatrick's [The Mom Test](https://www.momtestbook.com/) boils customer interviews down to three habits: talk about their life instead of your idea, ask about specifics in the past instead of opinions about the future, and talk less and listen more. Compliments and "I would definitely use that" are not data. What someone did last month, and what it cost them, is. YC's [How to Talk to Users](https://www.youtube.com/watch?v=MT4Ig2uqjTc) (Eric Migicovsky, Y Combinator) is the same idea in a short talk.
 
-AI helps on both sides of the conversation: before (a sharp interview guide) and after (an honest synthesis that keeps the customer's own words). It does not replace the conversation.
+AI helps on both sides of the conversation: before (a sharp interview guide) and after (an honest synthesis that keeps the customer's own words). It does not replace the conversation. Write each conversation down in the same shape: [interview-notes.md](../templates/interview-notes.md).
 
 ```text
 Role: a customer researcher who has read The Mom Test.
