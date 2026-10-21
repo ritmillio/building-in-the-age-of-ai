@@ -74,7 +74,7 @@ Format: table: plan | who it's for | what's included | price | why this price.
 Check: every competitor price has a link and a date. Price from the customer's value and today's cost, not from my cost. List what I should ask in the next 3 sales conversations to test it.
 ```
 
-**If you sell an AI product, know your cost per task.** Your margin moves with usage, and a cheap per-token model can be an expensive task. Measure it ([trick 66](tricks.md)) before you set a flat price.
+**If you sell an AI product, know your cost per task.** Your margin moves with usage, and a cheap per-token model can be an expensive task. Measure it ([trick 66](tricks.md#money-and-models)) before you set a flat price.
 
 ## 4. The first ten customers
 
