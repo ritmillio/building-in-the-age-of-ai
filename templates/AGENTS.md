@@ -1,6 +1,6 @@
 # AGENTS.md (template)
 
-> The rules file every coding agent reads at the start of every session. Codex, Cursor, Gemini CLI and most others read `AGENTS.md`; Claude Code reads `CLAUDE.md`, so either keep one file and symlink the other (`ln -s AGENTS.md CLAUDE.md`) or put `@AGENTS.md` inside `CLAUDE.md`.
+> The rules file every coding agent reads at the start of every session. Codex, Cursor, Gemini CLI and most others read `AGENTS.md`. Claude Code (v2.1.277 and later) reads it too when the project has no `CLAUDE.md`; if a `CLAUDE.md` exists, it reads only that, so a `CLAUDE.md` you add later must contain `@AGENTS.md` (or be a symlink, `ln -s AGENTS.md CLAUDE.md`). Older versions and some sessions read `CLAUDE.md` only, which is the other reason to keep that one-line import ([memory docs](https://code.claude.com/docs/en/memory), checked 2026-10-21).
 > Keep it short. Everything in here sits on the agent's desk in every session, so every line costs attention. Delete what you don't need, and add a line every time you correct the agent on the same thing twice.
 
 ## What this project is
