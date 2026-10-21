@@ -4,7 +4,7 @@
 ## Getting started
 
 **1. Which tool should I start with: ChatGPT, Claude or Gemini?**
-Any of the big three is good enough to start. Pick one, and build one Project (in Claude or ChatGPT, or a Gem in Gemini) with your own context: product, customers, rules, templates. The context you write down matters more than the model, and you can take it with you if you switch.
+Any of the big three is good enough to start. Pick one, and build one Project (in Claude or ChatGPT, or a skill in Gemini, where skills replace Gems from November 2026) with your own context: product, customers, rules, templates. The context you write down matters more than the model, and you can take it with you if you switch.
 
 **2. Which model is the best right now?**
 It changes every few months, so don't marry one. Keep your context in plain files (rules, docs, prompts) so switching is cheap. We use different models for different jobs.

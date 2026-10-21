@@ -56,7 +56,7 @@ cp -r skills/grill ~/.claude/skills/
 
 Checked 2026-10-21 in an empty project: both `npx skills add` forms found all six skills and installed them to `.claude/skills/`. Each `SKILL.md` carries only `name` and `description` in its frontmatter, so it uploads to claude.ai without edits; descriptions run 244 to 432 characters (see the length note in [install.md](install.md) if an upload is rejected).
 
-No terminal? In claude.ai, zip a skill folder and upload it as a skill. In ChatGPT or Gemini, paste the body of `SKILL.md` into a Project or Gem as its instructions: you lose the automatic triggering, not the method.
+No terminal? In claude.ai, zip a skill folder and upload it as a skill. In the Gemini app, upload the folder under Customize > Skills ([install.md, section G](install.md#g-gemini-app-geminigooglecom)). In ChatGPT, paste the body of `SKILL.md` into a Project as its instructions: you lose the automatic triggering, not the method.
 
 ## License
 

@@ -225,12 +225,14 @@ Quick one-off alternative: attach the `SKILL.md` to a chat and say "follow this"
 
 ## G. Gemini app (gemini.google.com)
 
-No native SKILL.md support in the Gemini **app** was found (the Gems help page doesn't mention skills; Gemini **CLI** does support them, see section E). Fallback: a **Gem**.
-1. gemini.google.com → **Explore Gems** → **New Gem**.
-2. Name it; paste the `SKILL.md` body into **Instructions** (Google suggests persona / task / context / format).
-3. Under **Knowledge**, **Add files** for the skill's reference files (or from Google Drive).
-4. **Save** (the preview does not save).
-Source: [Tips for creating custom Gems](https://support.google.com/gemini/answer/15235603). ⚠ The page does not state which plans can create Gems or the file limits.
+The Gemini app now takes skills natively, and Gems are going away (checked 2026-10-21 on Google's help pages).
+1. gemini.google.com → sidebar **Customize** (under **More** if you don't see it) → **Skills** → **Create**.
+2. Either **Create with Gemini** / **Create manually** and paste the `SKILL.md` body, or upload the skill folder: `SKILL.md` in the root, a lowercase hyphenated `name` (like ours), under 100 MB in total. No .docx/.xlsx, and scripts that need the internet won't run.
+3. In a chat, type `/` (or `@`), pick the skill. Gemini may also use an active skill on its own when it fits.
+
+Who: 18+, signed in to a personal Google Account, Keep Activity on; no subscription needed. Work and school accounts get skills later. Source: [Create & manage skills for Gemini Apps](https://support.google.com/gemini/answer/17094296?hl=en&co=GENIE.Platform%3DDesktop).
+
+**Gems:** from November 2026 Google converts personal-account Gems to skills automatically (Workspace business accounts in March 2027, education in June 2027), so build new things as skills. On a work account that has no skills yet, a Gem is still the fallback: **Explore Gems** → **New Gem**, paste the `SKILL.md` body into **Instructions**, add the reference files under **Knowledge**, **Save**. Sources: [About the transition from Gems to skills](https://support.google.com/gemini/answer/18560919?hl=en), [Tips for creating custom Gems](https://support.google.com/gemini/answer/15235603).
 
 ---
 
@@ -241,7 +243,7 @@ Source: [Tips for creating custom Gems](https://support.google.com/gemini/answer
 | Non-coder on Claude Pro/Max/Team | claude.ai → Customize > Skills (turn on Anthropic's) → upload ZIPs or add a marketplace under Customize > Plugins |
 | Non-coder on ChatGPT Plus | A Project with the SKILL.md pasted into instructions |
 | Non-coder on ChatGPT Business/Enterprise | Plugins → Skills → Upload from your computer |
-| Gemini user | A Gem with the SKILL.md as instructions |
+| Gemini user | Upload the skill folder under Customize > Skills (section G); a Gem only on a work account without skills |
 | Builder with a terminal | Claude Code: copy to `~/.claude/skills/`, or `/plugin install …`, or `npx skills add …`; Codex: `~/.agents/skills/` or `$skill-installer` |
 | Developer shipping a product | Claude Skills API (GA): `client.skills.create` + `container.skills` + code execution tool |
 
@@ -249,5 +251,5 @@ Source: [Tips for creating custom Gems](https://support.google.com/gemini/answer
 - Plan eligibility for claude.ai skills (Free vs paid): two Anthropic pages disagree.
 - The 200 vs 1,024 description limit in claude.ai uploads: two Anthropic pages disagree.
 - Whether Claude Code reads `.agents/skills/` directly (undocumented).
-- Gem availability by plan and file limits.
+- Regional limits for Gemini app skills: Google's skills help page lists none (checked 2026-10-21).
 - Apart from `npx skills add` (executed 2026-10-21, see A3), the install commands were not executed; they are quoted from the official docs or the repo READMEs.

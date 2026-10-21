@@ -16,7 +16,7 @@ Three things an agent reads so you don't have to repeat yourself:
 
 The one habit: **corrected the same thing twice? Write it down.** Into the rules file if it's always true, into a skill if it's a procedure, into memory if it's a fact or a decision.
 
-No terminal? A claude.ai Project, a ChatGPT Project, or a Gemini Gem (Google is turning Gems into skills; OpenAI is retiring custom GPTs) is the same idea: the instructions box is your rules file, the uploaded files are its context, and claude.ai lets you upload skills too ([install guide](../skills/install.md)).
+No terminal? A claude.ai Project, a ChatGPT Project, or a Gemini skill (Gems turn into skills from November 2026; OpenAI is retiring custom GPTs) is the same idea: the instructions box is your rules file, the uploaded files are its context, and claude.ai lets you upload skills too ([install guide](../skills/install.md)).
 
 ## 2. Never trust "done"
 
