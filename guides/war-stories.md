@@ -28,7 +28,7 @@ Read them as a checklist of failure modes. If you run more than one agent, or le
 
 ## When "green" was not green
 
-**6. Three green builds that were red.** All three on the same pull request. First, the build was run as `build 2>&1 | tail -15` to keep the output short; the pipe reported `tail`'s exit code, which is always success, so a failing build looked green. Second, once the build really passed, a missing import was still in the code: the framework's build skips type checking, and says so in one line of its output that nobody reads. Third, in a fresh worktree the build failed with a missing secret, which looked like a code bug and was only a `.env` file that git does not copy.
+**6. Three green builds that were red.** All three on the same pull request. First, the build was run as `build 2>&1 | tail -15` to keep the output short; the pipe reported `tail`'s exit code, which is always success, so a failing build looked green. Second, once the build really passed, a missing import was still in the code: the framework's build had been configured to skip type checking, and said so in one line of its output that nobody reads. Third, in a fresh worktree the build failed with a missing secret, which looked like a code bug and was only a `.env` file that git does not copy.
 *Cost:* a pull request reported ready that was not, and an hour chasing a "bug" that was a missing file.
 *Rule:* `cmd; echo "EXIT=$?"` instead of a pipe ([trick 43](tricks.md#verification)); run the type checker as its own step ([trick 44](tricks.md#verification)); copy `.env` into a new worktree before judging its build ([trick 35](tricks.md#agents-and-parallel-work)).
 
