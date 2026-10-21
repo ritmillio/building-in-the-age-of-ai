@@ -69,7 +69,7 @@ Repos verified to ship a `.claude-plugin/marketplace.json` (2026-10-20): `anthro
 
 ### A3. `npx skills` (cross-agent installer by Vercel) — **exists, verified**
 
-Ran on 2026-10-20: `npx skills@latest --help` and `npx skills add ritmillio/skills --list` both work as shown.
+Ran on 2026-10-20: `npx skills@latest --help` and `npx skills add ritmillio/skills --list` both work as shown. On 2026-10-21 a real install into an empty project (`npx skills add <path> --skill '*' -a claude-code -y`) copied every skill to `.claude/skills/`; a local folder path works as the source too.
 
 ```bash
 npx skills add vercel-labs/agent-skills                     # pick skills + agents interactively; project scope by default
@@ -250,4 +250,4 @@ Source: [Tips for creating custom Gems](https://support.google.com/gemini/answer
 - The 200 vs 1,024 description limit in claude.ai uploads: two Anthropic pages disagree.
 - Whether Claude Code reads `.agents/skills/` directly (undocumented).
 - Gem availability by plan and file limits.
-- None of the install commands were executed; they are quoted from the official docs or the repo READMEs.
+- Apart from `npx skills add` (executed 2026-10-21, see A3), the install commands were not executed; they are quoted from the official docs or the repo READMEs.

@@ -24,6 +24,8 @@ These live in the author's skills library, [github.com/ritmillio/skills](https:/
 | `shred-plan` | Tears a written plan apart: verifies every claim with evidence, ranks the gaps by severity |
 | `telegram-notify` | A Telegram ping when the agent finishes, commits or gets stuck |
 | `reclaim` | Gets a dev machine pinned by agents and build watchers back |
+| `worktree-janitor` | One table of every git worktree (uncommitted work, PR state, dev server running) with a safe / ask / keep verdict, then removes only the ones you pick |
+| `memory-hygiene` | Audits Claude Code's auto-memory so the index actually loads at startup: overlong lines, duplicates, rules that fall below the cut |
 | `morning-brief`, `safe-migration`, `vercel-triage`, `collect-bills`, `mac-compromise-check` | Founder routines: a daily brief, careful database migrations, deploy triage, invoice collection, a laptop security check |
 
 ```bash
@@ -32,7 +34,7 @@ npx skills@latest add ritmillio/skills
 
 ## Skills by other people
 
-The third-party skills I use, and other collections worth knowing, each credited to its author with repo, license and where it works: [third-party.md](third-party.md). Install them from their own repos, not from here.
+The third-party skills I use, and other collections worth knowing, each credited to its author with repo, license and where it works: [third-party.md](third-party.md). Install them from their own repos, not from here. The two I reach for most are Matt Pocock's `grill-me` (before building) and `handoff` (when a session gets long and a fresh one should pick up).
 
 ## Install
 
@@ -41,12 +43,18 @@ Step-by-step for every surface (Claude Code, claude.ai, the Claude API, Codex an
 The short version:
 
 ```bash
-# Claude Code, for every project
-cp -r skills/grill ~/.claude/skills/
+# straight from GitHub, no clone needed (Node.js 22.20+)
+npx skills@latest add ritmillio/building-in-the-age-of-ai --list                  # see the six
+npx skills@latest add ritmillio/building-in-the-age-of-ai --skill grill -a claude-code
 
-# any agent the cross-agent installer detects
-npx skills@latest add <owner>/<repo>
+# from a clone: all six into the current project (drop -a for any other agent it detects)
+npx skills@latest add ./skills --skill '*' -a claude-code -y
+
+# or just copy one, for every project on this machine
+cp -r skills/grill ~/.claude/skills/
 ```
+
+Checked 2026-10-21 in an empty project: both `npx skills add` forms found all six skills and installed them to `.claude/skills/`. Each `SKILL.md` carries only `name` and `description` in its frontmatter, so it uploads to claude.ai without edits; descriptions run 244 to 432 characters (see the length note in [install.md](install.md) if an upload is rejected).
 
 No terminal? In claude.ai, zip a skill folder and upload it as a skill. In ChatGPT or Gemini, paste the body of `SKILL.md` into a Project or Gem as its instructions: you lose the automatic triggering, not the method.
 
