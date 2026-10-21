@@ -63,13 +63,12 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 - Missing "Fails when" check: `python3 - <<'E'` splitting tricks.md on `(?m)^(?=\*\*\d+\. )` and listing paragraphs without `Fails when`. Insert the clause before a trailing ` Template: ` if the paragraph has one, else at the end. A failure mode that names vendor behaviour gets its doc link.
 - Shell is zsh: `set -- $p` does not word-split, use `${=p}` (or bash) in check loops, or a check silently prints False.
 - **A deny rule is not a wall.** Claude Code Bash deny/ask rules match the command text as written (`git -C . push` passes `Bash(git push *)`); anywhere we recommend one, pair it with branch protection, the sandbox or a container (permissions.md "What a Bash rule doesn't match").
+- **No invented thresholds.** A cutoff in a prompt or rule ("under 20 users", "3x") needs the link it comes from; without one, describe the judgement ("mark cohorts too small to read") instead of a number (T51).
 - **Flaky is not dead.** nfx.com answers 404 to about half the requests on real pages (6 tries: 200/404 mixed, same URL), so run a 404 there or on any other host 3+ times with GET before you call it dead. Carta and Crunchbase news 403 on HEAD (bot block); Crunchbase GET with a Mac UA is 200.
 
 ## Backlog
 
-Ordered by value to the mission. T1-T14, T16-T50 are done. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items). Hunt focus next: prompts 8-12 and war stories against current sources, then a first-time-visitor click path through README (it feeds T15).
-
-- [ ] **T51 Retention prompt for succeed.md §7.** The retention bullet says "ask the agent to compute it ... and to show the query" with no prompt; §7's only prompt is the weekly update. Add a five-part retention prompt (cohort by sign-up month, active = the one action §7 says to write down, show the SQL or spreadsheet formula, "missing" not estimated, say so when a cohort has under 20 users), placed after the bullet list or folded into the weekly prompt, whichever keeps §7 shorter.
+Ordered by value to the mission. T1-T14, T16-T51 are done. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items). Hunt focus next: prompts 8-12 and war stories against current sources, then a first-time-visitor click path through README (it feeds T15).
 
 - [ ] **T15 Final read-through.** Last iteration only: README → guides as a first-time visitor, fix the three worst confusions, Desktop README up to date.
 
@@ -80,6 +79,7 @@ Ordered by value to the mission. T1-T14, T16-T50 are done. T15 is for the last i
 - f864b67 + Desktop d5aed5e T49: faq.md 13 now dated and linked (Commission AI Act page, curl 200, read 2026-10-21): transparency rules apply since August 2026 (chatbots say they're AI, AI-generated content identifiable), high-risk uses (hiring, credit scoring) from 2 December 2027 after the AI Omnibus (in force 27 July 2026). qa.md 13 says what applies now, dates only if asked. Primary source grep confirmed the dates; regulation number and the Dec 2026 marking grace are not on that page, so left out. No other AI Act mention in repo or Desktop (grep). Gate 0.
 - f38d781 T48: war-stories.md (20) and succeed.md (1) trick links now carry `tricks.md#<section>`; premise undercounted (21 links, incl. tricks 41/42 and 65/66, not 18). Python mapped each number to its own `## ` section slug and asserted the slug is a real heading (all 21 passed); 0 `[trick N](tricks.md)` left, the 2 whole-guide links stay unanchored on purpose. Gate 0.
 - d1969e2 T50: succeed.md gains 9 *Fails when* clauses (interview guide, Buffer test, business case, PMF survey, pricing, first ten, default alive, hire agents, metrics); `grep -c 'Fails when'` 3 → 12. Sources curled and stripped to text; every quoted phrase grep-matched verbatim (PG ds "You can't wait for users to come to you", "usually doesn't work"; aord raise-money quote; a16z "active" and "vanity metric"; First Round "at least twice in the last two weeks"). No new numbers without the link they come from. Gate 0.
+- 6f99d02 T51: succeed.md §7 gains a retention prompt after the weekly one (cohort by sign-up month, "active" = the one action §7 says to write down, table of share + count, SQL or formula shown, "missing" not estimated, cohort sizes given and small cohorts marked). Premise's "under 20 users" threshold dropped: no source for it. Retention bullet points at the prompt. `grep -c '^Role:'` 9 → 10; no file claims a succeed.md prompt count (grep). Gate 0. Backlog is T15 only: next iteration hunts.
 
 ## Landed
 
