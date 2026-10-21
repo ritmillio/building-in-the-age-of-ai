@@ -60,12 +60,12 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 - When the ledger script inserts text before a heading, anchor on `\n## Heading\n`, not the bare heading text: the "How to read this" line names every section in backticks.
 - Missing "Fails when" check: `python3 - <<'E'` splitting tricks.md on `(?m)^(?=\*\*\d+\. )` and listing paragraphs without `Fails when`. Insert the clause before a trailing ` Template: ` if the paragraph has one, else at the end. A failure mode that names vendor behaviour gets its doc link.
 - Google feature checks: search the help center itself (`curl -sL 'https://support.google.com/gemini/search?q=<term>' -A Mozilla/5.0`, grep the HTML for titles and `answer/<id>`), then WebFetch the answer page. Press-only web search missed Gemini notebooks (T24).
+- Trick links: `[trick N](tricks.md#<section-slug>)` (e.g. `#context`, `#shipping-and-ops`); trick paragraphs have no anchors of their own, so link the section that holds the number and check it does.
 
 ## Backlog
 
-Ordered by value to the mission. T1-T14 and T16-T24 are done. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
+Ordered by value to the mission. T1-T14 and T16-T25 are done. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
 
-- [ ] **T25 Cross-links.** `guides/context.md` and `guides/scaffolding.md` never link tricks.md (grep 0): context.md §7 → tricks 1-7, scaffolding.md → trick 35 (fresh worktree has no `.env`) and 55-58. README `skills/` row (line 60) lists "Claude Code, claude.ai, ChatGPT and Gemini" but install.md also covers Codex (§D) and other agents (§E). Also: context.md "Projects & memory in the chat apps" (line ~144) has Claude and ChatGPT Projects but no Gemini notebooks bullet; add one from support.google.com/gemini/answer/16972047 (sources + Notebook settings instructions, past notebook chats only with Keep Activity, gradual rollout, checked 2026-10-21). Anchor-check every link added.
 - [ ] **T15 Final read-through.** Last iteration only: README → guides as a first-time visitor, fix the three worst confusions, Desktop README up to date.
 
 ## Iteration log
@@ -78,6 +78,7 @@ Ordered by value to the mission. T1-T14 and T16-T24 are done. T15 is for the las
 - 40c94c3 T22: tricks 28-36, 38-49 get one *Fails when:* each (21), grounded in memory notes (branch print that committed anyway, shared stash, pkill fleet, stale server reload, CI skipping a suite). Regex now 24 missing (50-73 = T23). Checked by running: worktree doc `#_refs` says all `refs/` shared (stash too); GitHub `#require-status-checks-before-merging` 200 + id present; `false | cat` in a Makefile and an npm script both EXIT 0 (trick 43); `pgrep -fl` runs on macOS. Gate 0.
 - 8b15581 T23: tricks 50-73 get one *Fails when:* each (23 new, trick 68's voice-fallback line reworded into one). Regex now reports 0 missing of 73, so the intro's "when it fails" promise holds. Grounded in memory notes (sketch pick rejected, wrong type system, unforced tool, uncited numbers, suggestion chips vs acting). New links 200 and wording read on the page: Postgres `ADD COLUMN IF NOT EXISTS`, Vercel "env changes apply only to new deployments", Anthropic batch "expire ... within 24 hours". No em dash; gate 0.
 - 4cf9efa T24: follow-along.md step 2 now says Gemini calls a Project a notebook (Menu, New notebook; gradual rollout), linked to Google help answer/16972047 (GET 200, HEAD 404 as usual for support.google.com; page read via WebFetch 2026-10-21; found via the help-center search, press search alone missed it). Afterwards lists prompts 8-12 with anchors, tricks.md and succeed.md. Python slug check: all 7 prompts.md anchors True; no other file mentions Gemini projects (grep repo + Desktop); gate 0.
+- 14cd3f1 T25: context.md §7 links tricks 1-7 (`tricks.md#context`), new Gemini notebooks bullet in "Projects & memory" (help answer/16972047 GET 200, re-read via WebFetch 2026-10-21: Notebooks > New notebook, sources + settings instructions, past chats need Keep Activity, gradual rollout); scaffolding.md traps link trick 56 and new trick-35 `.env` trap, closing line links 55-58 (`#shipping-and-ops`); README skills row now names Claude API, Codex, Cursor and other agents (install.md §C-E). Python slug check: 3 anchors True, each trick sits under its section; no em dash; gate 0.
 
 ## Landed
 
