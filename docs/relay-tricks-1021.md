@@ -62,13 +62,14 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 - README now has a "Start here, by role" section citing trick numbers (1, 8-13, 19-25, 28-39, 41-49, 50-58, 60-67) and war-stories anchors. If tricks are renumbered or headings renamed, update that section.
 - `templates/` now holds 8 files; README's templates row lists them. A new template gets a README row entry and a link from the trick it serves.
 - `workshop/faq.md` (repo, linked) and Desktop `qa.md` (presenter, plain pointers, numbers only "if asked") share their sections; edit both. chatgpt.com/pricing and openai.com pricing return 403 to curl and WebFetch: name the page, don't cite a number from it.
+- Mass link check: `tr '\n' '\0' < list | xargs -0 -P 24 -n 1 script.sh` (a plain `xargs -I{} sh -c` dies with "command line too long"). help.openai.com, openai.com, chatgpt.com, claude.ai, carta.com, lovable.dev, lmarena.ai return 403 to curl, which is bot blocking and not a dead link; support.google.com returns 404 to HEAD and 200 to GET; ai.meta.com returns 400 to curl but WebFetch reads it.
 - `npx skills add <owner/repo> --list` (run in an empty `git init` dir under /tmp) is the cheap way to check a skills repo still holds a named skill; it worked for the private repo too via local git credentials, so it does not prove public access.
 
 ## Backlog
 
 Ordered by value to the mission. T1-T13 are done (see Landed and the log).
 
-- [ ] **T14 Fact sweep.** Repo guide links all re-checked 200 at compaction; what is left: links added after this point, links in Desktop `script.html` / notes / `prompt-pack.html`, and the date-sensitive vendor names (ChatGPT Work, Claude Cowork, Gems→skills, Cursor) checked against vendor pages with a date.
+- [ ] **T18 ChatGPT side of the sweep.** help.openai.com and openai.com return 403 to curl and WebFetch, so `resources.md:94` "ChatGPT agent is now part of ChatGPT Work (since 2026-07)" was not re-verified. Custom GPT retirement holds: OpenAI's "Custom GPT retirement and migration FAQ" (help.openai.com/en/articles/20001519, found by WebSearch on 2026-10-21) says GPTs become plugins with skills, stop running 2026-12-11. Next: confirm ChatGPT Work through WebSearch and say in `skills/install.md` §F that ChatGPT now has skills/plugins, or say it can't be verified.
 - [ ] **T16 Prompt pack refresh.** Desktop `prompt-pack.html` (and the repo's `workshop/prompt-pack.pdf`) does not hold prompts 8-12 yet. Add them only if the pack stays readable; render, view every page, copy the PDF into the repo.
 - [ ] **T17 Desktop handout/prompt-pack pointer to the new templates.** Optional: the handout's "take home" list could name `templates/never-list.md` and `review-prompt.md`; only if it stays 2 pages.
 - [ ] **T15 Final read-through.** Run in the last iteration: README → guides as a first-time visitor, fix the three worst confusions, Desktop README up to date.
@@ -87,6 +88,8 @@ Ordered by value to the mission. T1-T13 are done (see Landed and the log).
 
 - Desktop 303e32c + repo slides.pdf T8: v16 gets 3 Q&A backup slides after 37 (reused cut `tricks` scene; new `steal` five-prompts and `starters` six-files scenes), notes with trick numbers checked against tricks.md (#8, #28, #40), ALT text, README + script header. Pages 1-37 cmp-identical to v15, 38-40 viewed as PNG (one heading overflow fixed), script.pdf 6 pages, gate 0 (40 slides, 40 notes). Dropped "daily setup" and "verify loop": they repeat slides 21 and 22.
 - 9466bc0 T12: skills README gets tested install commands (GitHub `ritmillio/building-in-the-age-of-ai` and `./skills`), worktree-janitor + memory-hygiene rows, handoff/grill-me pointer; third-party.md + install.md record the run. Evidence: `npx skills add ./skills --skill '*' -a claude-code -y` in empty /tmp project → 6 SKILL.md in .claude/skills; `--list` on 6 third-party/author repos lists every named skill; frontmatter name==folder, only name+description, desc 244-432 chars; zip recipe entries start with folder/. Gate 0. Did not write an own handoff skill: the one used is Matt Pocock's, credited.
+
+- 7e3e779 + Desktop 6dc3f35 T14: 596 repo links + 2 presenter links curl-checked; non-200s were bot blocks (403 OpenAI/Carta/etc.) or GET-200 on retry; the Meta Rule of Two post was read via WebFetch. Stale claim fixed: the Gemini app now has native skills and Gems convert from November 2026, so install.md §G was rewritten from Google help 17094296 + 18560919 (both 200, read on 2026-10-21), plus the README no-terminal line, how-i-build, context, faq, qa. Cursor skills dirs and Cowork plans + scheduling checked on vendor pages, both still match. Anchor True; gate 0.
 
 ## Landed
 
