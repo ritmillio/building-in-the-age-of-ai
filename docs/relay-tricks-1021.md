@@ -59,12 +59,12 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 - Anchor check that works: a short python script that slugs every `#` heading (lowercase, drop chars outside `[\w\- ]`, spaces to `-`) and tests each `](file#anchor)` in the changed section. Run it after any edit that adds anchor links; the gate does not.
 - `workshop/prompts.md` and Desktop `prompts.md` are kept in sync by hand (they differ only in the header, slide cues and the succeed.md link form); edit both.
 - README now has a "Start here, by role" section citing trick numbers (1, 8-13, 19-25, 28-39, 41-49, 50-58, 60-67) and war-stories anchors. If tricks are renumbered or headings renamed, update that section.
+- `workshop/faq.md` (repo, linked) and Desktop `qa.md` (presenter, plain pointers, numbers only "if asked") share their sections; edit both. chatgpt.com/pricing and openai.com pricing return 403 to curl and WebFetch: name the page, don't cite a number from it.
 
 ## Backlog
 
-Ordered by value to the mission. T1-T7, T9 and T10 are done (see Landed and the log).
+Ordered by value to the mission. T1-T7, T9, T10 and T13 are done (see Landed and the log).
 
-- [ ] **T13 qa.md + faq.md.** Questions the tricks will provoke (cost of running agents, which plan, data safety in tools, "is this only for developers?"), sourced answers. succeed.md's partner prompts can be borrowed.
 - [ ] **T11 Templates.** `templates/`: decisions-as-options rule, PR review prompt, customer-interview synthesis, "never list" for a project. `ls templates/` first; handoff and design-rules may already exist.
 - [ ] **T8 Q&A backup slides.** 3-5 slides AFTER 37 in `.deck-build-v16.mjs` (no v17), Excalidraw, no numbers: "My daily setup", "The verify loop", "Five prompts to steal", "Templates I start from". Only if they read well; otherwise drop and note why. Costs a full render + PNG check.
 - [ ] **T12 Skills check.** `skills/`: each listed skill installs with `npx skills add` in a temp dir, credits present; add missing generic ones (handoff, grill, root-cause) with attribution.
@@ -81,6 +81,7 @@ Ordered by value to the mission. T1-T7, T9 and T10 are done (see Landed and the 
 - Desktop 84bd465 T7: v16 = v15 slides + trick lines in notes of 13/18/21/22/29/32/37; 37 PDF pages pixel-identical to v15, notes diff exact. Gate 0 on v16.
 - 2fa629b T9: README "Start here, by role", 4 roles x 5 steps linking tricks/succeed/war-stories/guides/skills. All 31 links + anchors resolved by a slug script (BAD=0); gate 0.
 - 03ef12d + Desktop f1c1b2d T10: prompts 8-12 (sales follow-up, investor update, competitor teardown, meeting decisions, contract first read) in both prompts.md, README row + founder step. Gil link 200, 6 anchors True, banned-word grep empty, gate 0.
+- 368b0ec + Desktop 13d4f1b T13: faq.md and qa.md get "The tricks, agents and selling", 8 questions (only-for-devs, cost/plans, agent data safety, verification, production, parallel agents, validate-first, model choice). claude.com/pricing, lethal-trifecta post, Claude Code security page 200 and read; 23 anchors BAD=0; banned grep empty; gate 0.
 
 ## Landed
 
