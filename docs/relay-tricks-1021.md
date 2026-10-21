@@ -28,12 +28,12 @@
 
 ## Health
 
-**2026-10-21, compaction (iteration 16), branch head `b315ebe`, presenter folder head `6dc3f35` (clean tree):**
+**2026-10-21, compaction (iteration 24), branch head `3338328`, presenter folder head `03c91da` (clean tree):**
 - `.loop/gates/check.sh; echo EXIT=$?` → `ok confidentiality (repo)` / `ok deck Building-in-the-Age-of-AI-v16.pptx: 40 slides, 40 notes, clean` / `ok relative links` / `GATE_EXIT=0` / `EXIT=0`.
-- External links added on the branch (`git diff origin/main..HEAD`, docs/ excluded): 42 unique, 39 `curl -sIL` 200, 3 support.google.com HEAD 404 / GET 200 (known, fine).
-- PDFs: `handout.pdf` 2 pages, `script.pdf` 6 pages, repo `workshop/slides.pdf` 40 pages (pdfinfo). No deck or HTML change this iteration, nothing re-rendered.
-- Counts match the claims: tricks.md 73 tricks / 10 groups, war-stories.md 12 + 1, templates/ 8 files, inventory 99.
-- Reconciled: every branch commit and every presenter-folder commit (9a46874..6dc3f35) is in Landed or the log; no unsupported claim found.
+- External links added on the branch (`git diff origin/main..HEAD`, docs/ excluded): 49 unique, 40 `curl -sIL` 200, 6 OpenAI 403 (known bot block), 3 support.google.com HEAD 404 / GET 200 (known, fine). No dead link.
+- PDFs (pdfinfo): repo `workshop/slides.pdf` 40, Desktop `handout.pdf` 2, `script.pdf` 6, `rehearsal.pdf` 2, `prompt-pack.pdf` 5. No deck or HTML change since compaction 16, nothing re-rendered.
+- Counts match the claims: tricks.md 73 tricks, 45 without "Fails when" (28-36, 38-73 = T22+T23); templates/ 8 files.
+- Reconciled: all 16 content commits and 25 ledger commits on the branch, and all 12 presenter-folder commits (9a46874..03c91da), are in Landed or the log. No unsupported claim found; T24/T25 evidence re-checked by grep and still true.
 
 Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8/25, Context 301w 2.1/12, How we build 563w 4.0/15 (tightest), Raising 276w 2.0/10, Build 498w 3.6/60, Close 187w 1.3/27; total 2760w.
 
@@ -61,23 +61,16 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 
 ## Backlog
 
-Ordered by value to the mission. T1-T14 and T16-T21 are done; T21-T25 come from the iteration 21 hunt. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
+Ordered by value to the mission. T1-T14 and T16-T21 are done. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
 
-- [ ] **T22 tricks.md "Fails when", batch 2 (tricks 28-49).** Missing: 28-36, 38-49. Same rule as T21.
-- [ ] **T23 tricks.md "Fails when", batch 3 (tricks 50-73).** Missing: every trick 50-73. Same rule; after this batch the regex must report 0 missing (or soften the intro claim for the ones where no honest failure mode exists).
-- [ ] **T24 follow-along.md afterwards + Gemini Projects.** "Afterwards" points only to prompt 7; add prompts 8-12, tricks.md and succeed.md. Line 8 says "in Gemini, a new chat is fine": press reports (Android Authority, dataconomy 2026-04-07) say Gemini Projects (maybe renamed Notebooks) was in limited testing; no Google announcement found by search. Check the Google help page, date it, fix the line if Projects shipped.
-- [ ] **T25 Cross-links.** `guides/context.md` and `guides/scaffolding.md` never link tricks.md (grep empty): context.md §7 should point to tricks 1-7, scaffolding.md to trick 35 (fresh worktree has no `.env`) and 55-58. README `skills/` row says install steps for "Claude Code, claude.ai, ChatGPT and Gemini" but install.md also covers Codex (§D) and other agents (§E). Anchor-check every link added.
+- [ ] **T22 tricks.md "Fails when", batch 2 (tricks 28-49).** Missing: 28-36, 38-49. Rule: standing rule "Missing Fails when check".
+- [ ] **T23 tricks.md "Fails when", batch 3 (tricks 50-73).** Missing: every trick 50-73. Same rule; after this batch the regex must report 0 missing (or soften the intro claim for tricks with no honest failure mode).
+- [ ] **T24 follow-along.md afterwards + Gemini Projects.** "Afterwards" (line 38) points only to prompt 7; add prompts 8-12, tricks.md and succeed.md. Line 8 says "in Gemini, a new chat is fine": press reports (Android Authority, dataconomy 2026-04-07) say Gemini Projects (maybe renamed Notebooks) was in limited testing; no Google announcement found by search. Check the Google help page, date it, fix the line if Projects shipped.
+- [ ] **T25 Cross-links.** `guides/context.md` and `guides/scaffolding.md` never link tricks.md (grep 0): context.md §7 → tricks 1-7, scaffolding.md → trick 35 (fresh worktree has no `.env`) and 55-58. README `skills/` row (line 60) lists "Claude Code, claude.ai, ChatGPT and Gemini" but install.md also covers Codex (§D) and other agents (§E). Anchor-check every link added.
 - [ ] **T15 Final read-through.** Last iteration only: README → guides as a first-time visitor, fix the three worst confusions, Desktop README up to date.
 
 ## Iteration log
 
-- 368b0ec + Desktop 13d4f1b T13: faq.md and qa.md get "The tricks, agents and selling", 8 questions (only-for-devs, cost/plans, agent data safety, verification, production, parallel agents, validate-first, model choice). claude.com/pricing, lethal-trifecta post, Claude Code security page 200 and read; 23 anchors BAD=0; banned grep empty; gate 0.
-- 0916368 T11: 4 templates (never-list, ask-with-options, review-prompt, interview-notes), linked from README, AGENTS.md, trick 8, succeed §1. `/code-review` (alias `/review`) and `/security-review` read on code.claude.com commands page; 2 links 200; 7 anchors BAD=0; banned grep empty; gate 0.
-- Desktop 303e32c + repo fcf2ab6 (slides.pdf) T8: v16 gets 3 Q&A backup slides after 37 (reused cut `tricks` scene; new `steal` five-prompts and `starters` six-files scenes), notes with trick numbers checked against tricks.md (#8, #28, #40), ALT text, README + script header. Pages 1-37 cmp-identical to v15, 38-40 viewed as PNG (one heading overflow fixed), script.pdf 6 pages, gate 0 (40 slides, 40 notes). Dropped "daily setup" and "verify loop": they repeat slides 21 and 22.
-- 9466bc0 T12: skills README gets tested install commands (GitHub `ritmillio/building-in-the-age-of-ai` and `./skills`), worktree-janitor + memory-hygiene rows, handoff/grill-me pointer; third-party.md + install.md record the run. `npx skills add ./skills --skill '*' -a claude-code -y` in empty /tmp project → 6 SKILL.md; `--list` on 6 third-party/author repos lists every named skill; frontmatter checked; gate 0. Handoff skill is Matt Pocock's, credited, not rewritten.
-- 7e3e779 + Desktop 6dc3f35 T14: 596 repo links + 2 presenter links curl-checked; non-200s were bot blocks or GET-200 on retry; Meta Rule of Two read via WebFetch. Stale claim fixed: the Gemini app has native skills and Gems convert from November 2026, so install.md §G was rewritten from Google help 17094296 + 18560919 (read 2026-10-21), plus README no-terminal line, how-i-build, context, faq, qa. Cursor skills dirs and Cowork plans + scheduling still match vendor pages. Gate 0.
-- 59b2c57 T18: install.md §F: Plus/Pro skills marked unclear (help page names workspace plans only, pricing reports differ) with an in-account check; GPT retirement dated only for Enterprise (2026-12-11), no date for personal plans; migration FAQ linked (403 bot block, indexed in ~10 locales); resources.md ChatGPT Work "paid plans" claim softened (desktop reportedly on all plans). OpenAI pages 403 in WebFetch, so this was checked through WebSearch. faq/qa have no GPT claims to mirror. Gate 0.
-- f6b21d4 + Desktop 341950c T16: prompt-pack.html gets "After the workshop: five more prompts" (8-12 verbatim from prompts.md, Elad Gil credited as plain text) on new pages 4-5 before "Where to start". First render orphaned a heading; wrapped each h3+prompt in `.keep` (break-inside: avoid), re-rendered: 5 pages, all viewed at -r 60, pages 1-3 unchanged. PDF copied to repo; README rows (repo + Desktop) say 5 pages. Gate 0.
 - 2f05a40 T19: all 99 inventory items mapped to tricks.md; only 43 (monorepo worktree borrowing node_modules), 50 (forgotten caffeinate) and 71 (sans for reading text) were publishable and missing. Folded into tricks 35, 39, 53 so numbering (README roles, slide notes #8/#28/#40) stays put; still 73 tricks. Wording checked against the memory notes; `caffeinate -t 1`, `-i true`, `-w <pid>` all ran EXIT 0; banned grep empty; gate 0.
 - Desktop 62d0760 T17: handout back-page pointer now names templates/ (AGENTS.md starter, never list, review prompt for a fresh session). Rendered: 2 pages (pdfinfo), page 1 unchanged, page 2 viewed at -r 110, line wraps in the footer with room to spare. No repo copy of the handout, so no repo file changed. Gate 0.
 - hunt (iteration 21): backlog was only T15, so hunted. Evidence: pdfinfo slides.pdf 40 pages vs README "37 slides"; rehearsal.html still "v15 (37 slides)"; tricks.md regex 63/73 without `Fails when:` against an intro that promises it; follow-along afterwards stops at prompt 7; context.md/scaffolding.md grep for tricks.md empty; Gemini Projects status via WebSearch (testing, unconfirmed). Prompts and faq/qa pairs diff clean. Gate 0. Added T20-T25.
@@ -88,8 +81,9 @@ Ordered by value to the mission. T1-T14 and T16-T21 are done; T21-T25 come from 
 
 By theme; the five newest are in the Iteration log above.
 
-- **Raw material:** `0c4263d` `docs/tricks-inventory.md`, 99 tricks in 10 groups, tagged `[have] [war] [S] [product]` (internal, gate-excluded).
-- **Repo guides:** `882602b` `guides/tricks.md`, 73 tricks, 22 links 200; `9177a68` `guides/war-stories.md`, 12 stories + 1 on model price, generalised; `39767f5` `guides/succeed.md`, 7 sections, 8 prompts, 12 links 200, YC titles via oEmbed.
-- **Repo entry points:** `2fa629b` README "Start here, by role" (4 roles x 5 steps, 31 links + anchors BAD=0); `03ef12d` + Desktop `f1c1b2d` prompts 8-12 (sales follow-up, investor update, competitor teardown, meeting decisions, contract first read) in both prompts.md.
-- **Presenter folder:** `9a46874` v15 sources as local history; `811818e` 2-page A4 handout (+`0066c04` rebuttal lines rewritten); `1ccdddc` script +7 trick lines, 3 cuts, time table (+148 words, 6 pages); `84bd465` deck v16 notes-only, trick lines in notes of 13/18/21/22/29/32/37, pages pixel-identical to v15.
-- **Ledger commits:** `a9c5472` `40c8883` `0a0e5e5` `48f4e79` `e8c4ae3` `d51f57a` `daa4617` `9c4520f` `fc7cec3` `a833257` (compaction 8) `328b1c9` `7ff9fbf` `b3beaec` `32e5ff4` `6ee46af` `b315ebe` `3fa4f93`.
+- **Raw material:** `0c4263d` `docs/tricks-inventory.md`, 99 items, tagged `[have] [war] [S] [product]` (internal, gate-excluded); `2f05a40` coverage pass, every publishable item now in a public file.
+- **Repo guides:** `882602b` `guides/tricks.md` (73 tricks); `9177a68` `guides/war-stories.md` (12 + 1); `39767f5` `guides/succeed.md` (7 sections, 8 prompts); `368b0ec` + Desktop `13d4f1b` faq.md / qa.md "The tricks, agents and selling", 8 questions.
+- **Repo entry points, prompts, templates, skills:** `2fa629b` README "Start here, by role"; `03ef12d` + Desktop `f1c1b2d` prompts 8-12 in both prompts.md; `0916368` 4 templates (never-list, ask-with-options, review-prompt, interview-notes); `9466bc0` skills README with tested `npx skills add` commands, two more author skills.
+- **Fact sweeps (vendor claims, dated 2026-10-21):** `7e3e779` + Desktop `6dc3f35` 596 links re-checked, Gemini skills / Gems conversion rewritten in install.md §G and mirrors; `59b2c57` ChatGPT §F: Plus/Pro skills unclear, GPT retirement dated for Enterprise only, Work claim softened.
+- **Presenter folder:** `9a46874` v15 sources; `811818e` 2-page handout (+`0066c04`); `1ccdddc` script +7 trick lines, 3 cuts, time table; `84bd465` deck v16 notes-only; `303e32c` + repo `fcf2ab6` v16 3 Q&A backup slides (38-40), pages 1-37 identical to v15; `341950c` + repo `f6b21d4` prompt pack prompts 8-12, 5 pages.
+- **Ledger commits:** `a9c5472` `40c8883` `0a0e5e5` `48f4e79` `e8c4ae3` `d51f57a` `daa4617` `9c4520f` `fc7cec3` `a833257` (compaction 8) `328b1c9` `7ff9fbf` `b3beaec` `32e5ff4` `6ee46af` `b315ebe` `19ae4ce` (compaction 16) `3fa4f93` `1fdd032` `d7c0a9b` `f2b9ed0` `8f46c14` `08c7cd6` `5205833` `3338328`.
