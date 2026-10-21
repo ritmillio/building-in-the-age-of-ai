@@ -14,9 +14,7 @@
 
 **Ends when.** The clock runs out (7.5h).
 
-**How to read this.** `## For the founder` is your inbox, read it first. `## Health` is the current gate status. `- 882602b T2: `guides/tricks.md`, 73 tricks with what/why/command/fails-when; README row + how-i-build cross-link. Gate EXIT=0; all 22 external links curl 200 on 2026-10-21; vendor claims checked in page text (Anthropic batch 50%, OpenAI flex = batch rates, Next `typescript.ignoreBuildErrors`, Claude Code memory reads AGENTS.md). GNU bash pipelines page 403s to curl, so not linked.
-
-## Landed` is what shipped. `## Backlog` is what the loop would do next if it kept running.
+**How to read this.** `## For the founder` is your inbox, read it first. `## Health` is the current gate status. `## Landed` is what shipped. `## Backlog` is what the loop would do next if it kept running.
 
 ---
 
@@ -69,5 +67,7 @@ Baseline 2026-10-21 01:30: `.loop/gates/check.sh` GATE_EXIT=0 (confidentiality c
 ## Iteration log
 
 - 0c4263d T1: wrote `docs/tricks-inventory.md` (99 tricks, sources = product AGENTS.md, shared-agent-setup ref, skills, 38 feedback + ~20 general memory notes). Gate EXIT=0; inventory is gate-excluded by design, scanned by hand for banned words (none). No external links added.
+
+- 882602b T2: `guides/tricks.md`, 73 tricks with what/why/command/fails-when; README row + how-i-build cross-link. Gate EXIT=0; all 22 external links curl 200 on 2026-10-21; vendor claims checked in page text (Anthropic batch 50%, OpenAI flex = batch rates, Next `typescript.ignoreBuildErrors`, Claude Code memory reads AGENTS.md). GNU bash pipelines page 403s to curl, so not linked.
 
 ## Landed
