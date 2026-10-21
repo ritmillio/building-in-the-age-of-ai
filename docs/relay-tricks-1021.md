@@ -59,9 +59,8 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 
 ## Backlog
 
-Ordered by value to the mission. T1-T14, T16, T18 and T19 are done.
+Ordered by value to the mission. T1-T14 and T16-T19 are done. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
 
-- [ ] **T17 Handout pointer to the new templates.** Optional: the handout's take-home list could name `templates/never-list.md` and `review-prompt.md` (not there now); only if it stays 2 pages.
 - [ ] **T15 Final read-through.** Last iteration only: README → guides as a first-time visitor, fix the three worst confusions, Desktop README up to date.
 
 ## Iteration log
@@ -74,6 +73,7 @@ Ordered by value to the mission. T1-T14, T16, T18 and T19 are done.
 - 59b2c57 T18: install.md §F: Plus/Pro skills marked unclear (help page names workspace plans only, pricing reports differ) with an in-account check; GPT retirement dated only for Enterprise (2026-12-11), no date for personal plans; migration FAQ linked (403 bot block, indexed in ~10 locales); resources.md ChatGPT Work "paid plans" claim softened (desktop reportedly on all plans). OpenAI pages 403 in WebFetch, so this was checked through WebSearch. faq/qa have no GPT claims to mirror. Gate 0.
 - f6b21d4 + Desktop 341950c T16: prompt-pack.html gets "After the workshop: five more prompts" (8-12 verbatim from prompts.md, Elad Gil credited as plain text) on new pages 4-5 before "Where to start". First render orphaned a heading; wrapped each h3+prompt in `.keep` (break-inside: avoid), re-rendered: 5 pages, all viewed at -r 60, pages 1-3 unchanged. PDF copied to repo; README rows (repo + Desktop) say 5 pages. Gate 0.
 - 2f05a40 T19: all 99 inventory items mapped to tricks.md; only 43 (monorepo worktree borrowing node_modules), 50 (forgotten caffeinate) and 71 (sans for reading text) were publishable and missing. Folded into tricks 35, 39, 53 so numbering (README roles, slide notes #8/#28/#40) stays put; still 73 tricks. Wording checked against the memory notes; `caffeinate -t 1`, `-i true`, `-w <pid>` all ran EXIT 0; banned grep empty; gate 0.
+- Desktop 62d0760 T17: handout back-page pointer now names templates/ (AGENTS.md starter, never list, review prompt for a fresh session). Rendered: 2 pages (pdfinfo), page 1 unchanged, page 2 viewed at -r 110, line wraps in the footer with room to spare. No repo copy of the handout, so no repo file changed. Gate 0.
 
 ## Landed
 
