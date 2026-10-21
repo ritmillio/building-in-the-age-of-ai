@@ -60,13 +60,13 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 - When the ledger script inserts text before a heading, anchor on `\n## Heading\n`, not the bare heading text: the "How to read this" line names every section in backticks.
 - Missing "Fails when" check: `python3 - <<'E'` splitting tricks.md on `(?m)^(?=\*\*\d+\. )` and listing paragraphs without `Fails when`. Insert the clause before a trailing ` Template: ` if the paragraph has one, else at the end. A failure mode that names vendor behaviour gets its doc link.
 - Google feature checks: search the help center itself (`curl -sL 'https://support.google.com/gemini/search?q=<term>' -A Mozilla/5.0`, grep the HTML for titles and `answer/<id>`), then WebFetch the answer page. Press-only web search missed Gemini notebooks (T24).
+- Claude Code docs: `curl -sL https://code.claude.com/docs/en/<page>.md` returns clean markdown (grep it); vendor behaviour moves fast, so re-read before repeating any older claim in this repo.
 - Trick links: `[trick N](tricks.md#<section-slug>)` (e.g. `#context`, `#shipping-and-ops`); trick paragraphs have no anchors of their own, so link the section that holds the number and check it does.
 
 ## Backlog
 
-Ordered by value to the mission. T1-T14 and T16-T28 are done. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
+Ordered by value to the mission. T1-T14 and T16-T29 are done. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
 
-- [ ] **T29 Slide 40 notes contradict templates/AGENTS.md on Claude Code.** Evidence: `.deck-build-v16.mjs` line 109 (slide 40 note) says "AGENTS.md ... Claude Code reads it too; a CLAUDE.md next to it wins", while `templates/AGENTS.md` line 3 and trick 19 say Claude Code reads `CLAUDE.md`, so symlink or `@AGENTS.md`. Do: read code.claude.com/docs/en/memory (WebFetch; curl grep was inconclusive), fix whichever side is wrong (notes-only v16 change: rebuild pptx, gate checks notes), date the check.
 - [ ] **T15 Final read-through.** Last iteration only: README → guides as a first-time visitor, fix the three worst confusions, Desktop README up to date.
 
 ## Iteration log
@@ -77,6 +77,7 @@ Ordered by value to the mission. T1-T14 and T16-T28 are done. T15 is for the las
 - f4ace3d T26: never-list.md now linked from trick 25, how-i-build §5 (new closing line) and README Team lead step 1; review-prompt.md from tricks 16 and 41, how-i-build §2 step 4 and README Developer step 3. `grep -l` over guides/ workshop/ skills/ README now finds both templates in 3 files each (was 0 outside the README templates row). No new anchors (file-only links), gate relative links ok, no em dash; gate 0.
 - c8a974a T27: succeed.md §6 gets a five-part default-alive prompt (cash, expenses, 6 months revenue; table to profit or zero cash; steps shown, growth only from the user's numbers, "missing" not estimates, <3 months flagged). `grep -c '^```text'` 8 → 9, every section 1-7 now has one. PG essay re-opened (200, definition wording matches); its Trevor Blackwell calculator link fails TLS (curl exit 60) so not linked. No prompt-count claim elsewhere (README row says "a prompt"); gate 0.
 - c4341a9 T28: faq.md "How I build" gets "How do I set up a new project? What goes in my rules file?" (AGENTS.md + never list, tricks 19-25, templates/); skills answer adds ritmillio/skills (`gh repo view` PUBLIC, curl 200) with the install command. Desktop `0178045` mirrors in qa.md with plain pointers and a backup slide 40 cue. Bold-question count 36 → 37 in both; `#rules-files-and-skills` slug True and holds tricks 19-25; no em dash; gate 0.
+- 1d6a5b0 T29: the slide 40 note was right, the repo was stale. Memory docs (curl the .md, read 2026-10-21): Claude Code v2.1.277+ reads AGENTS.md when no CLAUDE.md/CLAUDE.local.md exists; if one exists it reads only that; older versions and some sessions read CLAUDE.md only. Fixed templates/AGENTS.md line 3, trick 19 Why, how-i-build rules-file row; context.md:137 and Desktop slide 21/40 notes already matched (no Desktop change). Link 200, no em dash; gate 0.
 
 ## Landed
 
