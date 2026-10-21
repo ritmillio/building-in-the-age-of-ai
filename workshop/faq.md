@@ -101,3 +101,31 @@ Yes, they are in the repo on the last slide, rewritten generic, plus the third-p
 
 **Isn't running several agents at once chaos?**
 Only if they share files. Each gets its own copy of the project (a git worktree) and its own task; I review each result separately.
+
+## The tricks, agents and selling (guides/tricks.md, war-stories.md, succeed.md)
+
+Links checked 2026-10-21.
+
+**Is this only for developers?**
+No. Most of the tricks are about context, briefing, checking and process, and they work in a chat window: [prompting](../guides/tricks.md#prompting-and-talking-to-the-agent), [design](../guides/tricks.md#design), [team and process](../guides/tricks.md#team-and-process). The README has [five steps per role](../README.md#start-here-by-role), and [prompts 8 to 12](prompts.md#after-the-workshop-not-in-the-live-build) are for sales, investors and contracts. The terminal parts (worktrees, overnight runs) are for people who already use one.
+
+**What does running agents all day cost, and which plan do I need?**
+Start on the plan you already have. On Anthropic's [pricing page](https://claude.com/pricing) (checked 2026-10-21) Claude Code comes with Pro, Max, Team and Enterprise, not Free; Max is five or twenty times Pro's usage, for people who hit the limit every day. OpenAI's plans also differ mainly by usage; its pricing page blocks automated checks, so look at chatgpt.com/pricing yourself. If you pay through the API: measure cost per task, not per token ([trick 66](../guides/tricks.md#money-and-models)), send work that can wait to the batch tier at half price ([trick 67](../guides/tricks.md#money-and-models)), and agree a spend limit with the agent ([trick 59](../guides/tricks.md#shipping-and-ops)).
+
+**Is it safe to let an agent read my email, my documents or the web?**
+Reading is where the risk starts. Text the agent reads can carry instructions (prompt injection), and no filter stops that reliably. Simon Willison's rule, [the lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/): never give one agent access to your private data, exposure to untrusted content and a way to send things out, all three at once. In practice: connectors read-only first, one at a time, and anything that sends, pays or deletes waits for a human ([trick 73](../guides/tricks.md#if-you-build-ai-products)). The [Claude Code security page](https://code.claude.com/docs/en/security) gives the same advice for coding agents: review commands before you approve them, don't pipe untrusted content straight in, and isolate anything that talks to outside services.
+
+**How do I know the agent really did what it says?**
+You don't, until you see it. "Done" means seen working: run the checks, use the thing, find the side effect where it lands, take a screenshot ([tricks 41 to 49](../guides/tricks.md#verification)). Ask for the words "not verified live" when it could not check. [Five of our war stories](../guides/war-stories.md#when-green-was-not-green) are green results that were red.
+
+**What stops an agent from breaking production?**
+Rules and permissions, not hope. Agents work on branches and open pull requests; a human merges ([trick 36](../guides/tricks.md#agents-and-parallel-work)). No agent touches the production database; it gets a copy ([trick 55](../guides/tricks.md#shipping-and-ops)). Hosting settings (environment variables, domains) change only after a human says yes to that exact action ([trick 57](../guides/tricks.md#shipping-and-ops)). Every hard rule carries the incident behind it in one line ([trick 25](../guides/tricks.md#rules-files-and-skills)); [war story 12](../guides/war-stories.md#when-the-machine-and-the-data-bite-back) is one of those incidents.
+
+**How many agents can I run at once?**
+Start with one, then two. Each gets its own copy of the project (a git worktree, [trick 28](../guides/tricks.md#agents-and-parallel-work)) and its own task. The real limit is how many results you can review well. The laptop has a limit too: [war story 11](../guides/war-stories.md#when-the-machine-and-the-data-bite-back) is a crash with eight agents running ([trick 39](../guides/tricks.md#agents-and-parallel-work)).
+
+**If building is this cheap, why validate first?**
+Because the cost moved. Building the wrong thing takes an afternoon now; finding out it is wrong still takes customers. Before you build, talk to five of them about what they did last month and what it cost them ([succeed.md §1](../guides/succeed.md#1-validate-before-you-build)), and ask what they pay today, in money or hours ([§3](../guides/succeed.md#3-price-it)).
+
+**Which model should we use, and when do we switch?**
+Whichever wins on your own work. Before switching, run a small bake-off: real tasks with known right answers, several runs per model ([trick 65](../guides/tricks.md#money-and-models)). Benchmarks are not your workload, and the cheapest price per token can be the most expensive task ([the story about money](../guides/war-stories.md#one-more-about-money)).
