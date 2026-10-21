@@ -61,9 +61,8 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 
 ## Backlog
 
-Ordered by value to the mission. T1-T14, T16-T37 are done. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
+Ordered by value to the mission. T1-T14, T16-T38 are done. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
 
-- [ ] **T38 Trick 35: `.worktreeinclude`.** Trick 35 says copy `.env` by hand into a fresh worktree. Claude Code copies gitignored files listed in a project-root `.worktreeinclude` into every worktree it creates (worktrees.md "Copy gitignored files into worktrees", curl 2026-10-21). Add it as the one-file fix, keep the copy-by-hand line for other tools; check whether Codex local environments' setup scripts do the same (learn.chatgpt.com/docs/environments/git-worktrees, "local environment to run setup scripts") and name it only if the page says so.
 - [ ] **T15 Final read-through.** Last iteration only: README → guides as a first-time visitor, fix the three worst confusions, Desktop README up to date.
 
 ## Iteration log
@@ -78,6 +77,7 @@ Ordered by value to the mission. T1-T14, T16-T37 are done. T15 is for the last i
 - b3123ca T33: scaffold-skill Naming bullet now says check the shipped names first (`/` in Claude Code or Codex, code.claude.com/docs/en/commands, Skill-marked rows), a same-name skill replaces a bundled skill or built-in but not its aliases (skills.md "Same name in" table, read 2026-10-21), names verify/run/debug/simplify/loop/code-review, Codex `/init` `/review` (developer-commands page, 200, both present); `/commit` dropped (0 hits in commands.md). No other `/commit` in repo or Desktop. Link 200, gate 0.
 - 609bb6e T36: how-i-build Skills row now names `/verify`, `/grill`, `/root-cause` (all in `skills/`, root-cause `name:` checked) and adds "`relay` is published separately" linking `../skills/README.md#also-by-the-author-published-separately` (slug check True). Premise confirmed by grep (relay not in skills/). Line 39 relay prose unchanged (no link claim). Gate 0.
 - 45c370c T37: 5 Codex links moved off developers.openai.com/codex to where the 308 lands (`curl -sIL` url_effective): my-stack 7 and 20 and follow-along 36 → learn.chatgpt.com/docs (resources.md already calls it the Codex docs home), trick 19 → /docs/agent-configuration/agents-md, trick 20 → /docs/build-skills; all 3 targets 200. The other developers.openai.com links (api/docs, cookbook, plugins) do not redirect and stay. Desktop had none (grep). Gate 0.
+- 485fe7c T38: trick 35 adds `.worktreeinclude` (repo root, `.gitignore` syntax, copies matching gitignored files; Claude Code: every worktree it creates incl. `--worktree` and subagents, worktrees.md curl; Codex: app-managed worktrees only, not CLI-made ones, WebFetch of learn.chatgpt.com/docs/environments/git-worktrees), copy-by-hand kept for other tools; *Fails when* adds hand-made `git worktree add`. scaffolding.md line aligned. Both links 200, Claude anchor = heading slug, gate 0. Desktop has no `.env` advice (grep), unchanged.
 
 ## Landed
 
