@@ -51,6 +51,7 @@ Baseline 2026-10-21 01:30: `.loop/gates/check.sh` GATE_EXIT=0 (confidentiality c
 - The inventory is gate-excluded; scan it by hand before relying on it, and never copy a `src:` path into a public file.
 - The YC Startup Library pages render client-side (WebFetch sees only the title); cite the YC YouTube video (title via `curl https://www.youtube.com/oembed?url=...`) and link the library page as secondary.
 - Script word counts: count only `.say`/`.bridge` text, strip `.cue` and `.src` spans; the table at the end of `script.html` holds the per-part numbers, update it if you add lines.
+- Deck v16 exists (`.deck-build-v16.mjs`, notes-only over v15). Any further deck change goes into v16, not a v17. The repo's `workshop/slides.pdf` was not refreshed (slides unchanged); refresh it only if slides change.
 - The handout's PDF and other PDFs are gitignored in the Desktop repo; commit the `.html` source and re-render. Handout must stay 2 pages: re-check `pdfinfo handout.pdf | grep Pages` after any edit.
 
 ## Backlog
@@ -61,8 +62,8 @@ Baseline 2026-10-21 01:30: `.loop/gates/check.sh` GATE_EXIT=0 (confidentiality c
 - [x] **T4 Succeed guide.** Done in 39767f5: `guides/succeed.md`, 7 sections, 8 prompts, 12 sources (Mom Test, YC talks, PG, First Round, Lenny, Buffer, a16z). Partner section is reasoning + prompt, no external source (none found that fits); T13 can borrow its prompts for qa.md.
 - [x] **T5 Printable handout.** Done in Desktop 811818e: `handout.html` → `handout.pdf` (2 pages A4): 25 tricks in 6 groups (non-coder wording, audience is founders/product/operators), 5 instruction lines to paste, 5 selling prompts from succeed.md (not duplicating the prompt pack), repo QR. rehearsal.html day-before list + Desktop README mention it.
 - [x] **T6 Speaker script weave.** Done in Desktop 1ccdddc: 7 trick lines on slides 13, 18, 21, 22, 29, 32, 37 (each with a grey `tricks.md #n` ref), cuts on 10, 17, 20, time-check table at the end. Raising part left untouched (no trick fit it).
-- [ ] **T7 Speaker notes sync.** Mirror the script's new lines into the deck NOTES (v16 build), rebuild, gate passes (notes == slides). The 7 new lines (1ccdddc) sit on slides 13, 18, 21, 22, 29, 32, 37; the cuts on 10, 17, 20 may need the same cut in NOTES. Slides themselves need no change, so v16 = notes-only unless T8 adds backup slides: consider doing T7 and T8 into one v16.
-- [ ] **T8 Q&A backup slides.** 3-5 slides AFTER 37 (section "Backup"), Excalidraw, no numbers: e.g. "My daily setup", "The verify loop", "Five prompts to steal", "Templates I start from". Only if they read well; otherwise drop and note why.
+- [x] **T7 Speaker notes sync.** Done in Desktop 84bd465: `.deck-build-v16.mjs` (notes-only), trick lines appended as "Trick (tricks.md #n): ..." on 13, 18, 21, 22, 29, handout line on 37, Say line replaced on 32. Script cuts on 10, 17, 20 NOT mirrored: notes are reference, not spoken, so the cut detail stays useful there.
+- [ ] **T8 Q&A backup slides.** Build them into `.deck-build-v16.mjs` (v16 already exists, notes-only so far; do not make a v17). 3-5 slides AFTER 37 (section "Backup"), Excalidraw, no numbers: e.g. "My daily setup", "The verify loop", "Five prompts to steal", "Templates I start from". Only if they read well; otherwise drop and note why.
 - [ ] **T9 Role-based start paths.** README "Start here": non-technical founder / product person / developer / team lead, each 5 steps with links into the repo.
 - [ ] **T10 More prompts for non-builders.** `workshop/prompts.md` (+ Desktop `prompts.md`): sales follow-ups, investor update, customer interview synthesis, competitor teardown, weekly ops digest, contract first-read with "not legal advice" caveat. Same five-part brief shape as slide 13.
 - [ ] **T11 Templates.** `templates/`: decisions-as-options rule, review prompt for a PR, handoff (exists?), customer-interview synthesis, design-rules (exists?), "never list" for a project. Check what exists first.
@@ -84,5 +85,7 @@ Baseline 2026-10-21 01:30: `.loop/gates/check.sh` GATE_EXIT=0 (confidentiality c
 - Desktop 811818e T5: `handout.html`/`handout.pdf` 2-page A4 tricks handout + print line in rehearsal day-before list + README row. Rendered with pdf.mjs: handout 2 pages (first render was 4, tightened), rehearsal still 2 pages; all pages viewed as PNG. Repo gate EXIT=0; handout grep for banned words clean. No new external links.
 
 - Desktop 1ccdddc T6: `script.html` +7 spoken trick lines, 3 cuts, time-check table; net +148 words (~1 min). Word counts by script (`.say`+bridge, cues and refs excluded). script.pdf re-rendered, 6 pages, all 6 viewed as PNG; banned-word grep clean; repo gate EXIT=0. No new external links.
+
+- Desktop 84bd465 T7: v16 deck = v15 slides + trick lines in 7 notes. Built pptx+PDF; all 37 PDF pages pixel-identical to v15 (cmp of 30 dpi PNGs); slide XML text identical, notes changed exactly on 13/18/21/22/29/32/37. Gate EXIT=0 on v16 (37 slides, 37 notes, clean). Desktop README + script header now say v16; script.pdf 6 pages, page 1 viewed.
 
 ## Landed
