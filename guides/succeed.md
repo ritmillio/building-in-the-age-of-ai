@@ -135,7 +135,7 @@ Check: show every calculation step. Use only the growth in my numbers, never a g
 Before revenue is large, a handful of numbers tell you more than any dashboard:
 
 - **The "very disappointed" share** from section 2, and who those people are.
-- **Retention:** are the people who started a month ago still using it? Ask the agent to compute it from your sign-up and activity data, and to show the query.
+- **Retention:** are the people who started a month ago still using it? Ask the agent to compute it from your sign-up and activity data, and to show the query (second prompt below).
 - **Time to first value:** how long from sign-up to the first useful result. AI products live or die here.
 - **Revenue per customer and gross margin,** with model costs included ([fundraising.md, margins](fundraising.md#margins-and-inference-cost)).
 - **Months of runway** at current spend: the default alive test.
@@ -148,6 +148,14 @@ Context: this week's raw numbers: sign-ups, active users, paying customers, reve
 Task: a one-screen weekly update.
 Format: table of this week vs last week vs 4 weeks ago; then 3 bullets: what moved, why it might have moved, what I should look at.
 Check: show the calculation for every derived number. If a number is missing, write "missing", don't estimate. No adjectives like "strong" or "healthy".
+```
+
+```text
+Role: a product analyst who shows the query.
+Context: my sign-ups (user id, sign-up date) and activity events (user id, date, action). [paste or connect] "Active" means: [the one action you wrote down].
+Task: monthly retention by sign-up cohort: of the people who signed up in each month, what share did that action in month 1, 2, 3 after.
+Format: a cohort table (rows = sign-up month, columns = months since sign-up, each cell = share and count), then the SQL or spreadsheet formula that produced it.
+Check: use only my definition of active, not logins or page views. If a month's data is missing, write "missing", don't estimate. Give each cohort's size, and mark any cohort too small to read as a trend.
 ```
 
 ---
