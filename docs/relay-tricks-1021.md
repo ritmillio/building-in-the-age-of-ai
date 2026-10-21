@@ -56,12 +56,13 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 - Deck v16 exists (`.deck-build-v16.mjs`, notes-only over v15). Any further deck change goes into v16, not a v17. The repo's `workshop/slides.pdf` was not refreshed (slides unchanged); refresh it only if slides change.
 - Every presenter-folder commit gets a log line here, including small follow-ups (`0066c04` was missed once).
 - The handout's PDF and other PDFs are gitignored in the Desktop repo; commit the `.html` source and re-render. Handout must stay 2 pages: re-check `pdfinfo handout.pdf | grep Pages` after any edit.
+- Anchor check that works: a short python script that slugs every `#` heading (lowercase, drop chars outside `[\w\- ]`, spaces to `-`) and tests each `](file#anchor)` in the changed section. Run it after any edit that adds anchor links; the gate does not.
+- README now has a "Start here, by role" section citing trick numbers (1, 8-13, 19-25, 28-39, 41-49, 50-58, 60-67) and war-stories anchors. If tricks are renumbered or headings renamed, update that section.
 
 ## Backlog
 
-Ordered by value to the mission. T1-T7 are done (see Landed).
+Ordered by value to the mission. T1-T7 and T9 are done (see Landed and the log).
 
-- [ ] **T9 Role-based start paths.** README "Start here": non-technical founder / product person / developer / team lead, each 5 steps linking into tricks.md, succeed.md, war-stories.md and the existing guides. Cheapest way to make tonight's three guides findable.
 - [ ] **T10 More prompts for non-builders.** `workshop/prompts.md` (+ Desktop `prompts.md`): sales follow-ups, investor update, customer interview synthesis, competitor teardown, weekly ops digest, contract first-read with "not legal advice" caveat. Same five-part brief shape as slide 13. Do not duplicate the 8 prompts in succeed.md or the 5 on the handout; link to them.
 - [ ] **T13 qa.md + faq.md.** Questions the tricks will provoke (cost of running agents, which plan, data safety in tools, "is this only for developers?"), sourced answers. succeed.md's partner prompts can be borrowed.
 - [ ] **T11 Templates.** `templates/`: decisions-as-options rule, PR review prompt, customer-interview synthesis, "never list" for a project. `ls templates/` first; handoff and design-rules may already exist.
@@ -77,6 +78,7 @@ Ordered by value to the mission. T1-T7 are done (see Landed).
 - Desktop 811818e (+0066c04) T5: `handout.html` 2-page A4 (first render was 4, tightened), print step in rehearsal, README row. All pages viewed; gate 0.
 - Desktop 1ccdddc T6: `script.html` +7 trick lines, 3 cuts, time-check table, net +148 words. script.pdf 6 pages viewed; gate 0.
 - Desktop 84bd465 T7: v16 = v15 slides + trick lines in notes of 13/18/21/22/29/32/37; 37 PDF pages pixel-identical to v15, notes diff exact. Gate 0 on v16.
+- 2fa629b T9: README "Start here, by role", 4 roles x 5 steps linking tricks/succeed/war-stories/guides/skills. All 31 links + anchors resolved by a slug script (BAD=0); gate 0.
 
 ## Landed
 
