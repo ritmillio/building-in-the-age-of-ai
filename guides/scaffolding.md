@@ -128,7 +128,7 @@ Once it is live: agents stay off the production database, schema and migration s
 
 ## Prompt: start from a template (Claude Code)
 
-The workshop's background build starts from an empty folder because it's a throwaway prototype. For something you'll keep, start like this instead:
+The workshop's live build starts from an empty folder because it's a throwaway prototype. For something you'll keep, start like this instead:
 
 ```
 Goal: [one sentence: what it does and for whom].

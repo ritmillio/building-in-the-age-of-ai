@@ -3,11 +3,11 @@
 Setup before the room fills:
 - Demo chat: a NEW, clean Project / Gem in the assistant you demo with. Web search ON. No customer data, nothing private.
 - Second window: Claude Code in an EMPTY folder. Never inside a real repo.
-- Optional: Claude in Chrome in a clean Chrome profile (nothing logged in) for the slide 6 demo.
+- Optional: Claude in Chrome in a clean Chrome profile (nothing logged in) for the slide 8 demo.
 - Hotspot as Wi-Fi backup. Font size up in every window.
 
 Prompts 1-5 run in the SAME chat, because each builds on the last.
-Prompt 0 runs in the SECOND window right after the room picks the idea (slide 3).
+Prompt 0 runs in the SECOND window right after the red team (3b, slide 30): we build it live, from zero. Nothing is built before that.
 
 Fallback idea if the room is quiet (rehearse this one end to end):
 > Freelancers and small agencies lose time and cash chasing unpaid invoices. They want to see who owes them what, and send polite reminders without awkwardness.
@@ -18,20 +18,7 @@ Fallback idea if the room is quiet (rehearse this one end to end):
 
 The chosen idea: [the room's idea in 1-2 sentences, in their words]. Every following task is about this idea.
 
-Then immediately: prompt 0 in the second window, prompt 1 in the demo chat.
-
----
-
-## 0. Background build (second window, Claude Code)
-
-Create a new project called "idea-prototype" in this folder.
-Goal: a clickable, multi-screen web prototype for user testing of this idea: [the room's idea].
-First plan the 3-4 most important screens (one of them an empty state), describe each in one line, then build them.
-Data: 20 made-up sample records that look realistic. No real data.
-Tech: plain HTML, CSS and JavaScript in a few files, no npm install, no build step; it starts with `python3 -m http.server`. English UI, short friendly copy, clean light design.
-Write a README: how to start it, what is in it, what is not (no real backend).
-Work on your own and only ask if you are stuck. When it runs locally, deploy it to Vercel as a public production deployment (vercel deploy --prod --yes) and check that the link opens without a login. Then make a QR code of that link as a PNG (with the qrencode tool already installed on this machine) and open it. The data is made up, so the link is safe to share.
-At the end, give me the local link, the public link and the QR file.
+Then immediately: prompt 1 in the demo chat, so the research is waiting after the break. Nothing goes into the second window yet.
 
 ---
 
@@ -101,11 +88,20 @@ Check: anything not in the notes goes under open questions. You may propose conc
 
 Review this spec through four pairs of eyes: 1) a skeptical engineer, 2) the customer who says no and would never pay, 3) an investor, 4) a bank's risk and compliance officer (customer data, regulation, fraud). Each writes the 3 biggest gaps or risks. Then update the spec and list what changed.
 
-### 0b. Update the background build (second window, right after 3b)
+## 0. The live build (second window, Claude Code, right after 3b)
 
-Here is the final spec after the red team:
+Nothing is built before this point: the room watches it start from an empty folder.
+
+Create a new project called "idea-prototype" in this folder.
+Goal: a clickable, multi-screen web prototype for user testing of this idea: [the room's idea].
+Here is the spec after the red team; build only its v0.1 scope:
 [paste the updated spec]
-Update the prototype in idea-prototype to match it, deploy again to the same project, and list in at most 5 bullets what changed.
+First plan the 3-4 most important screens (one of them an empty state), describe each in one line, then build them.
+Data: 20 made-up sample records that look realistic. No real data.
+Tech: plain HTML, CSS and JavaScript in a few files, no npm install, no build step; it starts with `python3 -m http.server`. English UI, short friendly copy, clean light design (the room's design rules follow in a few minutes).
+Write a README: how to start it, what is in it, what is not (no real backend).
+Work on your own and only ask if you are stuck. You have about 20 minutes. When it runs locally, deploy it to Vercel as a public production deployment (vercel deploy --prod --yes) and check that the link opens without a login. Then make a QR code of that link as a PNG (with the qrencode tool already installed on this machine) and open it. The data is made up, so the link is safe to share.
+At the end, give me the local link, the public link and the QR file.
 
 ### 3c. Tasks (only if there is time)
 
@@ -135,6 +131,12 @@ We pick variant [A/B/C]. Change: [the room's request]. Show only that variant fr
 
 From the chosen variant, write a short design-rules.md. Read every value from the variant's code and add nothing that is not there: colours (with hex), font family and sizes, spacing scale, corner radius for controls and for cards, what is banned (for example gradients, heavy shadows), and a rule that every screen has an empty state. At most 15 lines. I will attach this file to every future design request.
 
+### 0b. Apply the room's look (second window, right after 4c)
+
+Here are the design rules from the variant the room picked:
+[paste design-rules.md, and a screenshot of the chosen variant]
+Restyle idea-prototype to follow them. Change the look only, not the features. Deploy again to the same project and list in at most 5 bullets what changed.
+
 ---
 
 ## 5. Launch kit
@@ -152,7 +154,7 @@ Check: only what the prototype does today. No data-protection or security claims
 2. Event tracking plan in a table: event name, when it fires, properties.
 3. One SQL query or spreadsheet formula for the main metric.
 
-Then: reveal the background build in the second window. "This wasn't a question, it was a task."
+Then: reveal the live build from the second window. "This wasn't a question, it was a task."
 
 ---
 

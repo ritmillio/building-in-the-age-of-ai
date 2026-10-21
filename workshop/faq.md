@@ -16,7 +16,7 @@ With the task you hate most (slide 34). You know it inside out, so you can judge
 Show a win on a real task, not a demo. Get everyone to level 2: one shared Project with the team's context. Give them two weeks on one hated task each, then compare notes. People adopt what saves them pain, not what they're told to use.
 
 **5. Is a prompt engineering course worth it?**
-Mostly no. The wording matters far less than the context. Brief it like a smart new hire: role, context, task, format, check (slide 13).
+Mostly no. The wording matters far less than the context. Brief it like a smart new hire: role, context, task, format, check (slide 12).
 
 ## Trust and quality
 
@@ -55,7 +55,7 @@ For drafts, summaries and analysis, yes, the big models handle Hungarian well. A
 The prototype, the landing page and the first user test: yes, today. Production with payments, security and customer data: bring in an engineer to review the fundamentals. Your prototype is input for them, not a replacement.
 
 **16. When do I need to hire engineers?**
-When real users and real money depend on it: security, data, payments, scaling. AI made the first version cheap; it didn't make the fundamentals cheap (slide 11).
+When real users and real money depend on it: security, data, payments, scaling. AI made the first version cheap; it didn't make the fundamentals cheap (backup slide 41).
 
 **17. Will AI replace developers and designers?**
 It replaced the waiting and the cheap parts: boilerplate, first drafts. Taste, judgment, architecture and knowing what not to build became more valuable. Small teams that use it well will outrun bigger ones that don't.
@@ -74,7 +74,10 @@ A business seat is roughly 20-30 EUR per person per month (check current pricing
 **21. Isn't this all hype?**
 Some of it is. The test is simple: pick the task you hate most, try it for two weeks, and keep it only if it saved you real time. That's the whole method.
 
-## Context (slides 15-18)
+## Context (slides 14-18)
+
+**How long can a chat be? How full should it get?**
+Stay under about half of the desk (slide 17). Around half, finish the task; past that, ask for a handoff and start a fresh chat. Files, screenshots and web searches fill it fastest, and languages like Hungarian use more tokens than English for the same text. In Claude Code, /context shows how full it is. A rule of thumb, not a vendor number: quality drops long before the window is full.
 
 **Why does it get worse the longer we chat?**
 Every message, the whole conversation is read again from the top, and models use long inputs worse than short ones, especially the middle (context rot). Start a new chat with a short handoff when it drifts.
@@ -88,7 +91,7 @@ Only what a memory feature or a Project puts back on the desk. Keep the importan
 **What's a sub-agent?**
 A helper the agent starts with its own clean desk: it reads the big pile and brings back only the answer, so the main conversation stays sharp.
 
-## How I build (slides 20-22)
+## How I build (slides 19-24)
 
 **Should I start from a template or from scratch?**
 From a template, almost always. Pick the one closest to the shape of your product (a chat app, a SaaS, a bot), deploy it on day one, add your rules, then spend your time on the one thing only you know. We started our product from Vercel's open-source chatbot template. Which template for what, and the commands: guides/scaffolding.md.
