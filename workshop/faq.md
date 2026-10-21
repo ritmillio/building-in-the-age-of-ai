@@ -44,7 +44,7 @@ Use a business or team plan where training on your data is off by default, and r
 Start read-only and with one tool. Check what the connector can do: reading is low risk, sending and deleting are not. Keep a human approval on anything that leaves the building.
 
 **13. What about GDPR and the EU AI Act?**
-GDPR applies to any personal data you put in, exactly as with any other software vendor: business plan, data processing agreement, minimum data. Most internal productivity use is low-risk under the AI Act; obligations grow when AI makes decisions about people (hiring, credit) or talks to customers without saying it's AI. For your specific case, ask a lawyer; this is general orientation, not legal advice.
+GDPR applies to any personal data you put in, exactly as with any other software vendor: business plan, data processing agreement, minimum data. Most internal productivity use is low-risk under the AI Act. Two dates matter (checked 2026-10-21 on the [European Commission's AI Act page](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai)): the transparency rules apply since August 2026, so a chatbot that talks to customers has to say it's AI and AI-generated content has to be identifiable; the rules for high-risk uses such as hiring and credit scoring apply from 2 December 2027, after the AI Omnibus moved them. For your specific case, ask a lawyer; this is general orientation, not legal advice.
 
 **14. Does it work well in Hungarian?**
 For drafts, summaries and analysis, yes, the big models handle Hungarian well. Always check legal and tax specifics, and have a native speaker read anything customer-facing.
