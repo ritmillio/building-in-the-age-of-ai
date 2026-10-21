@@ -54,12 +54,12 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 - **Gate before every commit:** `.loop/gates/check.sh; echo EXIT=$?` (never pipe it through tail). HTML→PDF: `node /private/tmp/claude-501/-Users-zoltanfodor-Developer-clausis-ai/6aaa65e6-ef45-465a-9cb7-d307bf4c4c6e/scratchpad/pdf.mjs <abs html> <abs pdf>`, view every page. Handout stays 2 pages (`pdfinfo handout.pdf | grep Pages`).
 - War stories 2, 6, 10 tell well out loud; script lines and backup slides can borrow from `guides/war-stories.md`.
 - Skills repo check: `npx skills add <owner/repo> --list` in an empty `git init` dir under /tmp; it uses local git credentials, so it does not prove public access.
+- Print HTML (prompt pack, handout): wrap each heading with its block in a `break-inside: avoid` div, or Chrome leaves a heading alone at the page foot. Prompt pack is 5 pages now; `README.md` (repo + Desktop) state the page count.
 
 ## Backlog
 
-Ordered by value to the mission. T1-T14 and T18 are done.
+Ordered by value to the mission. T1-T14, T16 and T18 are done.
 
-- [ ] **T16 Prompt pack refresh.** Desktop `prompt-pack.html` (and repo `workshop/prompt-pack.pdf`) has no prompts 8-12 yet (checked: none of the five titles appear). Add them only if the pack stays readable; render, view every page, copy the PDF into the repo.
 - [ ] **T19 Inventory coverage pass.** tricks.md has 73 of the inventory's 99; skipped on purpose: 72, 75-76, 92, 99, `[S]` and "Not for publication". Diff the rest against tricks.md, war-stories.md, succeed.md and templates; add any publishable trick still missing (same what/why/command/fails-when shape, update trick counts and README role numbers if renumbered).
 - [ ] **T17 Handout pointer to the new templates.** Optional: the handout's take-home list could name `templates/never-list.md` and `review-prompt.md` (not there now); only if it stays 2 pages.
 - [ ] **T15 Final read-through.** Last iteration only: README → guides as a first-time visitor, fix the three worst confusions, Desktop README up to date.
@@ -72,6 +72,7 @@ Ordered by value to the mission. T1-T14 and T18 are done.
 - 9466bc0 T12: skills README gets tested install commands (GitHub `ritmillio/building-in-the-age-of-ai` and `./skills`), worktree-janitor + memory-hygiene rows, handoff/grill-me pointer; third-party.md + install.md record the run. `npx skills add ./skills --skill '*' -a claude-code -y` in empty /tmp project → 6 SKILL.md; `--list` on 6 third-party/author repos lists every named skill; frontmatter checked; gate 0. Handoff skill is Matt Pocock's, credited, not rewritten.
 - 7e3e779 + Desktop 6dc3f35 T14: 596 repo links + 2 presenter links curl-checked; non-200s were bot blocks or GET-200 on retry; Meta Rule of Two read via WebFetch. Stale claim fixed: the Gemini app has native skills and Gems convert from November 2026, so install.md §G was rewritten from Google help 17094296 + 18560919 (read 2026-10-21), plus README no-terminal line, how-i-build, context, faq, qa. Cursor skills dirs and Cowork plans + scheduling still match vendor pages. Gate 0.
 - 59b2c57 T18: install.md §F: Plus/Pro skills marked unclear (help page names workspace plans only, pricing reports differ) with an in-account check; GPT retirement dated only for Enterprise (2026-12-11), no date for personal plans; migration FAQ linked (403 bot block, indexed in ~10 locales); resources.md ChatGPT Work "paid plans" claim softened (desktop reportedly on all plans). OpenAI pages 403 in WebFetch, so this was checked through WebSearch. faq/qa have no GPT claims to mirror. Gate 0.
+- f6b21d4 + Desktop 341950c T16: prompt-pack.html gets "After the workshop: five more prompts" (8-12 verbatim from prompts.md, Elad Gil credited as plain text) on new pages 4-5 before "Where to start". First render orphaned a heading; wrapped each h3+prompt in `.keep` (break-inside: avoid), re-rendered: 5 pages, all viewed at -r 60, pages 1-3 unchanged. PDF copied to repo; README rows (repo + Desktop) say 5 pages. Gate 0.
 
 ## Landed
 
