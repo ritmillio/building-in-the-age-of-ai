@@ -108,7 +108,15 @@ Check: every "they gain" is a concrete benefit to the partner (less work, happie
 
 ## 6. Stay small on purpose
 
-**Know whether you are default alive.** Paul Graham, [Default Alive or Default Dead?](https://paulgraham.com/aord.html): with expenses constant and revenue growing at its recent rate, does the money you have get you to profitability? Ask it every month. Paste your numbers and ask an assistant to do the arithmetic with the steps shown; do not let it guess growth.
+**Know whether you are default alive.** Paul Graham, [Default Alive or Default Dead?](https://paulgraham.com/aord.html): with expenses constant and revenue growing at its recent rate, does the money you have get you to profitability? Ask it every month. Paste your numbers and let an assistant do the arithmetic with every step shown; do not let it guess growth.
+
+```text
+Role: a startup CFO who shows the work.
+Context: cash in the bank today: [amount]. Monthly expenses now, plus any change I already know is coming: [...]. Revenue for each of the last 6 months: [...].
+Task: am I default alive? With expenses as they are and revenue growing at its recent rate, does the cash I have get me to profitability? If not, how much faster would revenue have to grow, or how much would spend have to drop, to get there?
+Format: the monthly growth rate you used and how you got it; a month-by-month table (revenue, expenses, cash at month end) until profit or zero cash; one line: default alive or default dead, and in which month.
+Check: show every calculation step. Use only the growth in my numbers, never a guessed or "typical" rate. If a number is missing, write "missing" instead of estimating. With fewer than 3 months of revenue, say the growth rate is not reliable yet.
+```
 
 **Hire the work to agents before you hire people.** Teams are smaller than they used to be, and some reach real revenue with a few dozen people ([fundraising.md, smaller teams](fundraising.md#smaller-teams-faster-revenue)). Start with the task you hate most ([prompt 7](../workshop/prompts.md#7-the-task-you-hate-most)), give it two weeks, keep or drop it. Repeat. Anything that sends, pays or deletes still waits for a human.
 
