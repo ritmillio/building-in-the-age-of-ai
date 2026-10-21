@@ -58,7 +58,7 @@ Pick the row closest to you and do the five steps in order. None of them needs m
 | [`guides/succeed.md`](guides/succeed.md) | The go-to-market half: validate before you build (customer interviews, review mining, a landing page with prices), the product-market-fit question, pricing, the first ten customers, selling through partners, staying small, the few numbers that matter early. Each with a sourced rule and a prompt to paste |
 | [`guides/fundraising.md`](guides/fundraising.md) | Raising money in the AI era, the "thin wrapper" problem, what counts as a moat now. Sourced. |
 | [`skills/`](skills/) | My skills, rewritten for anyone to use, plus a credited catalogue of other people's skills and install steps for Claude Code, claude.ai, the Claude API, Codex, Cursor and other coding agents, ChatGPT and Gemini |
-| [`templates/`](templates/) | `AGENTS.md` rules file, `design-rules.md`, a handoff prompt, a memory index, a never list, the ask-with-options rule, a review prompt for a fresh session, customer interview notes |
+| [`templates/`](templates/) | `AGENTS.md` rules file, `design-rules.md`, a handoff prompt, a memory index, a never list, the ask-with-options rule, a review prompt for a fresh session, customer interview notes, a phone-notify hook |
 | [`resources.md`](resources.md) | Hundreds of links I'd actually send a friend: official guides, agents, skills, MCP, prototyping, design, ops automation, evals, security, research, newsletters, books, free courses |
 | [`open-source.md`](open-source.md) | Open-source projects for building with AI, licence-checked: coding agents, agent frameworks, MCP, local models, app builders, RAG, evals, browser agents, UI kits. Non-OSI licences and archived repos flagged |
 

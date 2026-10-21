@@ -96,7 +96,7 @@ New to all this? Read [how-i-build.md](how-i-build.md) first (the loop), then co
 
 **39. Cap how many agents run at once.** *Why:* a machine pinned at full memory crashes and takes every session with it. Skill: `reclaim` ([where to get it](../skills/README.md#also-by-the-author-published-separately)) for getting a pinned machine back. Keep scripts you need again in the repo, not in `/tmp`: a crash or reboot wipes it. And never leave `caffeinate` (the macOS keep-awake command) running without an end: wrap the job (`caffeinate -i ./run.sh`), bind it to a process (`caffeinate -w <pid>`) or give it a time (`caffeinate -t 3600`). A forgotten one kept a closed laptop awake in a bag for hours. *Fails when:* the cap is only on agents: each one starts its own test runners and builds, so five agents can mean twenty heavy processes. Cap test-runner workers too.
 
-**40. Let it ping your phone.** A hook sends a message when an agent finishes, fails or waits for permission. You stop babysitting terminals. [Hooks docs](https://code.claude.com/docs/en/hooks); our setup is in [my-stack.md](my-stack.md). *Fails when:* you add every event (each commit, each tool call) and after a day nobody reads them. Keep it to finished, failed and waiting, and name the session in the message.
+**40. Let it ping your phone.** A hook sends a message when an agent finishes, fails or waits for permission. You stop babysitting terminals. [Hooks docs](https://code.claude.com/docs/en/hooks); the script and settings block to copy are in [notify-hook.md](../templates/notify-hook.md). *Fails when:* you add every event (each commit, each tool call) and after a day nobody reads them. Keep it to finished, failed and waiting, and name the session in the message.
 
 ## Verification
 
