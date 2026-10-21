@@ -20,6 +20,8 @@
 
 ## For the founder
 
+- `docs/tricks-inventory.md` is internal raw material (private source paths). Delete it with the ledger before going public.
+- Inventory items tagged `[S]` (env var outage story, startup credit amounts) stay out of public files unless you OK a generalised version. Model vetoes and the runtime model ruling are listed under "Not for publication" there.
 - Ledger file `docs/relay-tricks-1021.md` lives in the repo branch; delete it (or squash it out) before flipping the repo public.
 
 ## Health
@@ -41,11 +43,13 @@ Baseline 2026-10-21 01:30: `.loop/gates/check.sh` GATE_EXIT=0 (confidentiality c
 - Speaker script and run sheet must keep fitting 3 hours. If you add spoken lines, cut elsewhere; count words (≈140 wpm) and note the per-part estimate in `## Health`.
 - Gate before every commit: `.loop/gates/check.sh; echo EXIT=$?` (never pipe it through tail). For HTML→PDF use `node /private/tmp/claude-501/-Users-zoltanfodor-Developer-clausis-ai/6aaa65e6-ef45-465a-9cb7-d307bf4c4c6e/scratchpad/pdf.mjs <abs html> <abs pdf>` (uses playwright-core from ~/Developer/clausis.ai/node_modules); look at the pages.
 
+- The inventory is gate-excluded; scan it by hand before relying on it, and never copy a `src:` path into a public file.
+
 ## Backlog
 
-- [ ] **T1 Tricks inventory.** Mine the sources named in Standing rules for every working practice (context hygiene, rules files, skills, verification, worktrees, relays, hooks, decisions as options, design from references, Mobbin, MCP-first tools, startup credits, model choice, cost control, prompt shapes, handoffs, fresh sessions, review agents, CI gates, "green is a claim"...). Write the raw list (one line each + source path) to `docs/tricks-inventory.md` (internal, delete before public; flag in founder inbox). Target 60+.
-- [ ] **T2 `guides/tricks.md` field guide.** From T1: 40-60 tricks grouped (Context, Prompting, Rules & skills, Agents & parallel work, Verification, Design, Shipping & ops, Team & process, Money & tools). Each: what, why, exact prompt/command/file, when it fails, link. Link it from README "Start here".
-- [ ] **T3 War stories.** `guides/war-stories.md`: 8-12 short real incidents and the rule each produced (build piped through tail; type check skipped by build; stale dev server; agent stashing a shared checkout; `git add -A` sweeping another agent's work; schema pushed instead of migrated; a "fixed" claim never checked in the browser...). Generalised, no internal names. Anything sensitive → founder inbox, not the file.
+- [x] **T1 Tricks inventory.** Done in 0c4263d: `docs/tricks-inventory.md`, 99 tricks in 10 groups, each with source, tags `[have]` `[war]` `[S]` `[product]`.
+- [ ] **T2 `guides/tricks.md` field guide.** From T1 (skip `[S]` items, link `[have]` items to the existing repo file instead of repeating them; vendor-link the shared-agent-setup tricks 23-27 from the sources listed in the inventory): 40-60 tricks grouped (Context, Prompting, Rules & skills, Agents & parallel work, Verification, Design, Shipping & ops, Team & process, Money & tools). Each: what, why, exact prompt/command/file, when it fails, link. Link it from README "Start here".
+- [ ] **T3 War stories.** Candidates are tagged `[war]` in `docs/tricks-inventory.md` (about 20). `guides/war-stories.md`: 8-12 short real incidents and the rule each produced (build piped through tail; type check skipped by build; stale dev server; agent stashing a shared checkout; `git add -A` sweeping another agent's work; schema pushed instead of migrated; a "fixed" claim never checked in the browser...). Generalised, no internal names. Anything sensitive → founder inbox, not the file.
 - [ ] **T4 Succeed guide.** `guides/succeed.md`: validating with AI (interview synthesis, review mining, landing tests), pricing conversations, first ten customers, distribution through partners, staying small, metrics that matter early. Every claim sourced (YC, First Round, a16z, Lenny's, vendor docs). Cross-link fundraising.md.
 - [ ] **T5 Printable handout.** `~/Desktop/building-in-the-age-of-ai/handout.html` → `handout.pdf`, 2 pages A4: the 25 best tricks + 5 prompts + the repo QR (`.assets/repo-qr.png`). Plain, legible, no numbers-as-stats. Mention in rehearsal.html's day-before list (print N copies).
 - [ ] **T6 Speaker script weave.** Add the strongest 1-2 tricks per part into `script.html` as spoken lines on the slides they fit, cut weaker lines to keep time; re-render `script.pdf`. Add a word-count/time table per part at the end.
@@ -60,5 +64,7 @@ Baseline 2026-10-21 01:30: `.loop/gates/check.sh` GATE_EXIT=0 (confidentiality c
 - [ ] **T15 Final read-through.** Read README → guides as a first-time visitor; fix the three worst confusions; update the deck folder README (v16 if built).
 
 ## Iteration log
+
+- 0c4263d T1: wrote `docs/tricks-inventory.md` (99 tricks, sources = product AGENTS.md, shared-agent-setup ref, skills, 38 feedback + ~20 general memory notes). Gate EXIT=0; inventory is gate-excluded by design, scanned by hand for banned words (none). No external links added.
 
 ## Landed
