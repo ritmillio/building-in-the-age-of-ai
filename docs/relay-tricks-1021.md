@@ -14,7 +14,9 @@
 
 **Ends when.** The clock runs out (7.5h).
 
-**How to read this.** `## For the founder` is your inbox, read it first. `## Health` is the current gate status. `## Landed` is what shipped. `## Backlog` is what the loop would do next if it kept running.
+**How to read this.** `## For the founder` is your inbox, read it first. `## Health` is the current gate status. `- 9177a68 T3: `guides/war-stories.md` (12 stories + 1 on model price), sources = 12 memory notes + migrations README incident log, generalised (no model names, no spend, no internal names, 'the founder' rewritten to 'we'). Gate EXIT=0; no external links in the file; trick numbers cross-checked against tricks.md headings.
+
+## Landed` is what shipped. `## Backlog` is what the loop would do next if it kept running.
 
 ---
 
@@ -44,13 +46,14 @@ Baseline 2026-10-21 01:30: `.loop/gates/check.sh` GATE_EXIT=0 (confidentiality c
 - Gate before every commit: `.loop/gates/check.sh; echo EXIT=$?` (never pipe it through tail). For HTML→PDF use `node /private/tmp/claude-501/-Users-zoltanfodor-Developer-clausis-ai/6aaa65e6-ef45-465a-9cb7-d307bf4c4c6e/scratchpad/pdf.mjs <abs html> <abs pdf>` (uses playwright-core from ~/Developer/clausis.ai/node_modules); look at the pages.
 
 - Anchor links into other repo files (`file.md#heading`) are not checked by the gate (it strips `#...`); derive GitHub anchors by hand: lowercase, drop punctuation, spaces to `-`.
+- War stories exist in `guides/war-stories.md`; T6 script lines and T8 backup slides can borrow from them (stories 2, 6, 10 tell well out loud).
 - The inventory is gate-excluded; scan it by hand before relying on it, and never copy a `src:` path into a public file.
 
 ## Backlog
 
 - [x] **T1 Tricks inventory.** Done in 0c4263d: `docs/tricks-inventory.md`, 99 tricks in 10 groups, each with source, tags `[have]` `[war]` `[S]` `[product]`.
 - [x] **T2 `guides/tricks.md` field guide.** Done in 882602b: 73 tricks (68 + 5 for AI-product builders) in 10 groups, linked from README table and how-i-build.md. Skipped inventory items 75-76, 92 ([S]), 72 (talk-only), 99. Over the 40-60 target on purpose; T15 may trim.
-- [ ] **T3 War stories.** Note: tricks.md already tells 1-line versions of ~12 [war] items (28, 31-33, 38, 41, 46, 48, 56, 8); war-stories.md should tell them as stories (what happened, cost, the rule) and link back to the trick number, not repeat the one-liner. Candidates are tagged `[war]` in `docs/tricks-inventory.md` (about 20). `guides/war-stories.md`: 8-12 short real incidents and the rule each produced (build piped through tail; type check skipped by build; stale dev server; agent stashing a shared checkout; `git add -A` sweeping another agent's work; schema pushed instead of migrated; a "fixed" claim never checked in the browser...). Generalised, no internal names. Anything sensitive → founder inbox, not the file.
+- [x] **T3 War stories.** Done in 9177a68: `guides/war-stories.md`, 12 incidents + 1 money story, each what/cost/rule with links to trick numbers; README row, tricks.md intro link. Left out: env var incident ([S]), the 'decisions never asked' story (already 1 line in trick 8), versions/scope stories (no incident detail in source).
 - [ ] **T4 Succeed guide.** `guides/succeed.md`: validating with AI (interview synthesis, review mining, landing tests), pricing conversations, first ten customers, distribution through partners, staying small, metrics that matter early. Every claim sourced (YC, First Round, a16z, Lenny's, vendor docs). Cross-link fundraising.md.
 - [ ] **T5 Printable handout.** `~/Desktop/building-in-the-age-of-ai/handout.html` → `handout.pdf`, 2 pages A4: the 25 best tricks + 5 prompts + the repo QR (`.assets/repo-qr.png`). Plain, legible, no numbers-as-stats. Mention in rehearsal.html's day-before list (print N copies).
 - [ ] **T6 Speaker script weave.** Add the strongest 1-2 tricks per part into `script.html` as spoken lines on the slides they fit, cut weaker lines to keep time; re-render `script.pdf`. Add a word-count/time table per part at the end.
