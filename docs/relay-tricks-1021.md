@@ -14,87 +14,59 @@
 
 **Ends when.** The clock runs out (7.5h).
 
-**How to read this.** `## For the founder` is your inbox, read it first. `## Health` is the current gate status. `## Landed` is what shipped. `## Backlog` is what the loop would do next if it kept running.
+**How to read this.** `## For the founder` is your inbox, read it first. `## Health
 
----
-
-## For the founder
-
-- `docs/tricks-inventory.md` is internal raw material (private source paths). Delete it with the ledger before going public.
-- Inventory items tagged `[S]` (env var outage story, startup credit amounts) stay out of public files unless you OK a generalised version. Model vetoes and the runtime model ruling are listed under "Not for publication" there.
-- Ledger file `docs/relay-tricks-1021.md` lives in the repo branch; delete it (or squash it out) before flipping the repo public.
-- `handout.pdf` (Desktop) is new and printable: skim both pages; the print count is "one per seat plus ten" because the seat count is not in any file. Its QR 404s until the repo is public.
-
-## Health
-
-**2026-10-21, compaction (iteration 8), branch head `fc7cec3`, presenter folder head `84bd465` (clean tree):**
-- `.loop/gates/check.sh; echo EXIT=$?` → `ok confidentiality (repo)` / `ok deck Building-in-the-Age-of-AI-v16.pptx: 37 slides, 37 notes, clean` / `ok relative links` / `GATE_EXIT=0` / `EXIT=0`.
-- External links in `guides/tricks.md`, `guides/succeed.md`, `guides/war-stories.md`: 34 unique, all 34 `curl -sIL` 200.
-- PDFs: `handout.pdf` 2 pages, `script.pdf` 6 pages (pdfinfo). No deck or HTML change this iteration, so nothing re-rendered.
-- Counts match the claims: tricks.md 73 tricks / 10 groups, war-stories.md 12 + 1, inventory 99.
+**2026-10-21, compaction (iteration 16), branch head `b315ebe`, presenter folder head `6dc3f35` (clean tree):**
+- `.loop/gates/check.sh; echo EXIT=$?` → `ok confidentiality (repo)` / `ok deck Building-in-the-Age-of-AI-v16.pptx: 40 slides, 40 notes, clean` / `ok relative links` / `GATE_EXIT=0` / `EXIT=0`.
+- External links added on the branch (`git diff origin/main..HEAD`, docs/ excluded): 42 unique, 39 `curl -sIL` 200, 3 support.google.com HEAD 404 / GET 200 (known, fine).
+- PDFs: `handout.pdf` 2 pages, `script.pdf` 6 pages, repo `workshop/slides.pdf` 40 pages (pdfinfo). No deck or HTML change this iteration, nothing re-rendered.
+- Counts match the claims: tricks.md 73 tricks / 10 groups, war-stories.md 12 + 1, templates/ 8 files, inventory 99.
+- Reconciled: every branch commit and every presenter-folder commit (9a46874..6dc3f35) is in Landed or the log; no unsupported claim found.
 
 Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8/25, Context 301w 2.1/12, How we build 563w 4.0/15 (tightest), Raising 276w 2.0/10, Build 498w 3.6/60, Close 187w 1.3/27; total 2760w.
 
 ## Standing rules
 
-- Findings come from running the thing, not from reading the source.
-- Commit before exiting. An uncommitted change does not survive the iteration.
+- Findings come from running the thing, not from reading the source. Commit before exiting.
 - **Never name**: the coding reference app (T3, t3code, pingdotgg, create-t3-app), the "mike" legal OSS project, the founder's company/product by name (no "Clausis", no "jogai"), "second brain", the founder's location (Vienna, remote, where he lives), Billingo or Billy. Say "our product", "our team".
 - **The hub** (where every agent files what it did, why and how it was checked) may only appear as the team's internal practice, spoken (script/notes), never on a slide, never named as a product, never "we are building this".
-- **Slides:** Excalidraw style, every text Excalifont (terminal lines Comic Shanns), NO numbers, stats or years on slides (numbers only in notes, script, repo). Native English. A new slide or changed slide means a new deck version: copy `.deck-build-v15.mjs` to `.deck-build-v16.mjs` once (OUT file `Building-in-the-Age-of-AI-v16.pptx`), keep v15 untouched. Render: `cd ~/Desktop/building-in-the-age-of-ai/drawings && node render.mjs <scene> && node render-slides.mjs <name>`, then `NODE_PATH=/private/tmp/claude-501/-Users-zoltanfodor-Developer-clausis-ai/6aaa65e6-ef45-465a-9cb7-d307bf4c4c6e/scratchpad/deps/node_modules node .deck-build-v16.mjs`, then `soffice --headless --convert-to pdf <pptx>` in that folder. Look at the changed pages as PNG (pdftoppm -r 60) before committing. If the NODE_PATH dir is gone, `npm i --prefix /tmp/kh-deps pptxgenjs sharp qrcode` and use `/tmp/kh-deps/node_modules`.
-- **Tricks are real.** Every trick is something the founder actually does (source: the clausis.ai repo `AGENTS.md`, `.agents/skills/*`, `docs/reference/*`, and the memory notes in `~/.claude/projects/-Users-zoltanfodor-Developer-clausis-ai/memory/*.md`, especially `feedback-*.md`), or a vendor-documented practice with a link. Read those as source material; never copy internal names, customers, money, tickets, people or URLs out of them. Generalise ("an agent deleted production env vars" style), and flag anything that could embarrass the company under `## For the founder` instead of publishing it.
-- **Every external claim gets a link** checked by opening it (curl -sIL or WebFetch). Vendor product names change monthly: check the date-sensitive ones (ChatGPT Work, Claude Cowork, Gems→skills, Cursor) against the vendor page, write the check date.
+- **Slides:** Excalidraw style, every text Excalifont (terminal lines Comic Shanns), NO numbers, stats or years on slides (numbers only in notes, script, repo). Native English. All deck changes go into v16 (`.deck-build-v16.mjs`, OUT `Building-in-the-Age-of-AI-v16.pptx`), never a v17, v15 untouched; the v15 builder reads only `layout`, backup slides 38-40 come from the `backup` export in `drawings/slides.mjs`. Render: `cd ~/Desktop/building-in-the-age-of-ai/drawings && node render.mjs <scene> && node render-slides.mjs <name>`, then `NODE_PATH=/private/tmp/claude-501/-Users-zoltanfodor-Developer-clausis-ai/6aaa65e6-ef45-465a-9cb7-d307bf4c4c6e/scratchpad/deps/node_modules node .deck-build-v16.mjs` (if gone: `npm i --prefix /tmp/kh-deps pptxgenjs sharp qrcode`, use `/tmp/kh-deps/node_modules`), then `soffice --headless --convert-to pdf <pptx>`. View changed pages as PNG (pdftoppm -r 60), copy the PDF to repo `workshop/slides.pdf`, check pages 1-37 `cmp` equal to v15 at `pdftoppm -r 40`.
+- **Presenter folder git:** commit `.excalidraw`, `drawings/slides/*.png` and `.html` sources; scene PNGs and all PDFs are gitignored there (re-render). Every presenter-folder commit gets a log line here, small follow-ups too (`0066c04` was missed once).
+- **Tricks are real.** Every trick is something the founder actually does (source: the clausis.ai repo `AGENTS.md`, `.agents/skills/*`, `docs/reference/*`, memory notes in `~/.claude/projects/-Users-zoltanfodor-Developer-clausis-ai/memory/*.md`, especially `feedback-*.md`), or a vendor-documented practice with a link. Never copy internal names, customers, money, tickets, people or URLs; generalise, and flag anything embarrassing under `## For the founder`. The inventory is gate-excluded: scan it by hand, never copy a `src:` path into a public file.
+- **Every external claim gets a link** checked by opening it. Date-sensitive vendor claims (ChatGPT Work, Claude Cowork, Gemini skills, Cursor) get checked on the vendor page with the check date written down.
+- **Link checking:** mass check with `tr '\n' '\0' < list | xargs -0 -P 24 -n 1 script.sh` (plain `xargs -I{} sh -c` dies). Bot blocks, not dead links: help.openai.com, openai.com, chatgpt.com, claude.ai, carta.com, lovable.dev, lmarena.ai (403); support.google.com (HEAD 404, GET 200, bit twice); ai.meta.com (400, WebFetch reads it). OpenAI pages can't be read: name the page, don't cite a number from it; use WebSearch for their content. YC Startup Library renders client-side: cite the YC YouTube video (title via `curl https://www.youtube.com/oembed?url=...`), library page secondary.
+- **Anchors:** the gate strips `#...`, so run a short python slug check (lowercase, drop chars outside `[\w\- ]`, spaces to `-`) on every `](file#anchor)` you add. README "Start here, by role" cites trick numbers (1, 8-13, 19-25, 28-39, 41-49, 50-58, 60-67) and war-stories anchors: renumbering or renaming headings means updating it.
+- **Pairs edited together:** `workshop/prompts.md` ↔ Desktop `prompts.md` (differ only in header, slide cues, succeed.md link form); `workshop/faq.md` ↔ Desktop `qa.md` (plain pointers, numbers only "if asked"). A new template gets a README templates-row entry and a link from the trick it serves.
 - **Tone.** Plain, concrete, first person plural, no hype, no em dash runs, no emoji. Each trick: what to do, why it works, the exact prompt/command/file, when it fails.
-- Speaker script and run sheet must keep fitting 3 hours. If you add spoken lines, cut elsewhere; count words (≈140 wpm) and note the per-part estimate in `## Health`.
-- Gate before every commit: `.loop/gates/check.sh; echo EXIT=$?` (never pipe it through tail). For HTML→PDF use `node /private/tmp/claude-501/-Users-zoltanfodor-Developer-clausis-ai/6aaa65e6-ef45-465a-9cb7-d307bf4c4c6e/scratchpad/pdf.mjs <abs html> <abs pdf>` (uses playwright-core from ~/Developer/clausis.ai/node_modules); look at the pages.
-
-- Anchor links into other repo files (`file.md#heading`) are not checked by the gate (it strips `#...`); derive GitHub anchors by hand: lowercase, drop punctuation, spaces to `-`.
-- War stories exist in `guides/war-stories.md`; T6 script lines and T8 backup slides can borrow from them (stories 2, 6, 10 tell well out loud).
-- The inventory is gate-excluded; scan it by hand before relying on it, and never copy a `src:` path into a public file.
-- The YC Startup Library pages render client-side (WebFetch sees only the title); cite the YC YouTube video (title via `curl https://www.youtube.com/oembed?url=...`) and link the library page as secondary.
-- Script word counts: count only `.say`/`.bridge` text, strip `.cue` and `.src` spans; the table at the end of `script.html` holds the per-part numbers, update it if you add lines.
-- Deck v16 exists (`.deck-build-v16.mjs`): v15 slides + notes, plus Q&A backup slides 38-40 from the `backup` export in `drawings/slides.mjs` (the v15 builder reads only `layout`, keep it that way). Any further deck change goes into v16, not a v17. After any slide change: copy the v16 PDF to the repo's `workshop/slides.pdf` and check pages 1-37 still `cmp` equal to v15 at `pdftoppm -r 40`.
-- Scene PNGs in `drawings/*.png` are gitignored in the Desktop repo (regenerated by render.mjs); commit the `.excalidraw` and `drawings/slides/*.png`.
-- Every presenter-folder commit gets a log line here, including small follow-ups (`0066c04` was missed once).
-- The handout's PDF and other PDFs are gitignored in the Desktop repo; commit the `.html` source and re-render. Handout must stay 2 pages: re-check `pdfinfo handout.pdf | grep Pages` after any edit.
-- Anchor check that works: a short python script that slugs every `#` heading (lowercase, drop chars outside `[\w\- ]`, spaces to `-`) and tests each `](file#anchor)` in the changed section. Run it after any edit that adds anchor links; the gate does not.
-- `workshop/prompts.md` and Desktop `prompts.md` are kept in sync by hand (they differ only in the header, slide cues and the succeed.md link form); edit both.
-- README now has a "Start here, by role" section citing trick numbers (1, 8-13, 19-25, 28-39, 41-49, 50-58, 60-67) and war-stories anchors. If tricks are renumbered or headings renamed, update that section.
-- `templates/` now holds 8 files; README's templates row lists them. A new template gets a README row entry and a link from the trick it serves.
-- `workshop/faq.md` (repo, linked) and Desktop `qa.md` (presenter, plain pointers, numbers only "if asked") share their sections; edit both. chatgpt.com/pricing and openai.com pricing return 403 to curl and WebFetch: name the page, don't cite a number from it.
-- Mass link check: `tr '\n' '\0' < list | xargs -0 -P 24 -n 1 script.sh` (a plain `xargs -I{} sh -c` dies with "command line too long"). help.openai.com, openai.com, chatgpt.com, claude.ai, carta.com, lovable.dev, lmarena.ai return 403 to curl, which is bot blocking and not a dead link; support.google.com returns 404 to HEAD and 200 to GET; ai.meta.com returns 400 to curl but WebFetch reads it.
-- `npx skills add <owner/repo> --list` (run in an empty `git init` dir under /tmp) is the cheap way to check a skills repo still holds a named skill; it worked for the private repo too via local git credentials, so it does not prove public access.
+- **Time:** speaker script and run sheet keep fitting 3 hours. Added spoken lines mean cuts elsewhere; count only `.say`/`.bridge` text (strip `.cue`, `.src`) at ≈140 wpm and update the table at the end of `script.html` and the numbers in `## Health`.
+- **Gate before every commit:** `.loop/gates/check.sh; echo EXIT=$?` (never pipe it through tail). HTML→PDF: `node /private/tmp/claude-501/-Users-zoltanfodor-Developer-clausis-ai/6aaa65e6-ef45-465a-9cb7-d307bf4c4c6e/scratchpad/pdf.mjs <abs html> <abs pdf>`, view every page. Handout stays 2 pages (`pdfinfo handout.pdf | grep Pages`).
+- War stories 2, 6, 10 tell well out loud; script lines and backup slides can borrow from `guides/war-stories.md`.
+- Skills repo check: `npx skills add <owner/repo> --list` in an empty `git init` dir under /tmp; it uses local git credentials, so it does not prove public access.
 
 ## Backlog
 
-Ordered by value to the mission. T1-T13 are done (see Landed and the log).
+Ordered by value to the mission. T1-T14 are done.
 
-- [ ] **T18 ChatGPT side of the sweep.** help.openai.com and openai.com return 403 to curl and WebFetch, so `resources.md:94` "ChatGPT agent is now part of ChatGPT Work (since 2026-07)" was not re-verified. Custom GPT retirement holds: OpenAI's "Custom GPT retirement and migration FAQ" (help.openai.com/en/articles/20001519, found by WebSearch on 2026-10-21) says GPTs become plugins with skills, stop running 2026-12-11. Next: confirm ChatGPT Work through WebSearch and say in `skills/install.md` §F that ChatGPT now has skills/plugins, or say it can't be verified.
-- [ ] **T16 Prompt pack refresh.** Desktop `prompt-pack.html` (and the repo's `workshop/prompt-pack.pdf`) does not hold prompts 8-12 yet. Add them only if the pack stays readable; render, view every page, copy the PDF into the repo.
-- [ ] **T17 Desktop handout/prompt-pack pointer to the new templates.** Optional: the handout's "take home" list could name `templates/never-list.md` and `review-prompt.md`; only if it stays 2 pages.
-- [ ] **T15 Final read-through.** Run in the last iteration: README → guides as a first-time visitor, fix the three worst confusions, Desktop README up to date.
+- [ ] **T18 ChatGPT side of the sweep.** `resources.md:94` says "ChatGPT agent is now part of ChatGPT Work (paid plans, since 2026-07)"; not re-verified (OpenAI pages 403). Custom GPT retirement holds per OpenAI's "Custom GPT retirement and migration FAQ" (help.openai.com/en/articles/20001519, found by WebSearch 2026-10-21: GPTs become plugins with skills, stop running 2026-12-11). Next: confirm ChatGPT Work via WebSearch, then say in `skills/install.md` §F that ChatGPT now takes skills/plugins (mirror in faq.md/qa.md if they mention GPTs), or mark it unverifiable.
+- [ ] **T16 Prompt pack refresh.** Desktop `prompt-pack.html` (and repo `workshop/prompt-pack.pdf`) has no prompts 8-12 yet (checked: none of the five titles appear). Add them only if the pack stays readable; render, view every page, copy the PDF into the repo.
+- [ ] **T19 Inventory coverage pass.** tricks.md has 73 of the inventory's 99; skipped on purpose: 72, 75-76, 92, 99, `[S]` and "Not for publication". Diff the rest against tricks.md, war-stories.md, succeed.md and templates; add any publishable trick still missing (same what/why/command/fails-when shape, update trick counts and README role numbers if renumbered).
+- [ ] **T17 Handout pointer to the new templates.** Optional: the handout's take-home list could name `templates/never-list.md` and `review-prompt.md` (not there now); only if it stays 2 pages.
+- [ ] **T15 Final read-through.** Last iteration only: README → guides as a first-time visitor, fix the three worst confusions, Desktop README up to date.
 
 ## Iteration log
 
-- 9177a68 T3: `guides/war-stories.md`, 12 stories + 1 on model price, from memory notes + migration incident log, generalised. Gate 0; no external links; trick numbers cross-checked.
-- 39767f5 T4: `guides/succeed.md`, 7 sections, 8 prompts, README row, fundraising cross-link. Gate 0; 12 links 200, claims read on page, YC titles via oEmbed, 7 anchors checked.
-- Desktop 811818e (+0066c04) T5: `handout.html` 2-page A4 (first render was 4, tightened), print step in rehearsal, README row. All pages viewed; gate 0.
-- Desktop 1ccdddc T6: `script.html` +7 trick lines, 3 cuts, time-check table, net +148 words. script.pdf 6 pages viewed; gate 0.
-- Desktop 84bd465 T7: v16 = v15 slides + trick lines in notes of 13/18/21/22/29/32/37; 37 PDF pages pixel-identical to v15, notes diff exact. Gate 0 on v16.
-- 2fa629b T9: README "Start here, by role", 4 roles x 5 steps linking tricks/succeed/war-stories/guides/skills. All 31 links + anchors resolved by a slug script (BAD=0); gate 0.
-- 03ef12d + Desktop f1c1b2d T10: prompts 8-12 (sales follow-up, investor update, competitor teardown, meeting decisions, contract first read) in both prompts.md, README row + founder step. Gil link 200, 6 anchors True, banned-word grep empty, gate 0.
 - 368b0ec + Desktop 13d4f1b T13: faq.md and qa.md get "The tricks, agents and selling", 8 questions (only-for-devs, cost/plans, agent data safety, verification, production, parallel agents, validate-first, model choice). claude.com/pricing, lethal-trifecta post, Claude Code security page 200 and read; 23 anchors BAD=0; banned grep empty; gate 0.
 - 0916368 T11: 4 templates (never-list, ask-with-options, review-prompt, interview-notes), linked from README, AGENTS.md, trick 8, succeed §1. `/code-review` (alias `/review`) and `/security-review` read on code.claude.com commands page; 2 links 200; 7 anchors BAD=0; banned grep empty; gate 0.
-
-- Desktop 303e32c + repo slides.pdf T8: v16 gets 3 Q&A backup slides after 37 (reused cut `tricks` scene; new `steal` five-prompts and `starters` six-files scenes), notes with trick numbers checked against tricks.md (#8, #28, #40), ALT text, README + script header. Pages 1-37 cmp-identical to v15, 38-40 viewed as PNG (one heading overflow fixed), script.pdf 6 pages, gate 0 (40 slides, 40 notes). Dropped "daily setup" and "verify loop": they repeat slides 21 and 22.
-- 9466bc0 T12: skills README gets tested install commands (GitHub `ritmillio/building-in-the-age-of-ai` and `./skills`), worktree-janitor + memory-hygiene rows, handoff/grill-me pointer; third-party.md + install.md record the run. Evidence: `npx skills add ./skills --skill '*' -a claude-code -y` in empty /tmp project → 6 SKILL.md in .claude/skills; `--list` on 6 third-party/author repos lists every named skill; frontmatter name==folder, only name+description, desc 244-432 chars; zip recipe entries start with folder/. Gate 0. Did not write an own handoff skill: the one used is Matt Pocock's, credited.
-
-- 7e3e779 + Desktop 6dc3f35 T14: 596 repo links + 2 presenter links curl-checked; non-200s were bot blocks (403 OpenAI/Carta/etc.) or GET-200 on retry; the Meta Rule of Two post was read via WebFetch. Stale claim fixed: the Gemini app now has native skills and Gems convert from November 2026, so install.md §G was rewritten from Google help 17094296 + 18560919 (both 200, read on 2026-10-21), plus the README no-terminal line, how-i-build, context, faq, qa. Cursor skills dirs and Cowork plans + scheduling checked on vendor pages, both still match. Anchor True; gate 0.
+- Desktop 303e32c + repo fcf2ab6 (slides.pdf) T8: v16 gets 3 Q&A backup slides after 37 (reused cut `tricks` scene; new `steal` five-prompts and `starters` six-files scenes), notes with trick numbers checked against tricks.md (#8, #28, #40), ALT text, README + script header. Pages 1-37 cmp-identical to v15, 38-40 viewed as PNG (one heading overflow fixed), script.pdf 6 pages, gate 0 (40 slides, 40 notes). Dropped "daily setup" and "verify loop": they repeat slides 21 and 22.
+- 9466bc0 T12: skills README gets tested install commands (GitHub `ritmillio/building-in-the-age-of-ai` and `./skills`), worktree-janitor + memory-hygiene rows, handoff/grill-me pointer; third-party.md + install.md record the run. `npx skills add ./skills --skill '*' -a claude-code -y` in empty /tmp project → 6 SKILL.md; `--list` on 6 third-party/author repos lists every named skill; frontmatter checked; gate 0. Handoff skill is Matt Pocock's, credited, not rewritten.
+- 7e3e779 + Desktop 6dc3f35 T14: 596 repo links + 2 presenter links curl-checked; non-200s were bot blocks or GET-200 on retry; Meta Rule of Two read via WebFetch. Stale claim fixed: the Gemini app has native skills and Gems convert from November 2026, so install.md §G was rewritten from Google help 17094296 + 18560919 (read 2026-10-21), plus README no-terminal line, how-i-build, context, faq, qa. Cursor skills dirs and Cowork plans + scheduling still match vendor pages. Gate 0.
 
 ## Landed
 
-Older iteration-log entries, collapsed. The newer ones are in the Iteration log above.
+By theme; the five newest are in the Iteration log above.
 
-- **Raw material:** `0c4263d` `docs/tricks-inventory.md`, 99 tricks in 10 groups with source and `[have] [war] [S] [product]` tags (internal, gate-excluded, scanned by hand). Ledger `a9c5472`, `40c8883`.
-- **Repo guides:** `882602b` `guides/tricks.md`, 73 tricks (what / why / command / fails-when), README row, how-i-build cross-link, 22 links 200, vendor claims read on page. Skipped inventory 72, 75-76, 92, 99. Ledger `0a0e5e5`, `48f4e79`. Then `9177a68` war stories and `39767f5` succeed guide (see log); ledger `e8c4ae3`, `d51f57a`.
-- **Presenter folder:** `9a46874` v15 sources imported as local history; `811818e` handout + `0066c04` three rebuttal lines on the handout rewritten as plain statements (this commit was missing from the ledger until compaction); `1ccdddc` script; `84bd465` deck v16 notes. Ledger `daa4617`, `9c4520f`, `fc7cec3`.
+- **Raw material:** `0c4263d` `docs/tricks-inventory.md`, 99 tricks in 10 groups, tagged `[have] [war] [S] [product]` (internal, gate-excluded).
+- **Repo guides:** `882602b` `guides/tricks.md`, 73 tricks, 22 links 200; `9177a68` `guides/war-stories.md`, 12 stories + 1 on model price, generalised; `39767f5` `guides/succeed.md`, 7 sections, 8 prompts, 12 links 200, YC titles via oEmbed.
+- **Repo entry points:** `2fa629b` README "Start here, by role" (4 roles x 5 steps, 31 links + anchors BAD=0); `03ef12d` + Desktop `f1c1b2d` prompts 8-12 (sales follow-up, investor update, competitor teardown, meeting decisions, contract first read) in both prompts.md.
+- **Presenter folder:** `9a46874` v15 sources as local history; `811818e` 2-page A4 handout (+`0066c04` rebuttal lines rewritten); `1ccdddc` script +7 trick lines, 3 cuts, time table (+148 words, 6 pages); `84bd465` deck v16 notes-only, trick lines in notes of 13/18/21/22/29/32/37, pages pixel-identical to v15.
+- **Ledger commits:** `a9c5472` `40c8883` `0a0e5e5` `48f4e79` `e8c4ae3` `d51f57a` `daa4617` `9c4520f` `fc7cec3` `a833257` (compaction 8) `328b1c9` `7ff9fbf` `b3beaec` `32e5ff4` `6ee46af` `b315ebe`.
