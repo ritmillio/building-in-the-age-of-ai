@@ -40,4 +40,4 @@
 ## When it fails
 
 - **No reason.** "Never use library X" gets ignored or applied in the wrong place. "Never use X: it breaks the build on Windows" gets applied right.
-- **Rules nobody checks.** For the ones that really matter (secrets, pushes to `main`, production data), add a hard stop as well: branch protection, read-only credentials, a pre-commit secret scan. A rule in a file is a request; a permission is a wall.
+- **Rules nobody checks.** For the ones that really matter (secrets, pushes to `main`, production data), add a hard stop as well: branch protection, read-only credentials, a pre-commit secret scan. A rule in a file is a request; a permission is a wall. In Claude Code the cheapest one is a deny rule in `.claude/settings.json`, such as `"deny": ["Bash(git push *)", "Read(./.env)"]`, which Claude Code enforces whatever the model decides ([trick 40](../guides/tricks.md#agents-and-parallel-work)). It matches the command as written, so `git -C . push` slips past it: keep branch protection behind it.
