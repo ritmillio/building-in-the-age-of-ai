@@ -11,7 +11,7 @@ Three things an agent reads so you don't have to repeat yourself:
 | | What | Where |
 |---|---|---|
 | **Rules file** | How we work, what we never do, where things are. Read first, every session. | `AGENTS.md` at the project root (Claude Code reads it too, unless a `CLAUDE.md` exists; then that file needs `@AGENTS.md` inside or should be a symlink). Template: [`templates/AGENTS.md`](../templates/AGENTS.md) |
-| **Skills** | A workflow I explained twice, saved once, called by name: `/verify`, `/grill`, `/relay`. Loaded only when needed, so they don't clutter the desk. | `.claude/skills/<name>/SKILL.md`. Mine: [`skills/`](../skills/). Others': [`skills/third-party.md`](../skills/third-party.md) |
+| **Skills** | A workflow I explained twice, saved once, called by name: `/verify`, `/grill`, `/root-cause`. Loaded only when needed, so they don't clutter the desk. | `.claude/skills/<name>/SKILL.md`. Mine: [`skills/`](../skills/) (`relay` is [published separately](../skills/README.md#also-by-the-author-published-separately)). Others': [`skills/third-party.md`](../skills/third-party.md) |
 | **Memory** | Decisions, lessons, mistakes it must not repeat. One note per fact, plus an index. | Template: [`templates/memory-index.md`](../templates/memory-index.md) |
 
 The one habit: **corrected the same thing twice? Write it down.** Into the rules file if it's always true, into a skill if it's a procedure, into memory if it's a fact or a decision.
