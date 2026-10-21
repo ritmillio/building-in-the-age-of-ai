@@ -29,12 +29,12 @@ Pick the row closest to you and do the five steps in order. None of them needs m
 **Developer**
 1. One rules file and one skills folder for every tool: [AGENTS.md template](templates/AGENTS.md), [tricks 19 to 24](guides/tricks.md#rules-files-and-skills).
 2. Start from a template that runs and deploy it before you change anything: [scaffolding.md](guides/scaffolding.md).
-3. Plan, shred the plan, build, verify: [how-i-build.md §2](guides/how-i-build.md#2-never-trust-done) and the [`verify`](skills/verify/SKILL.md) skill.
+3. Plan, shred the plan, build, verify: [how-i-build.md §2](guides/how-i-build.md#2-never-trust-done), the [`verify`](skills/verify/SKILL.md) skill and the [review prompt](templates/review-prompt.md) for a fresh session.
 4. Before you run agents in parallel, read [war stories 1 to 5](guides/war-stories.md#when-agents-share-a-checkout) and [tricks 28 to 39](guides/tricks.md#agents-and-parallel-work).
 5. Install the skills you want: [skills/install.md](skills/install.md) covers Claude Code, claude.ai, Codex, ChatGPT and Gemini.
 
 **Team lead**
-1. One shared rules file, every hard rule with the incident behind it: [tricks 19 and 25](guides/tricks.md#rules-files-and-skills).
+1. One shared rules file, every hard rule with the incident behind it: [tricks 19 and 25](guides/tricks.md#rules-files-and-skills) and the [never list](templates/never-list.md).
 2. Agents work on branches and open pull requests, a human merges, nobody's agent touches production: [trick 36](guides/tricks.md#agents-and-parallel-work), [tricks 55 to 58](guides/tricks.md#shipping-and-ops).
 3. "Done" means seen working, and "not verified" is said out loud: [tricks 41 to 49](guides/tricks.md#verification).
 4. One record per unit of work, one task list: [tricks 60 to 64](guides/tricks.md#team-and-process) and the [`log-work`](skills/log-work/SKILL.md) skill.

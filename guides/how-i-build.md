@@ -25,7 +25,7 @@ My loop for anything bigger than a one-line fix:
 1. **Plan, written to a file.** A plan that lives only in a chat dies with the chat (and rots with it). `draft-plan` turns a conversation into one.
 2. **Shred it before building.** `shred-plan` or `grill` check every claim in the plan against reality and hunt for missing failure modes, hidden dependencies and done-criteria nobody can verify. Same idea as the red team in the workshop build.
 3. **Build.** Often several agents at once, each in its own copy of the project (a git worktree) so they don't overwrite each other.
-4. **Verify.** "Done" is a claim, not a fact. `verify` treats the result like a stranger's pull request: review it adversarially, add the missing tests, run every check, then click through it in a real browser. It loops until a full pass finds nothing new.
+4. **Verify.** "Done" is a claim, not a fact. `verify` treats the result like a stranger's pull request: review it adversarially, add the missing tests, run every check, then click through it in a real browser. It loops until a full pass finds nothing new. Without the skill, paste [`templates/review-prompt.md`](../templates/review-prompt.md) into a fresh session.
 5. **A human decides** what goes live. Agents open pull requests; they don't merge them.
 
 Found something in step 4? Back to step 1, not a quick patch on top.
@@ -53,3 +53,5 @@ Long sessions get worse ([guides/context.md](context.md)). So:
 - Anything that sends, pays or deletes on a real account: the agent drafts, I approve.
 - Customer data in tools without a business agreement and training switched off.
 - The decision. Agents can argue every side; the call is mine.
+
+The agent's side of this list, each rule with its reason, is in our rules file: start from [`templates/never-list.md`](../templates/never-list.md).

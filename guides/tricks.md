@@ -44,7 +44,7 @@ New to all this? Read [how-i-build.md](how-i-build.md) first (the loop), then co
 
 **15. Spike when the choice is genuinely unclear.** A throwaway prototype that answers exactly one question, time-boxed, deleted after the decision. Skill: [`spike`](../skills/spike/SKILL.md). *Fails when:* the spike quietly becomes the product.
 
-**16. Plan as a file, then have a second agent shred it.** One session writes the plan to `docs/plans/`; a fresh session checks every claim in it against the actual code before anything is built. Skills: `draft-plan` and `shred-plan` ([where to get them](../skills/README.md#also-by-the-author-published-separately)). *Why:* the planner believes its own assumptions; a second reader does not. *Fails when:* the second agent is the same session or has read the planner's chat, so it shares the planner's assumptions. Give it only the plan file and the code.
+**16. Plan as a file, then have a second agent shred it.** One session writes the plan to `docs/plans/`; a fresh session checks every claim in it against the actual code before anything is built. Skills: `draft-plan` and `shred-plan` ([where to get them](../skills/README.md#also-by-the-author-published-separately)). *Why:* the planner believes its own assumptions; a second reader does not. *Fails when:* the second agent is the same session or has read the planner's chat, so it shares the planner's assumptions. Give it only the plan file and the code. The same move on a finished change: [review-prompt.md](../templates/review-prompt.md).
 
 **17. Fragments first, shape later.** For writing (a post, a talk, a pitch): one session pulls raw claims, stories and half-sentences out of you into one file; a second session shapes them into a piece. Skills: `writing-fragments`, `writing-shape` ([credits](../skills/third-party.md)). *Why:* structure too early kills the good material. *Fails when:* the shaping session fills gaps with material you never said. Tell it to use only what is in the fragments file and to mark the gaps instead.
 
@@ -64,7 +64,7 @@ New to all this? Read [how-i-build.md](how-i-build.md) first (the loop), then co
 
 **24. Explained it twice? Make it a skill.** Skill: [`scaffold-skill`](../skills/scaffold-skill/SKILL.md). *Why:* a skill is loaded only when needed, so it costs nothing until it is used. *Fails when:* the skill's description is vague. The agent decides from the description whether to load the skill ([Claude Code skills](https://code.claude.com/docs/en/skills)), so a vague one is never used.
 
-**25. Every hard rule carries its incident.** One line after the rule: "(We dropped a column by hand once and left it in the schema; production broke.)" *Why:* agents, like people, respect rules they understand, and the incident tells them where the edge is. *Fails when:* the incident grows into a paragraph. A long rules file makes every rule in it weigh less; one line is enough.
+**25. Every hard rule carries its incident.** One line after the rule: "(We dropped a column by hand once and left it in the schema; production broke.)" *Why:* agents, like people, respect rules they understand, and the incident tells them where the edge is. *Fails when:* the incident grows into a paragraph. A long rules file makes every rule in it weigh less; one line is enough. Template: [never-list.md](../templates/never-list.md).
 
 **26. Code in English; only user-facing text is translated.** Identifiers, keys, comments, commit messages in English. *Why:* models and tools work best in it, and a mixed codebase is hard to search. *Fails when:* an agent "fixes" existing non-English keys as a side effect. Renaming data keys that are already stored breaks the saved records; write new code in English and rename old keys only on purpose.
 
@@ -100,7 +100,7 @@ New to all this? Read [how-i-build.md](how-i-build.md) first (the loop), then co
 
 ## Verification
 
-**41. "Done" means seen working.** Click the real button, re-ask the real question, then report what you saw. Four steps: run the checks, use it, check the side effect where it lands (the database row, the file, the email), take a screenshot. *Why:* we had fixes reported done on green tests and the bug found in the browser minutes later. Skill: [`verify`](../skills/verify/SKILL.md). *Fails when:* what you click is not the code you changed (a stale dev server, another worktree's server, trick 46), so "seen working" was someone else's build.
+**41. "Done" means seen working.** Click the real button, re-ask the real question, then report what you saw. Four steps: run the checks, use it, check the side effect where it lands (the database row, the file, the email), take a screenshot. *Why:* we had fixes reported done on green tests and the bug found in the browser minutes later. Skill: [`verify`](../skills/verify/SKILL.md). *Fails when:* what you click is not the code you changed (a stale dev server, another worktree's server, trick 46), so "seen working" was someone else's build. Template for the review half, run in a fresh session: [review-prompt.md](../templates/review-prompt.md).
 
 **42. "Not verified live", in those words.** If something could not be checked for real, the report says so. *Why:* it is the most honest line in any report, and the one you most need. *Fails when:* the line is buried under a page of green. Put it first in the report.
 
