@@ -14,9 +14,7 @@
 
 **Ends when.** The clock runs out (7.5h).
 
-**How to read this.** `## For the founder` is your inbox, read it first. `## Health` is the current gate status. `- 9177a68 T3: `guides/war-stories.md` (12 stories + 1 on model price), sources = 12 memory notes + migrations README incident log, generalised (no model names, no spend, no internal names, 'the founder' rewritten to 'we'). Gate EXIT=0; no external links in the file; trick numbers cross-checked against tricks.md headings.
-
-## Landed` is what shipped. `## Backlog` is what the loop would do next if it kept running.
+**How to read this.** `## For the founder` is your inbox, read it first. `## Health` is the current gate status. `## Landed` is what shipped. `## Backlog` is what the loop would do next if it kept running.
 
 ---
 
@@ -48,13 +46,14 @@ Baseline 2026-10-21 01:30: `.loop/gates/check.sh` GATE_EXIT=0 (confidentiality c
 - Anchor links into other repo files (`file.md#heading`) are not checked by the gate (it strips `#...`); derive GitHub anchors by hand: lowercase, drop punctuation, spaces to `-`.
 - War stories exist in `guides/war-stories.md`; T6 script lines and T8 backup slides can borrow from them (stories 2, 6, 10 tell well out loud).
 - The inventory is gate-excluded; scan it by hand before relying on it, and never copy a `src:` path into a public file.
+- The YC Startup Library pages render client-side (WebFetch sees only the title); cite the YC YouTube video (title via `curl https://www.youtube.com/oembed?url=...`) and link the library page as secondary.
 
 ## Backlog
 
 - [x] **T1 Tricks inventory.** Done in 0c4263d: `docs/tricks-inventory.md`, 99 tricks in 10 groups, each with source, tags `[have]` `[war]` `[S]` `[product]`.
 - [x] **T2 `guides/tricks.md` field guide.** Done in 882602b: 73 tricks (68 + 5 for AI-product builders) in 10 groups, linked from README table and how-i-build.md. Skipped inventory items 75-76, 92 ([S]), 72 (talk-only), 99. Over the 40-60 target on purpose; T15 may trim.
 - [x] **T3 War stories.** Done in 9177a68: `guides/war-stories.md`, 12 incidents + 1 money story, each what/cost/rule with links to trick numbers; README row, tricks.md intro link. Left out: env var incident ([S]), the 'decisions never asked' story (already 1 line in trick 8), versions/scope stories (no incident detail in source).
-- [ ] **T4 Succeed guide.** `guides/succeed.md`: validating with AI (interview synthesis, review mining, landing tests), pricing conversations, first ten customers, distribution through partners, staying small, metrics that matter early. Every claim sourced (YC, First Round, a16z, Lenny's, vendor docs). Cross-link fundraising.md.
+- [x] **T4 Succeed guide.** Done in 39767f5: `guides/succeed.md`, 7 sections, 8 prompts, 12 sources (Mom Test, YC talks, PG, First Round, Lenny, Buffer, a16z). Partner section is reasoning + prompt, no external source (none found that fits); T13 can borrow its prompts for qa.md.
 - [ ] **T5 Printable handout.** `~/Desktop/building-in-the-age-of-ai/handout.html` → `handout.pdf`, 2 pages A4: the 25 best tricks + 5 prompts + the repo QR (`.assets/repo-qr.png`). Plain, legible, no numbers-as-stats. Mention in rehearsal.html's day-before list (print N copies).
 - [ ] **T6 Speaker script weave.** Add the strongest 1-2 tricks per part into `script.html` as spoken lines on the slides they fit, cut weaker lines to keep time; re-render `script.pdf`. Add a word-count/time table per part at the end.
 - [ ] **T7 Speaker notes sync.** Mirror the script's new lines into the deck NOTES (v16 build), rebuild, gate passes (notes == slides).
@@ -72,5 +71,9 @@ Baseline 2026-10-21 01:30: `.loop/gates/check.sh` GATE_EXIT=0 (confidentiality c
 - 0c4263d T1: wrote `docs/tricks-inventory.md` (99 tricks, sources = product AGENTS.md, shared-agent-setup ref, skills, 38 feedback + ~20 general memory notes). Gate EXIT=0; inventory is gate-excluded by design, scanned by hand for banned words (none). No external links added.
 
 - 882602b T2: `guides/tricks.md`, 73 tricks with what/why/command/fails-when; README row + how-i-build cross-link. Gate EXIT=0; all 22 external links curl 200 on 2026-10-21; vendor claims checked in page text (Anthropic batch 50%, OpenAI flex = batch rates, Next `typescript.ignoreBuildErrors`, Claude Code memory reads AGENTS.md). GNU bash pipelines page 403s to curl, so not linked.
+
+- 9177a68 T3: `guides/war-stories.md` (12 stories + 1 on model price), sources = 12 memory notes + migrations README incident log, generalised (no model names, no spend, no internal names, 'the founder' rewritten to 'we'). Gate EXIT=0; no external links in the file; trick numbers cross-checked against tricks.md headings.
+
+- 39767f5 T4: `guides/succeed.md` (7 sections: validate, decide, price, first ten customers, partners, stay small, early metrics; 8 paste-ready prompts), README row, fundraising.md cross-link. Gate EXIT=0; all 12 external links curl 200 on 2026-10-21; claims read on page (Superhuman 4 questions + Ellis 40%, Lenny B2B channels + press quote, PG quotes, Buffer pricing-page test); YC talk titles confirmed via YouTube oEmbed; 7 anchors checked by script.
 
 ## Landed
