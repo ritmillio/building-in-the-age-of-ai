@@ -26,6 +26,7 @@
 - ChatGPT plan details (skills on Plus/Pro, custom GPT shutdown date for personal plans, ChatGPT Work by plan) could only be checked through search results, because OpenAI pages block bots. Before the event, open Plugins → Skills in a Plus account once and fix `skills/install.md` §F1 if it differs.
 - `handout.pdf` (Desktop) is new and printable: skim both pages; the print count is "one per seat plus ten" because the seat count is not in any file. Its QR 404s until the repo is public.
 - Trick 57's new *Fails when* uses Vercel's documented behaviour (env changes reach only new deployments, so damage shows at the next build). It does not tell the outage story, but it is the lesson behind it: cut that sentence if even the generalised version is too close.
+- Agent view (trick 40) is a research preview: its keys and flags may change. Try `claude agents` once before the event if you plan to mention it out loud.
 
 ## Health
 
@@ -64,9 +65,8 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 
 ## Backlog
 
-Ordered by value to the mission. T1-T14, T16-T45 and T47 are done. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items, starting with the "succeeding" half: succeed.md, war stories, prompts).
+Ordered by value to the mission. T1-T14 and T16-T47 are done. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items, starting with the "succeeding" half: succeed.md, war stories, prompts).
 
-- [ ] **T46 Agent view and Remote Control (tricks 28/40).** 0 hits for `claude agents`, `--bg`, `Remote Control`. Docs: agent-view.md (`claude agents`: one screen, sessions grouped Needs input / Working / Completed, background sessions run without a terminal, `claude --bg`), remote-control.md (continue a local session from the Claude phone app or claude.ai/code, code stays on your machine). Fits trick 40 (the ping tells you; Remote Control lets you answer from the phone). Keep to one or two sentences; check whether either needs a paid plan or version and say so with the check date.
 - [ ] **T15 Final read-through.** Last iteration only: README → guides as a first-time visitor, fix the three worst confusions, Desktop README up to date.
 
 ## Iteration log
@@ -76,6 +76,7 @@ Ordered by value to the mission. T1-T14, T16-T45 and T47 are done. T15 is for th
 - 3800a55 T44: trick 39 adds getting sessions back after a crash: `claude --continue`/`-c`, `--resume <name>`/`-r`, picker (sessions.md "Resume a session" table, curl), `claude -n` (cli-reference `--name, -n`), `/rename`; Codex `codex resume --last` and `/resume`, `/rename` (developer-commands page). Resume = same task, new topic = fresh session (trick 1). *Fails when* adds: in-flight command not rerun (marked cut off, agent told to check), background jobs not restored, `--mcp-config`/`--add-dir` passed again ("What a resumed session restores"), so `git status` first. Premise confirmed (0 hits repo + Desktop). Anchors = heading slugs, both links 200, gate 0.
 - 0084f51 + Desktop bd66615 T47: faq.md and qa.md gain "It asks me to approve everything. Can I turn that off?": narrow it (allow/deny, `/fewer-permission-prompts`, trick 40), auto mode = second model reviews each action (`Shift+Tab`, Codex `/permissions` Auto), "reduces prompts, does not guarantee safety" (docs warning), bypass only in a container. Premise confirmed (no such question in either file). permission-modes.md curl: auto is the starting mode from v2.1.283 (qa.md: version only if asked); anchor `#eliminate-permission-prompts-with-auto-mode` = heading slug (python check True), link 200. faq now 38 questions, no public file states a count (grep). Gate 0.
 - 1203a81 T45: trick 37 adds the launch line per iteration: `claude -p "$(cat prompt.md)" --permission-mode auto --permission-prompts none` (headless.md curl, flag v2.1.259+, anchor = heading slug, python True) and `codex exec --sandbox workspace-write` (learn.chatgpt.com non-interactive-mode, `id="permissions-and-safety"` present, read-only by default, `--full-auto` gone). Backlog premise half wrong: a headless run does not stall, it is denied (`-p` with no mode starts in Manual mode from v2.1.302, denies anything needing approval), so *Fails when* says "ends without a commit, set the mode, read the log for denials". 0 prior hits confirmed. Both links 200, gate 0.
+- 303b368 T46: trick 40 adds agent view (`claude agents`: Needs input / Working / Completed, research preview; `claude --bg "<prompt>"`, no terminal) and Remote Control (`claude --remote-control`, `/rc`; answer from the Claude phone app or claude.ai/code, code stays local; Pro/Max/Team/Enterprise, no API key, Requirements section). *Fails when* adds: local only, survive sleep, stop at shutdown, each background session spends usage (Limitations sections). Trick 28: `--bg` sessions move into a worktree before the first edit. Premise confirmed (0 hits). Anchors `#requirements`, `#how-file-edits-are-isolated` = slugs, both pages 200, 73 *Fails when* intact, gate 0.
 
 ## Landed
 
