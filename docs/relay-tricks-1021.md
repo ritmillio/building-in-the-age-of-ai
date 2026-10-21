@@ -27,6 +27,8 @@
 
 ## Health
 
+Script time 2026-10-21 (T6, scripted words at 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8/25, Context 301w 2.1/12, How we build 563w 4.0/15 (tightest), Raising 276w 2.0/10, Build 498w 3.6/60, Close 187w 1.3/27; total 2760w (was 2612). Script PDF 6 pages.
+
 _(no compaction iteration has run yet)_
 
 Baseline 2026-10-21 01:30: `.loop/gates/check.sh` GATE_EXIT=0 (confidentiality clean, v15 deck 37 slides / 37 notes, relative links ok).
@@ -48,6 +50,7 @@ Baseline 2026-10-21 01:30: `.loop/gates/check.sh` GATE_EXIT=0 (confidentiality c
 - War stories exist in `guides/war-stories.md`; T6 script lines and T8 backup slides can borrow from them (stories 2, 6, 10 tell well out loud).
 - The inventory is gate-excluded; scan it by hand before relying on it, and never copy a `src:` path into a public file.
 - The YC Startup Library pages render client-side (WebFetch sees only the title); cite the YC YouTube video (title via `curl https://www.youtube.com/oembed?url=...`) and link the library page as secondary.
+- Script word counts: count only `.say`/`.bridge` text, strip `.cue` and `.src` spans; the table at the end of `script.html` holds the per-part numbers, update it if you add lines.
 - The handout's PDF and other PDFs are gitignored in the Desktop repo; commit the `.html` source and re-render. Handout must stay 2 pages: re-check `pdfinfo handout.pdf | grep Pages` after any edit.
 
 ## Backlog
@@ -57,8 +60,8 @@ Baseline 2026-10-21 01:30: `.loop/gates/check.sh` GATE_EXIT=0 (confidentiality c
 - [x] **T3 War stories.** Done in 9177a68: `guides/war-stories.md`, 12 incidents + 1 money story, each what/cost/rule with links to trick numbers; README row, tricks.md intro link. Left out: env var incident ([S]), the 'decisions never asked' story (already 1 line in trick 8), versions/scope stories (no incident detail in source).
 - [x] **T4 Succeed guide.** Done in 39767f5: `guides/succeed.md`, 7 sections, 8 prompts, 12 sources (Mom Test, YC talks, PG, First Round, Lenny, Buffer, a16z). Partner section is reasoning + prompt, no external source (none found that fits); T13 can borrow its prompts for qa.md.
 - [x] **T5 Printable handout.** Done in Desktop 811818e: `handout.html` → `handout.pdf` (2 pages A4): 25 tricks in 6 groups (non-coder wording, audience is founders/product/operators), 5 instruction lines to paste, 5 selling prompts from succeed.md (not duplicating the prompt pack), repo QR. rehearsal.html day-before list + Desktop README mention it.
-- [ ] **T6 Speaker script weave.** Add the strongest 1-2 tricks per part into `script.html` as spoken lines on the slides they fit, cut weaker lines to keep time; re-render `script.pdf`. Add a word-count/time table per part at the end.
-- [ ] **T7 Speaker notes sync.** Mirror the script's new lines into the deck NOTES (v16 build), rebuild, gate passes (notes == slides).
+- [x] **T6 Speaker script weave.** Done in Desktop 1ccdddc: 7 trick lines on slides 13, 18, 21, 22, 29, 32, 37 (each with a grey `tricks.md #n` ref), cuts on 10, 17, 20, time-check table at the end. Raising part left untouched (no trick fit it).
+- [ ] **T7 Speaker notes sync.** Mirror the script's new lines into the deck NOTES (v16 build), rebuild, gate passes (notes == slides). The 7 new lines (1ccdddc) sit on slides 13, 18, 21, 22, 29, 32, 37; the cuts on 10, 17, 20 may need the same cut in NOTES. Slides themselves need no change, so v16 = notes-only unless T8 adds backup slides: consider doing T7 and T8 into one v16.
 - [ ] **T8 Q&A backup slides.** 3-5 slides AFTER 37 (section "Backup"), Excalidraw, no numbers: e.g. "My daily setup", "The verify loop", "Five prompts to steal", "Templates I start from". Only if they read well; otherwise drop and note why.
 - [ ] **T9 Role-based start paths.** README "Start here": non-technical founder / product person / developer / team lead, each 5 steps with links into the repo.
 - [ ] **T10 More prompts for non-builders.** `workshop/prompts.md` (+ Desktop `prompts.md`): sales follow-ups, investor update, customer interview synthesis, competitor teardown, weekly ops digest, contract first-read with "not legal advice" caveat. Same five-part brief shape as slide 13.
@@ -79,5 +82,7 @@ Baseline 2026-10-21 01:30: `.loop/gates/check.sh` GATE_EXIT=0 (confidentiality c
 - 39767f5 T4: `guides/succeed.md` (7 sections: validate, decide, price, first ten customers, partners, stay small, early metrics; 8 paste-ready prompts), README row, fundraising.md cross-link. Gate EXIT=0; all 12 external links curl 200 on 2026-10-21; claims read on page (Superhuman 4 questions + Ellis 40%, Lenny B2B channels + press quote, PG quotes, Buffer pricing-page test); YC talk titles confirmed via YouTube oEmbed; 7 anchors checked by script.
 
 - Desktop 811818e T5: `handout.html`/`handout.pdf` 2-page A4 tricks handout + print line in rehearsal day-before list + README row. Rendered with pdf.mjs: handout 2 pages (first render was 4, tightened), rehearsal still 2 pages; all pages viewed as PNG. Repo gate EXIT=0; handout grep for banned words clean. No new external links.
+
+- Desktop 1ccdddc T6: `script.html` +7 spoken trick lines, 3 cuts, time-check table; net +148 words (~1 min). Word counts by script (`.say`+bridge, cues and refs excluded). script.pdf re-rendered, 6 pages, all 6 viewed as PNG; banned-word grep clean; repo gate EXIT=0. No new external links.
 
 ## Landed
