@@ -61,9 +61,8 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 
 ## Backlog
 
-Ordered by value to the mission. T1-T14, T16-T39, T41 and T42 are done; T40 comes from the iteration 47 hunt. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
+Ordered by value to the mission. T1-T14 and T16-T42 are done. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
 
-- [ ] **T40 Side questions that stay out of the context.** Not in the repo. Claude Code `/btw <question>` answers from what is already in context, never enters the history, works while Claude is busy, has no tool access (interactive-mode.md "Side questions with /btw"); Codex `/side` or `/btw` "ephemeral side chat" (developer-commands page). Fold into trick 1 or context.md §7, with the no-tools limit as *Fails when*.
 - [ ] **T15 Final read-through.** Last iteration only: README → guides as a first-time visitor, fix the three worst confusions, Desktop README up to date.
 
 ## Iteration log
@@ -76,6 +75,7 @@ Ordered by value to the mission. T1-T14, T16-T39, T41 and T42 are done; T40 come
 - 0f8c040 T42: README founder path step 4 now links [trick 1](#context) and [tricks 8 to 13](#prompting-and-talking-to-the-agent) (trick 1 sits under `## Context`, tricks.md:13). Python slug check: every `guides/tricks.md#` anchor in README resolves; all other role-line trick ranges checked against section boundaries (Context 1-7, Prompting 8-18, Rules 19-27, Agents 28-40, Verification 41-49, Design 50-54, Shipping 55-59, Team 60-64, Money 65-68), all correct. Desktop has no such link (grep). Gate 0.
 - f639d6f T39: trick 12 adds going back instead of arguing forward: Claude Code `/rewind` or `Esc` twice on an empty prompt restores code, conversation or both (checkpointing.md + commands.md curl, aliases `/checkpoint` `/undo` confirmed); elsewhere commit each version. *Fails when* adds shell-command and most subagent edits not restored, ~30-day snapshot sweep, so commit before risky steps. Codex developer-commands page has `/diff` `/fork`, no rewind/undo (grep), so Codex gets no claim. Link 200, gate 0. Desktop has no undo advice (grep), unchanged.
 - 5dc128c T41: trick 16 now says draft in plan mode (reads and proposes, no edits): Claude Code `Shift+Tab` or `/plan <task>` (permission-modes.md curl, section "Analyze before you edit with plan mode" matches the anchor), Codex `/plan` (developer-commands page, "Switch to plan mode with /plan"), then save the approved plan to `docs/plans/` since a plan-mode plan lives in one session. how-i-build step 1 aligned. Both links 200, gate 0. Desktop has no plan-mode mention (grep), unchanged.
+- d1f99f4 T40: trick 1 adds side questions: Claude Code `/btw <question>` (answers from session context, works while busy, never enters history; interactive-mode.md curl, anchor `#side-questions-with-btw` = heading slug), Codex `/side` or `/btw` temporary side chat with its own transcript (developer-commands page curl, both aliases listed). *Fails when* adds no tools for `/btw` (use a sub-agent, trick 5) and Codex side-chat findings staying there until pasted back. Premise confirmed (0 hits repo + Desktop). Both links 200, gate 0.
 
 ## Landed
 
