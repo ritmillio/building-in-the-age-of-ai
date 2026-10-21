@@ -13,6 +13,15 @@ Skills written by the repo author, Zoltán Fodor, from the workflows he uses eve
 | [`log-work`](log-work/SKILL.md) | One record per unit of work in your tracker: what, why, how verified, links, open questions | Claude Code + claude.ai chat (with a connector) |
 | [`scaffold-skill`](scaffold-skill/SKILL.md) | Turns a workflow you keep re-explaining into a new skill | Claude Code + claude.ai chat |
 
+### `verify` shares its name with a built-in
+
+Claude Code now ships its own `/verify`: it builds and runs your app to check that one change works, and it runs only when you type it. Our `verify` is the bigger loop: review, missing tests, every gate, real use, repeated until a pass finds nothing new. Two things follow from the shared name, per the [Claude Code skills docs](https://code.claude.com/docs/en/skills) (checked 2026-10-21):
+
+- **Ours replaces theirs.** A personal or project skill named `verify` replaces the bundled `/verify` (the "Resolve skills that share a name" table).
+- **It can run before every commit.** From v2.1.286, when a session starts with a skill named `verify` in place and Claude is allowed to invoke it, Claude is told to run it right before each commit, except commits that only touch docs or tests ("Run your checks before each commit"). With our loop that makes every commit slow and token-heavy.
+
+Pick one. Want the full loop before every commit: install as is. Want it only when you ask: add `disable-model-invocation: true` to the frontmatter, which also drops the per-commit instruction. Want to keep the built-in `/verify` too: rename the folder and the `name:` line to `verify-loop` and call it as `/verify-loop`.
+
 ## Also by the author, published separately
 
 These live in the author's skills library, [github.com/ritmillio/skills](https://github.com/ritmillio/skills) (MIT), so they are installed from there rather than copied here:

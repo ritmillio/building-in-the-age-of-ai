@@ -25,7 +25,7 @@ My loop for anything bigger than a one-line fix:
 1. **Plan, written to a file.** A plan that lives only in a chat dies with the chat (and rots with it). `draft-plan` turns a conversation into one.
 2. **Shred it before building.** `shred-plan` or `grill` check every claim in the plan against reality and hunt for missing failure modes, hidden dependencies and done-criteria nobody can verify. Same idea as the red team in the workshop build.
 3. **Build.** Often several agents at once, each in its own copy of the project (a git worktree) so they don't overwrite each other.
-4. **Verify.** "Done" is a claim, not a fact. `verify` treats the result like a stranger's pull request: review it adversarially, add the missing tests, run every check, then click through it in a real browser. It loops until a full pass finds nothing new. Without the skill, paste [`templates/review-prompt.md`](../templates/review-prompt.md) into a fresh session.
+4. **Verify.** "Done" is a claim, not a fact. `verify` treats the result like a stranger's pull request: review it adversarially, add the missing tests, run every check, then click through it in a real browser. It loops until a full pass finds nothing new. Claude Code's built-in `/verify` is the lighter version (run the app, check the one change); ours replaces it when installed, and why that matters is in [skills/README](../skills/README.md#verify-shares-its-name-with-a-built-in). Without the skill, paste [`templates/review-prompt.md`](../templates/review-prompt.md) into a fresh session.
 5. **A human decides** what goes live. Agents open pull requests; they don't merge them.
 
 Found something in step 4? Back to step 1, not a quick patch on top.
