@@ -64,9 +64,9 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 
 ## Backlog
 
-Ordered by value to the mission. T1-T14 and T16-T27 are done. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
+Ordered by value to the mission. T1-T14 and T16-T28 are done. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
 
-- [ ] **T28 faq/qa: "How do you set up a new project / what goes in my rules file?"** Evidence: slide 40 (backup) is the answer to "how do you set up a new project?" but `grep -n 'templates/' workshop/faq.md` is empty (re-checked compaction 32) and neither faq.md nor qa.md (37 numbered questions each) has a rules-file or templates question; "Can I get your skills?" also omits the separately published skills repo (github.com/ritmillio/skills, PUBLIC per `gh repo view`, holds relay, draft-plan, shred-plan, telegram-notify). Do: one question in faq.md "How I build" + mirror in qa.md (plain pointers, slide 40 cue), and one clause on the skills answer. Pair rule applies.
+- [ ] **T29 Slide 40 notes contradict templates/AGENTS.md on Claude Code.** Evidence: `.deck-build-v16.mjs` line 109 (slide 40 note) says "AGENTS.md ... Claude Code reads it too; a CLAUDE.md next to it wins", while `templates/AGENTS.md` line 3 and trick 19 say Claude Code reads `CLAUDE.md`, so symlink or `@AGENTS.md`. Do: read code.claude.com/docs/en/memory (WebFetch; curl grep was inconclusive), fix whichever side is wrong (notes-only v16 change: rebuild pptx, gate checks notes), date the check.
 - [ ] **T15 Final read-through.** Last iteration only: README → guides as a first-time visitor, fix the three worst confusions, Desktop README up to date.
 
 ## Iteration log
@@ -76,6 +76,7 @@ Ordered by value to the mission. T1-T14 and T16-T27 are done. T15 is for the las
 - hunt (iteration 29): backlog was only T15, so hunted; added T26-T28. Checked clean: all 91 internal `](file#anchor)` links resolve (python slug check), faq/qa 37 questions each (2 wording diffs only), prompts pair diff = known header/cue lines, 15 scaffold packages 200 on registry.npmjs.org, ritmillio/skills PUBLIC with every skill skills/README names, qa.md and script trick numbers match tricks.md titles, handout 25 `class="t"` = its claim, model names current. Gate 0.
 - f4ace3d T26: never-list.md now linked from trick 25, how-i-build §5 (new closing line) and README Team lead step 1; review-prompt.md from tricks 16 and 41, how-i-build §2 step 4 and README Developer step 3. `grep -l` over guides/ workshop/ skills/ README now finds both templates in 3 files each (was 0 outside the README templates row). No new anchors (file-only links), gate relative links ok, no em dash; gate 0.
 - c8a974a T27: succeed.md §6 gets a five-part default-alive prompt (cash, expenses, 6 months revenue; table to profit or zero cash; steps shown, growth only from the user's numbers, "missing" not estimates, <3 months flagged). `grep -c '^```text'` 8 → 9, every section 1-7 now has one. PG essay re-opened (200, definition wording matches); its Trevor Blackwell calculator link fails TLS (curl exit 60) so not linked. No prompt-count claim elsewhere (README row says "a prompt"); gate 0.
+- c4341a9 T28: faq.md "How I build" gets "How do I set up a new project? What goes in my rules file?" (AGENTS.md + never list, tricks 19-25, templates/); skills answer adds ritmillio/skills (`gh repo view` PUBLIC, curl 200) with the install command. Desktop `0178045` mirrors in qa.md with plain pointers and a backup slide 40 cue. Bold-question count 36 → 37 in both; `#rules-files-and-skills` slug True and holds tricks 19-25; no em dash; gate 0.
 
 ## Landed
 
