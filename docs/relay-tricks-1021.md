@@ -59,17 +59,18 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 - Anchor check that works: a short python script that slugs every `#` heading (lowercase, drop chars outside `[\w\- ]`, spaces to `-`) and tests each `](file#anchor)` in the changed section. Run it after any edit that adds anchor links; the gate does not.
 - `workshop/prompts.md` and Desktop `prompts.md` are kept in sync by hand (they differ only in the header, slide cues and the succeed.md link form); edit both.
 - README now has a "Start here, by role" section citing trick numbers (1, 8-13, 19-25, 28-39, 41-49, 50-58, 60-67) and war-stories anchors. If tricks are renumbered or headings renamed, update that section.
+- `templates/` now holds 8 files; README's templates row lists them. A new template gets a README row entry and a link from the trick it serves.
 - `workshop/faq.md` (repo, linked) and Desktop `qa.md` (presenter, plain pointers, numbers only "if asked") share their sections; edit both. chatgpt.com/pricing and openai.com pricing return 403 to curl and WebFetch: name the page, don't cite a number from it.
 
 ## Backlog
 
-Ordered by value to the mission. T1-T7, T9, T10 and T13 are done (see Landed and the log).
+Ordered by value to the mission. T1-T7, T9-T11 and T13 are done (see Landed and the log).
 
-- [ ] **T11 Templates.** `templates/`: decisions-as-options rule, PR review prompt, customer-interview synthesis, "never list" for a project. `ls templates/` first; handoff and design-rules may already exist.
 - [ ] **T8 Q&A backup slides.** 3-5 slides AFTER 37 in `.deck-build-v16.mjs` (no v17), Excalidraw, no numbers: "My daily setup", "The verify loop", "Five prompts to steal", "Templates I start from". Only if they read well; otherwise drop and note why. Costs a full render + PNG check.
 - [ ] **T12 Skills check.** `skills/`: each listed skill installs with `npx skills add` in a temp dir, credits present; add missing generic ones (handoff, grill, root-cause) with attribution.
 - [ ] **T14 Fact sweep.** Repo guide links all re-checked 200 at compaction; what is left: links added after this point, links in Desktop `script.html` / notes / `prompt-pack.html`, and the date-sensitive vendor names (ChatGPT Work, Claude Cowork, Gems→skills, Cursor) checked against vendor pages with a date.
 - [ ] **T16 Prompt pack refresh.** Desktop `prompt-pack.html` (and the repo's `workshop/prompt-pack.pdf`) does not hold prompts 8-12 yet. Add them only if the pack stays readable; render, view every page, copy the PDF into the repo.
+- [ ] **T17 Desktop handout/prompt-pack pointer to the new templates.** Optional: the handout's "take home" list could name `templates/never-list.md` and `review-prompt.md`; only if it stays 2 pages.
 - [ ] **T15 Final read-through.** Run in the last iteration: README → guides as a first-time visitor, fix the three worst confusions, Desktop README up to date.
 
 ## Iteration log
@@ -82,6 +83,7 @@ Ordered by value to the mission. T1-T7, T9, T10 and T13 are done (see Landed and
 - 2fa629b T9: README "Start here, by role", 4 roles x 5 steps linking tricks/succeed/war-stories/guides/skills. All 31 links + anchors resolved by a slug script (BAD=0); gate 0.
 - 03ef12d + Desktop f1c1b2d T10: prompts 8-12 (sales follow-up, investor update, competitor teardown, meeting decisions, contract first read) in both prompts.md, README row + founder step. Gil link 200, 6 anchors True, banned-word grep empty, gate 0.
 - 368b0ec + Desktop 13d4f1b T13: faq.md and qa.md get "The tricks, agents and selling", 8 questions (only-for-devs, cost/plans, agent data safety, verification, production, parallel agents, validate-first, model choice). claude.com/pricing, lethal-trifecta post, Claude Code security page 200 and read; 23 anchors BAD=0; banned grep empty; gate 0.
+- 0916368 T11: 4 templates (never-list, ask-with-options, review-prompt, interview-notes), linked from README, AGENTS.md, trick 8, succeed §1. `/code-review` (alias `/review`) and `/security-review` read on code.claude.com commands page; 2 links 200; 7 anchors BAD=0; banned grep empty; gate 0.
 
 ## Landed
 
