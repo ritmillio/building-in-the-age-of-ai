@@ -96,8 +96,11 @@ From a template, almost always. Pick the one closest to the shape of your produc
 **Won't a template lock me in?**
 No, you own the code from the first commit. Swap what you won't keep (auth, models, analytics) in the first days, while it's a ten-minute job for an agent.
 
+**How do I set up a new project? What goes in my rules file?**
+Two files before the first prompt. A rules file ([AGENTS.md](../templates/AGENTS.md)): what the product is, how we work, how to check the work. And a [never list](../templates/never-list.md): what the agent never does without you (send, pay, delete, touch production), each rule with the incident behind it. Keep the rules file short, because the agent reads every line in every session, and add a line the second time you correct the same thing ([tricks 19 to 25](../guides/tricks.md#rules-files-and-skills)). The other starters (design rules, ask-with-options, a review prompt, interview notes) are in [templates/](../templates/).
+
 **Can I get your skills?**
-Yes, they are in the repo on the last slide, rewritten generic, plus the third-party ones I use, credited to their authors, with install steps for Claude Code, claude.ai and plain ChatGPT/Gemini.
+Yes, they are in the repo on the last slide, rewritten generic, plus the third-party ones I use, credited to their authors, with install steps for Claude Code, claude.ai and plain ChatGPT/Gemini. The bigger ones (relay for overnight runs, draft-plan, shred-plan, telegram-notify) are published separately at [github.com/ritmillio/skills](https://github.com/ritmillio/skills): `npx skills@latest add ritmillio/skills`.
 
 **Isn't running several agents at once chaos?**
 Only if they share files. Each gets its own copy of the project (a git worktree) and its own task; I review each result separately.
