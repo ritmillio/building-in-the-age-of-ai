@@ -16,7 +16,7 @@ Pick the row closest to you and do the five steps in order. None of them needs m
 1. Do [the one thing](#if-you-only-do-one-thing) above, on the task you hate most.
 2. Before you build anything, test the idea with customers: [succeed.md §1](guides/succeed.md#1-validate-before-you-build) (interviews, review mining, a landing page with prices).
 3. Run the live-build prompts on your own idea, in order: [prompts.md](workshop/prompts.md). Were you in the room? [follow-along.md](workshop/follow-along.md) has the order. For the rest of the week (follow-ups, investor update, contracts): [prompts 8 to 12](workshop/prompts.md#after-the-workshop-not-in-the-live-build).
-4. Learn why long chats get worse and what to do instead: [context.md §7](guides/context.md#7-practical-rules-for-the-audience-one-slide), then [tricks 1 and 8 to 13](guides/tricks.md#prompting-and-talking-to-the-agent).
+4. Learn why long chats get worse and what to do instead: [context.md §7](guides/context.md#7-practical-rules-for-the-audience-one-slide), then [trick 1](guides/tricks.md#context) and [tricks 8 to 13](guides/tricks.md#prompting-and-talking-to-the-agent).
 5. Before you talk to investors: [fundraising.md](guides/fundraising.md) on the "thin wrapper" question, and [succeed.md §7](guides/succeed.md#7-the-few-numbers-that-matter-early) for the numbers that matter early.
 
 **Product person or operator**
