@@ -1,6 +1,6 @@
 # Tricks: building faster with AI, one habit at a time
 
-These are the working habits behind the workshop, collected from our own rules file, skills and the notes our agents keep about what went wrong. Every one of them is something we actually do. Most came from a mistake, and where it helps we say which.
+These are the working habits behind the workshop, collected from our own rules file, skills and the notes our agents keep about what went wrong. Every one of them is something we actually do. Most came from a mistake, and where it helps we say which. The longer versions of those mistakes are in [war-stories.md](war-stories.md).
 
 Each trick says **what** to do, **why** it works, the exact **prompt, command or file**, and **when it fails**. Where a trick is already covered in depth elsewhere in this repo, we link there instead of repeating it.
 
