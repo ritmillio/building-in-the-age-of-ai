@@ -23,6 +23,7 @@ Pick the task you hate most. Hand it to an AI assistant with [prompt 7](workshop
 | [`guides/tricks.md`](guides/tricks.md) | Seventy-odd working habits for building faster with AI: context, prompting, rules files and skills, parallel agents, verification, design, shipping, money. Each with the exact prompt or command and when it fails |
 | [`guides/war-stories.md`](guides/war-stories.md) | Twelve real incidents from building with agents (a stash that emptied a shared folder, a build piped through `tail`, a column dropped by hand) with what each cost and the rule it left |
 | [`guides/my-stack.md`](guides/my-stack.md) | Every tool and service I use: agents, MCP servers, where I find designs, and what the product runs on (Vercel, Neon, Turbopuffer, Trigger.dev, Expo…) |
+| [`guides/succeed.md`](guides/succeed.md) | The go-to-market half: validate before you build (customer interviews, review mining, a landing page with prices), the product-market-fit question, pricing, the first ten customers, selling through partners, staying small, the few numbers that matter early. Each with a sourced rule and a prompt to paste |
 | [`guides/fundraising.md`](guides/fundraising.md) | Raising money in the AI era, the "thin wrapper" problem, what counts as a moat now. Sourced. |
 | [`skills/`](skills/) | My skills, rewritten for anyone to use, plus a credited catalogue of other people's skills and install steps for Claude Code, claude.ai, ChatGPT and Gemini |
 | [`templates/`](templates/) | `AGENTS.md` rules file, `design-rules.md`, a handoff prompt, a memory index |

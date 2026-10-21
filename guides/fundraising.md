@@ -4,6 +4,8 @@ The guide behind slides 25-27 of the workshop. A prototype takes an afternoon no
 
 Compiled 2026-10-20. Every figure below was read on the cited page unless marked otherwise. Most market data is US-centric (Carta, PitchBook) or global (Crunchbase); CEE data is thinner and flagged as such.
 
+For the other half (validating, pricing, first customers, staying small) see [succeed.md](succeed.md).
+
 ---
 
 ## Part 1. Summary in plain language
