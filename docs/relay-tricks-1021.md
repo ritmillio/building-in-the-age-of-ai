@@ -14,7 +14,18 @@
 
 **Ends when.** The clock runs out (7.5h).
 
-**How to read this.** `## For the founder` is your inbox, read it first. `## Health
+**How to read this.** `## For the founder` is your inbox, read it first. `## Health` is the current gate status. `## Landed` is what shipped. `## Backlog` is what the loop would do next if it kept running.
+
+---
+
+## For the founder
+
+- `docs/tricks-inventory.md` is internal raw material (private source paths). Delete it with the ledger before going public.
+- Inventory items tagged `[S]` (env var outage story, startup credit amounts) stay out of public files unless you OK a generalised version. Model vetoes and the runtime model ruling are listed under "Not for publication" there.
+- Ledger file `docs/relay-tricks-1021.md` lives in the repo branch; delete it (or squash it out) before flipping the repo public.
+- `handout.pdf` (Desktop) is new and printable: skim both pages; the print count is "one per seat plus ten" because the seat count is not in any file. Its QR 404s until the repo is public.
+
+## Health
 
 **2026-10-21, compaction (iteration 16), branch head `b315ebe`, presenter folder head `6dc3f35` (clean tree):**
 - `.loop/gates/check.sh; echo EXIT=$?` → `ok confidentiality (repo)` / `ok deck Building-in-the-Age-of-AI-v16.pptx: 40 slides, 40 notes, clean` / `ok relative links` / `GATE_EXIT=0` / `EXIT=0`.
