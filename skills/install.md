@@ -203,7 +203,9 @@ Docs: [Build skills (Codex)](https://learn.chatgpt.com/docs/build-skills), skill
 
 ## F. ChatGPT
 
-Docs: [Skills in ChatGPT](https://help.openai.com/en/articles/20001066-skills-in-chatgpt), [Projects in ChatGPT](https://help.openai.com/en/articles/10169521-projects-in-chatgpt), [Creating and editing GPTs](https://help.openai.com/en/articles/8554397-creating-a-gpt)
+Docs: [Skills in ChatGPT](https://help.openai.com/en/articles/20001066-skills-in-chatgpt), [Projects in ChatGPT](https://help.openai.com/en/articles/10169521-projects-in-chatgpt), [Creating and editing GPTs](https://help.openai.com/en/articles/8554397-creating-a-gpt), [Custom GPT retirement and migration FAQ](https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq)
+
+OpenAI's help pages block automated reading, so this section was re-checked on 2026-10-21 through search results quoting them, not by opening them. Look in your own account before you rely on a plan detail.
 
 ### F1. Native skills (Business, Enterprise, Healthcare, Edu)
 *"Skills are available to eligible ChatGPT Business, Enterprise, Healthcare, and Edu users, subject to workspace settings."*
@@ -212,8 +214,10 @@ Docs: [Skills in ChatGPT](https://help.openai.com/en/articles/20001066-skills-in
 3. Admins control *Enable skills*, *Enable skill uploading*, sharing and publishing under **Permissions & roles**.
 ChatGPT includes `skill-creator` by default for eligible accounts.
 
-### F2. Fallback for Free / Plus / Pro (no native skills): use a Project
-⚠ **Custom GPTs are no longer an option for most people:** OpenAI's help page says *"New GPT creation and publishing are not available on personal ChatGPT accounts, including Free, Go, Plus, and Pro,"* and custom GPTs are being retired in favour of Plugins (Enterprise retirement planned for Dec 11, 2026). Existing GPTs still work.
+On Plus and Pro it is unclear: the help page names only the workspace plans, while reports of OpenAI's pricing page list a skills beta on personal plans too. If **Plugins → Skills** shows up in your account, use F1; if not, use F2.
+
+### F2. Fallback when your account has no Skills tab: use a Project
+⚠ **Custom GPTs are no longer an option for most people:** OpenAI's help page says *"New GPT creation and publishing are not available on personal ChatGPT accounts, including Free, Go, Plus, and Pro,"* and custom GPTs are being retired in favour of plugins (a plugin bundles instructions, skills and connected apps). The firm date is for Enterprise workspaces: GPTs stop running there on Dec 11, 2026. OpenAI says the change affects all plans but has not dated it for Free, Go, Plus or Pro, so existing GPTs still work there for now. Build new things as a Project or a skill, not a GPT.
 
 Instead:
 1. **New project** in the sidebar.
@@ -241,7 +245,7 @@ Who: 18+, signed in to a personal Google Account, Keep Activity on; no subscript
 | Person | Easiest path |
 |---|---|
 | Non-coder on Claude Pro/Max/Team | claude.ai → Customize > Skills (turn on Anthropic's) → upload ZIPs or add a marketplace under Customize > Plugins |
-| Non-coder on ChatGPT Plus | A Project with the SKILL.md pasted into instructions |
+| Non-coder on ChatGPT Plus | A Project with the SKILL.md pasted into instructions (or Plugins → Skills if your account shows it) |
 | Non-coder on ChatGPT Business/Enterprise | Plugins → Skills → Upload from your computer |
 | Gemini user | Upload the skill folder under Customize > Skills (section G); a Gem only on a work account without skills |
 | Builder with a terminal | Claude Code: copy to `~/.claude/skills/`, or `/plugin install …`, or `npx skills add …`; Codex: `~/.agents/skills/` or `$skill-installer` |
@@ -251,5 +255,6 @@ Who: 18+, signed in to a personal Google Account, Keep Activity on; no subscript
 - Plan eligibility for claude.ai skills (Free vs paid): two Anthropic pages disagree.
 - The 200 vs 1,024 description limit in claude.ai uploads: two Anthropic pages disagree.
 - Whether Claude Code reads `.agents/skills/` directly (undocumented).
+- ChatGPT skills on Plus and Pro, and the retirement date of custom GPTs outside Enterprise: OpenAI's pages block automated reading and reports disagree (checked by search 2026-10-21).
 - Regional limits for Gemini app skills: Google's skills help page lists none (checked 2026-10-21).
 - Apart from `npx skills add` (executed 2026-10-21, see A3), the install commands were not executed; they are quoted from the official docs or the repo READMEs.
