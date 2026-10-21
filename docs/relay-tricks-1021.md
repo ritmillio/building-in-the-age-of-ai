@@ -23,6 +23,7 @@
 - `docs/tricks-inventory.md` is internal raw material (private source paths). Delete it with the ledger before going public.
 - Inventory items tagged `[S]` (env var outage story, startup credit amounts) stay out of public files unless you OK a generalised version. Model vetoes and the runtime model ruling are listed under "Not for publication" there.
 - Ledger file `docs/relay-tricks-1021.md` lives in the repo branch; delete it (or squash it out) before flipping the repo public.
+- ChatGPT plan details (skills on Plus/Pro, custom GPT shutdown date for personal plans, ChatGPT Work by plan) could only be checked through search results, because OpenAI pages block bots. Before the event, open Plugins → Skills in a Plus account once and fix `skills/install.md` §F1 if it differs.
 - `handout.pdf` (Desktop) is new and printable: skim both pages; the print count is "one per seat plus ten" because the seat count is not in any file. Its QR 404s until the repo is public.
 
 ## Health
@@ -56,9 +57,8 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 
 ## Backlog
 
-Ordered by value to the mission. T1-T14 are done.
+Ordered by value to the mission. T1-T14 and T18 are done.
 
-- [ ] **T18 ChatGPT side of the sweep.** `resources.md:94` says "ChatGPT agent is now part of ChatGPT Work (paid plans, since 2026-07)"; not re-verified (OpenAI pages 403). Custom GPT retirement holds per OpenAI's "Custom GPT retirement and migration FAQ" (help.openai.com/en/articles/20001519, found by WebSearch 2026-10-21: GPTs become plugins with skills, stop running 2026-12-11). Next: confirm ChatGPT Work via WebSearch, then say in `skills/install.md` §F that ChatGPT now takes skills/plugins (mirror in faq.md/qa.md if they mention GPTs), or mark it unverifiable.
 - [ ] **T16 Prompt pack refresh.** Desktop `prompt-pack.html` (and repo `workshop/prompt-pack.pdf`) has no prompts 8-12 yet (checked: none of the five titles appear). Add them only if the pack stays readable; render, view every page, copy the PDF into the repo.
 - [ ] **T19 Inventory coverage pass.** tricks.md has 73 of the inventory's 99; skipped on purpose: 72, 75-76, 92, 99, `[S]` and "Not for publication". Diff the rest against tricks.md, war-stories.md, succeed.md and templates; add any publishable trick still missing (same what/why/command/fails-when shape, update trick counts and README role numbers if renumbered).
 - [ ] **T17 Handout pointer to the new templates.** Optional: the handout's take-home list could name `templates/never-list.md` and `review-prompt.md` (not there now); only if it stays 2 pages.
@@ -71,6 +71,7 @@ Ordered by value to the mission. T1-T14 are done.
 - Desktop 303e32c + repo fcf2ab6 (slides.pdf) T8: v16 gets 3 Q&A backup slides after 37 (reused cut `tricks` scene; new `steal` five-prompts and `starters` six-files scenes), notes with trick numbers checked against tricks.md (#8, #28, #40), ALT text, README + script header. Pages 1-37 cmp-identical to v15, 38-40 viewed as PNG (one heading overflow fixed), script.pdf 6 pages, gate 0 (40 slides, 40 notes). Dropped "daily setup" and "verify loop": they repeat slides 21 and 22.
 - 9466bc0 T12: skills README gets tested install commands (GitHub `ritmillio/building-in-the-age-of-ai` and `./skills`), worktree-janitor + memory-hygiene rows, handoff/grill-me pointer; third-party.md + install.md record the run. `npx skills add ./skills --skill '*' -a claude-code -y` in empty /tmp project → 6 SKILL.md; `--list` on 6 third-party/author repos lists every named skill; frontmatter checked; gate 0. Handoff skill is Matt Pocock's, credited, not rewritten.
 - 7e3e779 + Desktop 6dc3f35 T14: 596 repo links + 2 presenter links curl-checked; non-200s were bot blocks or GET-200 on retry; Meta Rule of Two read via WebFetch. Stale claim fixed: the Gemini app has native skills and Gems convert from November 2026, so install.md §G was rewritten from Google help 17094296 + 18560919 (read 2026-10-21), plus README no-terminal line, how-i-build, context, faq, qa. Cursor skills dirs and Cowork plans + scheduling still match vendor pages. Gate 0.
+- 59b2c57 T18: install.md §F: Plus/Pro skills marked unclear (help page names workspace plans only, pricing reports differ) with an in-account check; GPT retirement dated only for Enterprise (2026-12-11), no date for personal plans; migration FAQ linked (403 bot block, indexed in ~10 locales); resources.md ChatGPT Work "paid plans" claim softened (desktop reportedly on all plans). OpenAI pages 403 in WebFetch, so this was checked through WebSearch. faq/qa have no GPT claims to mirror. Gate 0.
 
 ## Landed
 
@@ -80,4 +81,4 @@ By theme; the five newest are in the Iteration log above.
 - **Repo guides:** `882602b` `guides/tricks.md`, 73 tricks, 22 links 200; `9177a68` `guides/war-stories.md`, 12 stories + 1 on model price, generalised; `39767f5` `guides/succeed.md`, 7 sections, 8 prompts, 12 links 200, YC titles via oEmbed.
 - **Repo entry points:** `2fa629b` README "Start here, by role" (4 roles x 5 steps, 31 links + anchors BAD=0); `03ef12d` + Desktop `f1c1b2d` prompts 8-12 (sales follow-up, investor update, competitor teardown, meeting decisions, contract first read) in both prompts.md.
 - **Presenter folder:** `9a46874` v15 sources as local history; `811818e` 2-page A4 handout (+`0066c04` rebuttal lines rewritten); `1ccdddc` script +7 trick lines, 3 cuts, time table (+148 words, 6 pages); `84bd465` deck v16 notes-only, trick lines in notes of 13/18/21/22/29/32/37, pages pixel-identical to v15.
-- **Ledger commits:** `a9c5472` `40c8883` `0a0e5e5` `48f4e79` `e8c4ae3` `d51f57a` `daa4617` `9c4520f` `fc7cec3` `a833257` (compaction 8) `328b1c9` `7ff9fbf` `b3beaec` `32e5ff4` `6ee46af` `b315ebe`.
+- **Ledger commits:** `a9c5472` `40c8883` `0a0e5e5` `48f4e79` `e8c4ae3` `d51f57a` `daa4617` `9c4520f` `fc7cec3` `a833257` (compaction 8) `328b1c9` `7ff9fbf` `b3beaec` `32e5ff4` `6ee46af` `b315ebe` `3fa4f93`.
