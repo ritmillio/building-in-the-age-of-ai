@@ -27,11 +27,13 @@
 
 ## Health
 
-Script time 2026-10-21 (T6, scripted words at 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8/25, Context 301w 2.1/12, How we build 563w 4.0/15 (tightest), Raising 276w 2.0/10, Build 498w 3.6/60, Close 187w 1.3/27; total 2760w (was 2612). Script PDF 6 pages.
+**2026-10-21, compaction (iteration 8), branch head `fc7cec3`, presenter folder head `84bd465` (clean tree):**
+- `.loop/gates/check.sh; echo EXIT=$?` → `ok confidentiality (repo)` / `ok deck Building-in-the-Age-of-AI-v16.pptx: 37 slides, 37 notes, clean` / `ok relative links` / `GATE_EXIT=0` / `EXIT=0`.
+- External links in `guides/tricks.md`, `guides/succeed.md`, `guides/war-stories.md`: 34 unique, all 34 `curl -sIL` 200.
+- PDFs: `handout.pdf` 2 pages, `script.pdf` 6 pages (pdfinfo). No deck or HTML change this iteration, so nothing re-rendered.
+- Counts match the claims: tricks.md 73 tricks / 10 groups, war-stories.md 12 + 1, inventory 99.
 
-_(no compaction iteration has run yet)_
-
-Baseline 2026-10-21 01:30: `.loop/gates/check.sh` GATE_EXIT=0 (confidentiality clean, v15 deck 37 slides / 37 notes, relative links ok).
+Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8/25, Context 301w 2.1/12, How we build 563w 4.0/15 (tightest), Raising 276w 2.0/10, Build 498w 3.6/60, Close 187w 1.3/27; total 2760w.
 
 ## Standing rules
 
@@ -52,40 +54,34 @@ Baseline 2026-10-21 01:30: `.loop/gates/check.sh` GATE_EXIT=0 (confidentiality c
 - The YC Startup Library pages render client-side (WebFetch sees only the title); cite the YC YouTube video (title via `curl https://www.youtube.com/oembed?url=...`) and link the library page as secondary.
 - Script word counts: count only `.say`/`.bridge` text, strip `.cue` and `.src` spans; the table at the end of `script.html` holds the per-part numbers, update it if you add lines.
 - Deck v16 exists (`.deck-build-v16.mjs`, notes-only over v15). Any further deck change goes into v16, not a v17. The repo's `workshop/slides.pdf` was not refreshed (slides unchanged); refresh it only if slides change.
+- Every presenter-folder commit gets a log line here, including small follow-ups (`0066c04` was missed once).
 - The handout's PDF and other PDFs are gitignored in the Desktop repo; commit the `.html` source and re-render. Handout must stay 2 pages: re-check `pdfinfo handout.pdf | grep Pages` after any edit.
 
 ## Backlog
 
-- [x] **T1 Tricks inventory.** Done in 0c4263d: `docs/tricks-inventory.md`, 99 tricks in 10 groups, each with source, tags `[have]` `[war]` `[S]` `[product]`.
-- [x] **T2 `guides/tricks.md` field guide.** Done in 882602b: 73 tricks (68 + 5 for AI-product builders) in 10 groups, linked from README table and how-i-build.md. Skipped inventory items 75-76, 92 ([S]), 72 (talk-only), 99. Over the 40-60 target on purpose; T15 may trim.
-- [x] **T3 War stories.** Done in 9177a68: `guides/war-stories.md`, 12 incidents + 1 money story, each what/cost/rule with links to trick numbers; README row, tricks.md intro link. Left out: env var incident ([S]), the 'decisions never asked' story (already 1 line in trick 8), versions/scope stories (no incident detail in source).
-- [x] **T4 Succeed guide.** Done in 39767f5: `guides/succeed.md`, 7 sections, 8 prompts, 12 sources (Mom Test, YC talks, PG, First Round, Lenny, Buffer, a16z). Partner section is reasoning + prompt, no external source (none found that fits); T13 can borrow its prompts for qa.md.
-- [x] **T5 Printable handout.** Done in Desktop 811818e: `handout.html` → `handout.pdf` (2 pages A4): 25 tricks in 6 groups (non-coder wording, audience is founders/product/operators), 5 instruction lines to paste, 5 selling prompts from succeed.md (not duplicating the prompt pack), repo QR. rehearsal.html day-before list + Desktop README mention it.
-- [x] **T6 Speaker script weave.** Done in Desktop 1ccdddc: 7 trick lines on slides 13, 18, 21, 22, 29, 32, 37 (each with a grey `tricks.md #n` ref), cuts on 10, 17, 20, time-check table at the end. Raising part left untouched (no trick fit it).
-- [x] **T7 Speaker notes sync.** Done in Desktop 84bd465: `.deck-build-v16.mjs` (notes-only), trick lines appended as "Trick (tricks.md #n): ..." on 13, 18, 21, 22, 29, handout line on 37, Say line replaced on 32. Script cuts on 10, 17, 20 NOT mirrored: notes are reference, not spoken, so the cut detail stays useful there.
-- [ ] **T8 Q&A backup slides.** Build them into `.deck-build-v16.mjs` (v16 already exists, notes-only so far; do not make a v17). 3-5 slides AFTER 37 (section "Backup"), Excalidraw, no numbers: e.g. "My daily setup", "The verify loop", "Five prompts to steal", "Templates I start from". Only if they read well; otherwise drop and note why.
-- [ ] **T9 Role-based start paths.** README "Start here": non-technical founder / product person / developer / team lead, each 5 steps with links into the repo.
-- [ ] **T10 More prompts for non-builders.** `workshop/prompts.md` (+ Desktop `prompts.md`): sales follow-ups, investor update, customer interview synthesis, competitor teardown, weekly ops digest, contract first-read with "not legal advice" caveat. Same five-part brief shape as slide 13.
-- [ ] **T11 Templates.** `templates/`: decisions-as-options rule, review prompt for a PR, handoff (exists?), customer-interview synthesis, design-rules (exists?), "never list" for a project. Check what exists first.
-- [ ] **T12 Skills check.** `skills/`: confirm each listed skill installs with `npx skills add` (run it in a temp dir), credits present, add any missing generic ones (handoff, grill, root-cause) with attribution.
-- [ ] **T13 qa.md + faq.md.** Add the questions the tricks will provoke (cost of running agents, which plan, data safety in tools, "is this only for developers?"), with sourced answers.
-- [ ] **T14 Link + fact sweep.** Open every external link added tonight; fix or drop dead ones; re-check the date-sensitive vendor facts in notes and repo; record dates.
-- [ ] **T15 Final read-through.** Read README → guides as a first-time visitor; fix the three worst confusions; update the deck folder README (v16 if built).
+Ordered by value to the mission. T1-T7 are done (see Landed).
+
+- [ ] **T9 Role-based start paths.** README "Start here": non-technical founder / product person / developer / team lead, each 5 steps linking into tricks.md, succeed.md, war-stories.md and the existing guides. Cheapest way to make tonight's three guides findable.
+- [ ] **T10 More prompts for non-builders.** `workshop/prompts.md` (+ Desktop `prompts.md`): sales follow-ups, investor update, customer interview synthesis, competitor teardown, weekly ops digest, contract first-read with "not legal advice" caveat. Same five-part brief shape as slide 13. Do not duplicate the 8 prompts in succeed.md or the 5 on the handout; link to them.
+- [ ] **T13 qa.md + faq.md.** Questions the tricks will provoke (cost of running agents, which plan, data safety in tools, "is this only for developers?"), sourced answers. succeed.md's partner prompts can be borrowed.
+- [ ] **T11 Templates.** `templates/`: decisions-as-options rule, PR review prompt, customer-interview synthesis, "never list" for a project. `ls templates/` first; handoff and design-rules may already exist.
+- [ ] **T8 Q&A backup slides.** 3-5 slides AFTER 37 in `.deck-build-v16.mjs` (no v17), Excalidraw, no numbers: "My daily setup", "The verify loop", "Five prompts to steal", "Templates I start from". Only if they read well; otherwise drop and note why. Costs a full render + PNG check.
+- [ ] **T12 Skills check.** `skills/`: each listed skill installs with `npx skills add` in a temp dir, credits present; add missing generic ones (handoff, grill, root-cause) with attribution.
+- [ ] **T14 Fact sweep.** Repo guide links all re-checked 200 at compaction; what is left: links added after this point, links in Desktop `script.html` / notes / `prompt-pack.html`, and the date-sensitive vendor names (ChatGPT Work, Claude Cowork, Gems→skills, Cursor) checked against vendor pages with a date.
+- [ ] **T15 Final read-through.** Run in the last iteration: README → guides as a first-time visitor, fix the three worst confusions, Desktop README up to date.
 
 ## Iteration log
 
-- 0c4263d T1: wrote `docs/tricks-inventory.md` (99 tricks, sources = product AGENTS.md, shared-agent-setup ref, skills, 38 feedback + ~20 general memory notes). Gate EXIT=0; inventory is gate-excluded by design, scanned by hand for banned words (none). No external links added.
-
-- 882602b T2: `guides/tricks.md`, 73 tricks with what/why/command/fails-when; README row + how-i-build cross-link. Gate EXIT=0; all 22 external links curl 200 on 2026-10-21; vendor claims checked in page text (Anthropic batch 50%, OpenAI flex = batch rates, Next `typescript.ignoreBuildErrors`, Claude Code memory reads AGENTS.md). GNU bash pipelines page 403s to curl, so not linked.
-
-- 9177a68 T3: `guides/war-stories.md` (12 stories + 1 on model price), sources = 12 memory notes + migrations README incident log, generalised (no model names, no spend, no internal names, 'the founder' rewritten to 'we'). Gate EXIT=0; no external links in the file; trick numbers cross-checked against tricks.md headings.
-
-- 39767f5 T4: `guides/succeed.md` (7 sections: validate, decide, price, first ten customers, partners, stay small, early metrics; 8 paste-ready prompts), README row, fundraising.md cross-link. Gate EXIT=0; all 12 external links curl 200 on 2026-10-21; claims read on page (Superhuman 4 questions + Ellis 40%, Lenny B2B channels + press quote, PG quotes, Buffer pricing-page test); YC talk titles confirmed via YouTube oEmbed; 7 anchors checked by script.
-
-- Desktop 811818e T5: `handout.html`/`handout.pdf` 2-page A4 tricks handout + print line in rehearsal day-before list + README row. Rendered with pdf.mjs: handout 2 pages (first render was 4, tightened), rehearsal still 2 pages; all pages viewed as PNG. Repo gate EXIT=0; handout grep for banned words clean. No new external links.
-
-- Desktop 1ccdddc T6: `script.html` +7 spoken trick lines, 3 cuts, time-check table; net +148 words (~1 min). Word counts by script (`.say`+bridge, cues and refs excluded). script.pdf re-rendered, 6 pages, all 6 viewed as PNG; banned-word grep clean; repo gate EXIT=0. No new external links.
-
-- Desktop 84bd465 T7: v16 deck = v15 slides + trick lines in 7 notes. Built pptx+PDF; all 37 PDF pages pixel-identical to v15 (cmp of 30 dpi PNGs); slide XML text identical, notes changed exactly on 13/18/21/22/29/32/37. Gate EXIT=0 on v16 (37 slides, 37 notes, clean). Desktop README + script header now say v16; script.pdf 6 pages, page 1 viewed.
+- 9177a68 T3: `guides/war-stories.md`, 12 stories + 1 on model price, from memory notes + migration incident log, generalised. Gate 0; no external links; trick numbers cross-checked.
+- 39767f5 T4: `guides/succeed.md`, 7 sections, 8 prompts, README row, fundraising cross-link. Gate 0; 12 links 200, claims read on page, YC titles via oEmbed, 7 anchors checked.
+- Desktop 811818e (+0066c04) T5: `handout.html` 2-page A4 (first render was 4, tightened), print step in rehearsal, README row. All pages viewed; gate 0.
+- Desktop 1ccdddc T6: `script.html` +7 trick lines, 3 cuts, time-check table, net +148 words. script.pdf 6 pages viewed; gate 0.
+- Desktop 84bd465 T7: v16 = v15 slides + trick lines in notes of 13/18/21/22/29/32/37; 37 PDF pages pixel-identical to v15, notes diff exact. Gate 0 on v16.
 
 ## Landed
+
+Older iteration-log entries, collapsed. The newer ones are in the Iteration log above.
+
+- **Raw material:** `0c4263d` `docs/tricks-inventory.md`, 99 tricks in 10 groups with source and `[have] [war] [S] [product]` tags (internal, gate-excluded, scanned by hand). Ledger `a9c5472`, `40c8883`.
+- **Repo guides:** `882602b` `guides/tricks.md`, 73 tricks (what / why / command / fails-when), README row, how-i-build cross-link, 22 links 200, vendor claims read on page. Skipped inventory 72, 75-76, 92, 99. Ledger `0a0e5e5`, `48f4e79`. Then `9177a68` war stories and `39767f5` succeed guide (see log); ledger `e8c4ae3`, `d51f57a`.
+- **Presenter folder:** `9a46874` v15 sources imported as local history; `811818e` handout + `0066c04` three rebuttal lines on the handout rewritten as plain statements (this commit was missing from the ledger until compaction); `1ccdddc` script; `84bd465` deck v16 notes. Ledger `daa4617`, `9c4520f`, `fc7cec3`.
