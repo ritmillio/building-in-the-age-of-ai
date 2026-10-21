@@ -40,7 +40,7 @@ Long sessions get worse ([guides/context.md](context.md)). So:
 
 ## 4. Small tricks that add up
 
-- **Parallel agents, separate worktrees.** `git worktree add ../proj-feature-x -b feat/x`. The trap: two agents editing the same file. Give each a lane.
+- **Parallel agents, separate worktrees.** `claude --worktree feature-x` or `codex --worktree` makes one in a flag; by hand, `git worktree add ../proj-feature-x -b feat/x` ([trick 28](tricks.md#agents-and-parallel-work)). The trap: two agents editing the same file. Give each a lane.
 - **It asks me with buttons, not paragraphs.** A line in my rules file: every decision comes as a short list of options, recommendation first, with what each costs. Decisions take seconds, and nothing gets buried in prose.
 - **It pings my phone.** A hook sends a Telegram message when an agent finishes, fails or waits for permission ([notify-hook.md](../templates/notify-hook.md) has the script and settings to copy). I stop babysitting terminals.
 - **Real screens before any design.** I collect reference screens (Mobbin, apps I admire), ask for three variants side by side, pick one, then write the taste down ([`templates/design-rules.md`](../templates/design-rules.md)).
