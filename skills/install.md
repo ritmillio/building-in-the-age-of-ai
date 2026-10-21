@@ -69,7 +69,7 @@ Repos verified to ship a `.claude-plugin/marketplace.json` (2026-10-20): `anthro
 
 ### A3. `npx skills` (cross-agent installer by Vercel) — **exists, verified**
 
-Ran on 2026-10-20: `npx skills@latest --help` and `npx skills add ritmillio/skills --list` both work as shown.
+Ran on 2026-10-20: `npx skills@latest --help` and `npx skills add ritmillio/skills --list` both work as shown. On 2026-10-21 a real install into an empty project (`npx skills add <path> --skill '*' -a claude-code -y`) copied every skill to `.claude/skills/`; a local folder path works as the source too.
 
 ```bash
 npx skills add vercel-labs/agent-skills                     # pick skills + agents interactively; project scope by default
@@ -203,7 +203,9 @@ Docs: [Build skills (Codex)](https://learn.chatgpt.com/docs/build-skills), skill
 
 ## F. ChatGPT
 
-Docs: [Skills in ChatGPT](https://help.openai.com/en/articles/20001066-skills-in-chatgpt), [Projects in ChatGPT](https://help.openai.com/en/articles/10169521-projects-in-chatgpt), [Creating and editing GPTs](https://help.openai.com/en/articles/8554397-creating-a-gpt)
+Docs: [Skills in ChatGPT](https://help.openai.com/en/articles/20001066-skills-in-chatgpt), [Projects in ChatGPT](https://help.openai.com/en/articles/10169521-projects-in-chatgpt), [Creating and editing GPTs](https://help.openai.com/en/articles/8554397-creating-a-gpt), [Custom GPT retirement and migration FAQ](https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq)
+
+OpenAI's help pages block automated reading, so this section was re-checked on 2026-10-21 through search results quoting them, not by opening them. Look in your own account before you rely on a plan detail.
 
 ### F1. Native skills (Business, Enterprise, Healthcare, Edu)
 *"Skills are available to eligible ChatGPT Business, Enterprise, Healthcare, and Edu users, subject to workspace settings."*
@@ -212,8 +214,10 @@ Docs: [Skills in ChatGPT](https://help.openai.com/en/articles/20001066-skills-in
 3. Admins control *Enable skills*, *Enable skill uploading*, sharing and publishing under **Permissions & roles**.
 ChatGPT includes `skill-creator` by default for eligible accounts.
 
-### F2. Fallback for Free / Plus / Pro (no native skills): use a Project
-⚠ **Custom GPTs are no longer an option for most people:** OpenAI's help page says *"New GPT creation and publishing are not available on personal ChatGPT accounts, including Free, Go, Plus, and Pro,"* and custom GPTs are being retired in favour of Plugins (Enterprise retirement planned for Dec 11, 2026). Existing GPTs still work.
+On Plus and Pro it is unclear: the help page names only the workspace plans, while reports of OpenAI's pricing page list a skills beta on personal plans too. If **Plugins → Skills** shows up in your account, use F1; if not, use F2.
+
+### F2. Fallback when your account has no Skills tab: use a Project
+⚠ **Custom GPTs are no longer an option for most people:** OpenAI's help page says *"New GPT creation and publishing are not available on personal ChatGPT accounts, including Free, Go, Plus, and Pro,"* and custom GPTs are being retired in favour of plugins (a plugin bundles instructions, skills and connected apps). The firm date is for Enterprise workspaces: GPTs stop running there on Dec 11, 2026. OpenAI says the change affects all plans but has not dated it for Free, Go, Plus or Pro, so existing GPTs still work there for now. Build new things as a Project or a skill, not a GPT.
 
 Instead:
 1. **New project** in the sidebar.
@@ -225,12 +229,14 @@ Quick one-off alternative: attach the `SKILL.md` to a chat and say "follow this"
 
 ## G. Gemini app (gemini.google.com)
 
-No native SKILL.md support in the Gemini **app** was found (the Gems help page doesn't mention skills; Gemini **CLI** does support them, see section E). Fallback: a **Gem**.
-1. gemini.google.com → **Explore Gems** → **New Gem**.
-2. Name it; paste the `SKILL.md` body into **Instructions** (Google suggests persona / task / context / format).
-3. Under **Knowledge**, **Add files** for the skill's reference files (or from Google Drive).
-4. **Save** (the preview does not save).
-Source: [Tips for creating custom Gems](https://support.google.com/gemini/answer/15235603). ⚠ The page does not state which plans can create Gems or the file limits.
+The Gemini app now takes skills natively, and Gems are going away (checked 2026-10-21 on Google's help pages).
+1. gemini.google.com → sidebar **Customize** (under **More** if you don't see it) → **Skills** → **Create**.
+2. Either **Create with Gemini** / **Create manually** and paste the `SKILL.md` body, or upload the skill folder: `SKILL.md` in the root, a lowercase hyphenated `name` (like ours), under 100 MB in total. No .docx/.xlsx, and scripts that need the internet won't run.
+3. In a chat, type `/` (or `@`), pick the skill. Gemini may also use an active skill on its own when it fits.
+
+Who: 18+, signed in to a personal Google Account, Keep Activity on; no subscription needed. Work and school accounts get skills later. Source: [Create & manage skills for Gemini Apps](https://support.google.com/gemini/answer/17094296?hl=en&co=GENIE.Platform%3DDesktop).
+
+**Gems:** from November 2026 Google converts personal-account Gems to skills automatically (Workspace business accounts in March 2027, education in June 2027), so build new things as skills. On a work account that has no skills yet, a Gem is still the fallback: **Explore Gems** → **New Gem**, paste the `SKILL.md` body into **Instructions**, add the reference files under **Knowledge**, **Save**. Sources: [About the transition from Gems to skills](https://support.google.com/gemini/answer/18560919?hl=en), [Tips for creating custom Gems](https://support.google.com/gemini/answer/15235603).
 
 ---
 
@@ -239,9 +245,9 @@ Source: [Tips for creating custom Gems](https://support.google.com/gemini/answer
 | Person | Easiest path |
 |---|---|
 | Non-coder on Claude Pro/Max/Team | claude.ai → Customize > Skills (turn on Anthropic's) → upload ZIPs or add a marketplace under Customize > Plugins |
-| Non-coder on ChatGPT Plus | A Project with the SKILL.md pasted into instructions |
+| Non-coder on ChatGPT Plus | A Project with the SKILL.md pasted into instructions (or Plugins → Skills if your account shows it) |
 | Non-coder on ChatGPT Business/Enterprise | Plugins → Skills → Upload from your computer |
-| Gemini user | A Gem with the SKILL.md as instructions |
+| Gemini user | Upload the skill folder under Customize > Skills (section G); a Gem only on a work account without skills |
 | Builder with a terminal | Claude Code: copy to `~/.claude/skills/`, or `/plugin install …`, or `npx skills add …`; Codex: `~/.agents/skills/` or `$skill-installer` |
 | Developer shipping a product | Claude Skills API (GA): `client.skills.create` + `container.skills` + code execution tool |
 
@@ -249,5 +255,6 @@ Source: [Tips for creating custom Gems](https://support.google.com/gemini/answer
 - Plan eligibility for claude.ai skills (Free vs paid): two Anthropic pages disagree.
 - The 200 vs 1,024 description limit in claude.ai uploads: two Anthropic pages disagree.
 - Whether Claude Code reads `.agents/skills/` directly (undocumented).
-- Gem availability by plan and file limits.
-- None of the install commands were executed; they are quoted from the official docs or the repo READMEs.
+- ChatGPT skills on Plus and Pro, and the retirement date of custom GPTs outside Enterprise: OpenAI's pages block automated reading and reports disagree (checked by search 2026-10-21).
+- Regional limits for Gemini app skills: Google's skills help page lists none (checked 2026-10-21).
+- Apart from `npx skills add` (executed 2026-10-21, see A3), the install commands were not executed; they are quoted from the official docs or the repo READMEs.

@@ -5,7 +5,7 @@ description: Post-implementation verification loop. Use right after finishing a 
 
 # /verify: prove it works before calling it done
 
-**Works in:** Claude Code (needs a shell, the test runner and ideally a browser). In claude.ai chat you can run phase 2 on pasted code.
+**Works in:** Claude Code (needs a shell, the test runner and ideally a browser). In claude.ai chat you can run phase 2 on pasted code. In Claude Code this skill replaces the built-in `/verify`, and from v2.1.286 Claude runs a skill named `verify` before every commit that touches code. To run it only when you type it, add `disable-model-invocation: true` to the frontmatter; to keep the built-in too, rename the folder and `name:` to `verify-loop`.
 
 "Finished" is a claim, not a fact. Treat the work you just did as a hostile pull request from a stranger and loop review, test, simulate until a complete pass produces zero new findings. The goal is a verdict you can defend: ship, ship with notes, or not ready.
 

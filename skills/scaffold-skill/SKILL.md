@@ -71,10 +71,10 @@ description: <what it does + when to use it, including the phrases a user would 
 ## Naming
 
 - Short, kebab-case. If the name needs explaining in the description, rename it.
-- Avoid overlapping built-ins (`/run`, `/review`, `/init`, `/commit`).
+- Check the names that ship with the tool before you pick one: type `/` in Claude Code or Codex, or read https://code.claude.com/docs/en/commands (bundled skills are marked Skill there). In Claude Code a skill with the same name as a bundled skill or built-in command replaces it, but not its aliases: a skill called `verify`, `run`, `debug`, `simplify`, `loop` or `code-review` hides the one Claude Code ships. Codex has its own commands too, such as `/init` and `/review`. Pick a distinct name unless replacing the built-in is the point (checked 2026-10-21).
 
 ## After writing
 
 1. Show the user the path of the new `SKILL.md` to review.
-2. Tell them to start a new session (or reload skills) so it shows up.
+2. Tell them it should show up in `/skills` straight away (Claude Code and Codex watch skill folders); if it does not, run `/reload-skills` in Claude Code or restart the tool.
 3. If the skill is useful beyond this project, suggest moving it to the user-level skills directory, and ask before writing outside the project.

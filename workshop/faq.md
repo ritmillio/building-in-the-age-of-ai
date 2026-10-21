@@ -4,7 +4,7 @@
 ## Getting started
 
 **1. Which tool should I start with: ChatGPT, Claude or Gemini?**
-Any of the big three is good enough to start. Pick one, and build one Project (in Claude or ChatGPT, or a Gem in Gemini) with your own context: product, customers, rules, templates. The context you write down matters more than the model, and you can take it with you if you switch.
+Any of the big three is good enough to start. Pick one, and build one Project (in Claude or ChatGPT, or a skill in Gemini, where skills replace Gems from November 2026) with your own context: product, customers, rules, templates. The context you write down matters more than the model, and you can take it with you if you switch.
 
 **2. Which model is the best right now?**
 It changes every few months, so don't marry one. Keep your context in plain files (rules, docs, prompts) so switching is cheap. We use different models for different jobs.
@@ -38,13 +38,13 @@ Harvard-BCG field experiment with consultants (Dell'Acqua et al.): inside the fr
 ## Data, security, law
 
 **11. Is my data safe? Will it train on my data?**
-Use a business or team plan where training on your data is off by default, and read the data terms. Free consumer accounts are for public information only. Anonymise customer data where you can.
+Business and team plans (Claude Team or Enterprise, ChatGPT Business or Enterprise, Gemini through a Google Workspace account) do not train on your chats by default; read your plan's data terms anyway. On a personal plan the switch is yours (checked 2026-10-21): Claude Free, Pro and Max train on your chats only if you allow model improvement in Settings → Privacy ([Anthropic](https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training)); ChatGPT personal plans train unless you turn off "Improve the model for everyone" in Settings → Data Controls ([OpenAI Data Controls FAQ](https://help.openai.com/en/articles/7730893-data-controls-faq)); Gemini on a personal Google account is controlled by Keep Activity, and even with it off human reviewers may read chats to keep the service safe ([Gemini Apps Privacy Hub](https://support.google.com/gemini/answer/13594961); Workspace accounts follow the [Workspace privacy hub](https://support.google.com/a/answer/15706919) instead). On any plan, a thumbs up or down sends the whole conversation to the vendor as feedback, and Anthropic may train on feedback even from business plans ([Anthropic, commercial](https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training)), so don't rate a chat that holds customer data. Keep personal accounts for public information and anonymise customer data where you can.
 
 **12. Is it safe to connect my Gmail or Drive through MCP?**
 Start read-only and with one tool. Check what the connector can do: reading is low risk, sending and deleting are not. Keep a human approval on anything that leaves the building.
 
 **13. What about GDPR and the EU AI Act?**
-GDPR applies to any personal data you put in, exactly as with any other software vendor: business plan, data processing agreement, minimum data. Most internal productivity use is low-risk under the AI Act; obligations grow when AI makes decisions about people (hiring, credit) or talks to customers without saying it's AI. For your specific case, ask a lawyer; this is general orientation, not legal advice.
+GDPR applies to any personal data you put in, exactly as with any other software vendor: business plan, data processing agreement, minimum data. Most internal productivity use is low-risk under the AI Act. Two dates matter (checked 2026-10-21 on the [European Commission's AI Act page](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai)): the transparency rules apply since August 2026, so a chatbot that talks to customers has to say it's AI and AI-generated content has to be identifiable; the rules for high-risk uses such as hiring and credit scoring apply from 2 December 2027, after the AI Omnibus moved them. For your specific case, ask a lawyer; this is general orientation, not legal advice.
 
 **14. Does it work well in Hungarian?**
 For drafts, summaries and analysis, yes, the big models handle Hungarian well. Always check legal and tax specifics, and have a native speaker read anything customer-facing.
@@ -96,8 +96,42 @@ From a template, almost always. Pick the one closest to the shape of your produc
 **Won't a template lock me in?**
 No, you own the code from the first commit. Swap what you won't keep (auth, models, analytics) in the first days, while it's a ten-minute job for an agent.
 
+**How do I set up a new project? What goes in my rules file?**
+Two files before the first prompt. A rules file ([AGENTS.md](../templates/AGENTS.md)): what the product is, how we work, how to check the work. And a [never list](../templates/never-list.md): what the agent never does without you (send, pay, delete, touch production), each rule with the incident behind it. Keep the rules file short, because the agent reads every line in every session, and add a line the second time you correct the same thing ([tricks 19 to 25](../guides/tricks.md#rules-files-and-skills)). The other starters (design rules, ask-with-options, a review prompt, interview notes) are in [templates/](../templates/).
+
 **Can I get your skills?**
-Yes, they are in the repo on the last slide, rewritten generic, plus the third-party ones I use, credited to their authors, with install steps for Claude Code, claude.ai and plain ChatGPT/Gemini.
+Yes, they are in the repo on the last slide, rewritten generic, plus the third-party ones I use, credited to their authors, with install steps for Claude Code, claude.ai and plain ChatGPT/Gemini. The bigger ones (relay for overnight runs, draft-plan, shred-plan, telegram-notify) are published separately at [github.com/ritmillio/skills](https://github.com/ritmillio/skills): `npx skills@latest add ritmillio/skills`. If all you want is the phone ping when an agent finishes, fails or waits for a yes, [templates/notify-hook.md](../templates/notify-hook.md) is one script and one settings block, no skill needed.
 
 **Isn't running several agents at once chaos?**
 Only if they share files. Each gets its own copy of the project (a git worktree) and its own task; I review each result separately.
+
+## The tricks, agents and selling (guides/tricks.md, war-stories.md, succeed.md)
+
+Links checked 2026-10-21.
+
+**Is this only for developers?**
+No. Most of the tricks are about context, briefing, checking and process, and they work in a chat window: [prompting](../guides/tricks.md#prompting-and-talking-to-the-agent), [design](../guides/tricks.md#design), [team and process](../guides/tricks.md#team-and-process). The README has [five steps per role](../README.md#start-here-by-role), and [prompts 8 to 12](prompts.md#after-the-workshop-not-in-the-live-build) are for sales, investors and contracts. The terminal parts (worktrees, overnight runs) are for people who already use one.
+
+**What does running agents all day cost, and which plan do I need?**
+Start on the plan you already have. On Anthropic's [pricing page](https://claude.com/pricing) (checked 2026-10-21) Claude Code comes with Pro, Max, Team and Enterprise, not Free; Max is five or twenty times Pro's usage, for people who hit the limit every day. OpenAI's plans also differ mainly by usage; its pricing page blocks automated checks, so look at chatgpt.com/pricing yourself. If you pay through the API: measure cost per task, not per token ([trick 66](../guides/tricks.md#money-and-models)), send work that can wait to the batch tier at half price ([trick 67](../guides/tricks.md#money-and-models)), and agree a spend limit with the agent ([trick 59](../guides/tricks.md#shipping-and-ops)).
+
+**Is it safe to let an agent read my email, my documents or the web?**
+Reading is where the risk starts. Text the agent reads can carry instructions (prompt injection), and no filter stops that reliably. Simon Willison's rule, [the lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/): never give one agent access to your private data, exposure to untrusted content and a way to send things out, all three at once. In practice: connectors read-only first, one at a time, and anything that sends, pays or deletes waits for a human ([trick 73](../guides/tricks.md#if-you-build-ai-products)). The [Claude Code security page](https://code.claude.com/docs/en/security) gives the same advice for coding agents: review commands before you approve them, don't pipe untrusted content straight in, and isolate anything that talks to outside services.
+
+**How do I know the agent really did what it says?**
+You don't, until you see it. "Done" means seen working: run the checks, use the thing, find the side effect where it lands, take a screenshot ([tricks 41 to 49](../guides/tricks.md#verification)). Ask for the words "not verified live" when it could not check. [Five of our war stories](../guides/war-stories.md#when-green-was-not-green) are green results that were red.
+
+**It asks me to approve everything. Can I turn that off?**
+Don't turn it off, narrow it. Allow the safe commands and deny the dangerous ones in a settings file, so the prompts that are left are the ones worth reading ([trick 40](../guides/tricks.md#agents-and-parallel-work)); in Claude Code, `/fewer-permission-prompts` builds that allowlist from your past sessions. Auto mode goes further: a second model reviews each action instead of you and blocks anything beyond what you asked for. In Claude Code, press `Shift+Tab` until the status bar says auto mode (it is already the starting mode from v2.1.283; [permission modes](https://code.claude.com/docs/en/permission-modes#eliminate-permission-prompts-with-auto-mode), read 2026-10-21); in Codex, `/permissions` and pick Auto. The docs say it plainly: auto mode reduces prompts, it does not guarantee safety, so keep branches and a human merge behind it. Skipping approvals entirely (`bypassPermissions`, Codex `--yolo`) belongs only inside a container or VM.
+
+**What stops an agent from breaking production?**
+Rules and permissions, not hope. Agents work on branches and open pull requests; a human merges ([trick 36](../guides/tricks.md#agents-and-parallel-work)). No agent touches the production database; it gets a copy ([trick 55](../guides/tricks.md#shipping-and-ops)). Hosting settings (environment variables, domains) change only after a human says yes to that exact action ([trick 57](../guides/tricks.md#shipping-and-ops)). Every hard rule carries the incident behind it in one line ([trick 25](../guides/tricks.md#rules-files-and-skills)); [war story 12](../guides/war-stories.md#when-the-machine-and-the-data-bite-back) is one of those incidents.
+
+**How many agents can I run at once?**
+Start with one, then two. Each gets its own copy of the project (a git worktree, [trick 28](../guides/tricks.md#agents-and-parallel-work)) and its own task. The real limit is how many results you can review well. The laptop has a limit too: [war story 11](../guides/war-stories.md#when-the-machine-and-the-data-bite-back) is a crash with eight agents running ([trick 39](../guides/tricks.md#agents-and-parallel-work)).
+
+**If building is this cheap, why validate first?**
+Because the cost moved. Building the wrong thing takes an afternoon now; finding out it is wrong still takes customers. Before you build, talk to five of them about what they did last month and what it cost them ([succeed.md §1](../guides/succeed.md#1-validate-before-you-build)), and ask what they pay today, in money or hours ([§3](../guides/succeed.md#3-price-it)).
+
+**Which model should we use, and when do we switch?**
+Whichever wins on your own work. Before switching, run a small bake-off: real tasks with known right answers, several runs per model ([trick 65](../guides/tricks.md#money-and-models)). Benchmarks are not your workload, and the cheapest price per token can be the most expensive task ([the story about money](../guides/war-stories.md#one-more-about-money)).

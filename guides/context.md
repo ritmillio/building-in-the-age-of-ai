@@ -146,7 +146,8 @@ Authors: Prithvi Rajasekaran, Ethan Dixon, Carly Ryan, Jeremy Hadfield (Anthropi
 - **Claude memory and chat search:** chat search across past conversations is on paid plans. Memory *"saves memory as a set of individual topics as you chat"*; on by default for Free, Pro and Max; off by default per member on Team/Enterprise until owners allow it. Each project keeps its own memory. Manage at **Settings > Memory**. Incognito chats are not searched later. [Chat search and memory](https://support.claude.com/en/articles/11817273)
 - **ChatGPT Projects:** chats, files and instructions together; *"Project instructions apply only within that project and override your global custom instructions."* Projects can use their chats and files as context. [Projects in ChatGPT](https://help.openai.com/en/articles/10169521-projects-in-chatgpt)
 - **ChatGPT memory:** sources can include past chats, saved memories, custom instructions, Library files and connected apps (by plan/region). Controls at **Settings > Personalization > Memory** (Reference saved memories, Reference chat history). Turning off chat-history reference schedules derived info for deletion within 30 days. [Memory in ChatGPT](https://help.openai.com/en/articles/8590148-memory-faq)
-- **Gemini Gems:** custom instructions + "Knowledge" files; created via **Explore Gems > New Gem**. [Tips for creating custom Gems](https://support.google.com/gemini/answer/15235603)
+- **Gemini Gems, becoming skills:** a Gem is custom instructions + "Knowledge" files (**Explore Gems > New Gem**). From November 2026 Google converts personal-account Gems to skills (Workspace from March 2027); new work goes into **Customize > Skills**, invoked with `/` (checked 2026-10-21). [Tips for creating custom Gems](https://support.google.com/gemini/answer/15235603), [About the transition from Gems to skills](https://support.google.com/gemini/answer/18560919?hl=en)
+- **Gemini notebooks (Gemini's name for a project):** menu at the top left, **Notebooks > New notebook**. A notebook keeps your sources (files, Drive, websites, pasted text) and instructions, set in the notebook's settings. It can use earlier notebook chats only while Keep Activity is on. Google is rolling it out gradually, so your account may not have it yet (checked 2026-10-21). [Organize your projects with notebooks in Gemini Apps](https://support.google.com/gemini/answer/16972047)
 
 **On memory features:** memory is convenient but it is context you didn't choose. For focused work (a pitch, a spec), use a project or an incognito/temporary chat so old, irrelevant "memories" don't leak in.
 
@@ -159,6 +160,8 @@ Authors: Prithvi Rajasekaran, Ethan Dixon, Carly Ryan, Jeremy Hadfield (Anthropi
 5. **Offload noisy work** to sub-agents or separate chats and keep only the summary.
 6. **Ask for a hand-off note** before a long session ends; start the next session from it.
 7. **Watch for rot:** repeated mistakes, forgotten constraints, "it was fine an hour ago". Clear and restart with a summary.
+
+The same rules as working habits, each with the exact prompt or file: [tricks 1-7](tricks.md#context).
 
 ## 8. Productivity research numbers (for the "why it matters / be careful" slide)
 
