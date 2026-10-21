@@ -86,7 +86,7 @@ New to all this? Read [how-i-build.md](how-i-build.md) first (the loop), then co
 
 **34. With a dev server watching, write each edit in one go.** Add the import and its use in the same edit. *Why:* a half-written file gets served and the app crashes mid-session.
 
-**35. A fresh worktree has no `.env`.** Ignored files stay behind. A build that "fails" in a new worktree may just be missing a secret. Copy or link `.env` first, then judge.
+**35. A fresh worktree has no `.env`.** Ignored files stay behind. A build that "fails" in a new worktree may just be missing a secret. Copy or link `.env` first, then judge. In a monorepo, don't borrow another checkout's `node_modules` either: the workspace links inside it point back at that checkout's packages, so your checks run against its source and you get red that isn't yours or green that isn't real. Install fresh in the worktree (with pnpm it is quick, packages come from a shared store).
 
 **36. Agents fold into one branch; a human merges.** Agents commit to an integration branch and open pull requests. They never merge and never push `main`. One branch and one pull request per initiative, phases as separate commits, no stacks of dependent pull requests.
 
@@ -94,7 +94,7 @@ New to all this? Read [how-i-build.md](how-i-build.md) first (the loop), then co
 
 **38. Kill processes by a precise pattern.** `pkill -f "vitest run"`, not `pkill -f vite`. *Why:* a broad pattern once killed a whole fleet of background agents along with the one stuck test run.
 
-**39. Cap how many agents run at once.** *Why:* a machine pinned at full memory crashes and takes every session with it. Skill: `reclaim` ([where to get it](../skills/README.md#also-by-the-author-published-separately)) for getting a pinned machine back. Keep scripts you need again in the repo, not in `/tmp`: a crash or reboot wipes it.
+**39. Cap how many agents run at once.** *Why:* a machine pinned at full memory crashes and takes every session with it. Skill: `reclaim` ([where to get it](../skills/README.md#also-by-the-author-published-separately)) for getting a pinned machine back. Keep scripts you need again in the repo, not in `/tmp`: a crash or reboot wipes it. And never leave `caffeinate` (the macOS keep-awake command) running without an end: wrap the job (`caffeinate -i ./run.sh`), bind it to a process (`caffeinate -w <pid>`) or give it a time (`caffeinate -t 3600`). A forgotten one kept a closed laptop awake in a bag for hours.
 
 **40. Let it ping your phone.** A hook sends a message when an agent finishes, fails or waits for permission. You stop babysitting terminals. [Hooks docs](https://code.claude.com/docs/en/hooks); our setup is in [my-stack.md](my-stack.md).
 
@@ -126,7 +126,7 @@ New to all this? Read [how-i-build.md](how-i-build.md) first (the loop), then co
 
 **52. Rebuild whole pages, don't patch.** Compare the whole page to the reference and rebuild it in the reference's system. Patching an old page section by section never converges.
 
-**53. Write the taste down, then test for it.** A design rules file (corner radius tiers, one button style, fonts, banned patterns) plus a test that fails when a banned pattern appears. Template: [design-rules.md](../templates/design-rules.md). When something "looks wrong", it is usually inconsistency (mismatched corners, three different greys), not the effect itself.
+**53. Write the taste down, then test for it.** A design rules file (corner radius tiers, one button style, fonts, banned patterns) plus a test that fails when a banned pattern appears. Template: [design-rules.md](../templates/design-rules.md). When something "looks wrong", it is usually inconsistency (mismatched corners, three different greys), not the effect itself. One rule worth stealing: reading text in a sans font, a serif only for the one big display title per screen; a book serif in a chat answer tires the eye.
 
 **54. Build it in the real app, not a mock.** At a real URL, with real navigation. And never put a placeholder where the picture you asked for should go: show nothing, or the real thing.
 
