@@ -15,7 +15,7 @@ Pick the row closest to you and do the five steps in order. None of them needs m
 **Founder, not technical**
 1. Do [the one thing](#if-you-only-do-one-thing) above, on the task you hate most.
 2. Before you build anything, test the idea with customers: [succeed.md §1](guides/succeed.md#1-validate-before-you-build) (interviews, review mining, a landing page with prices).
-3. Run the live-build prompts on your own idea, in order: [prompts.md](workshop/prompts.md). Were you in the room? [follow-along.md](workshop/follow-along.md) has the order.
+3. Run the live-build prompts on your own idea, in order: [prompts.md](workshop/prompts.md). Were you in the room? [follow-along.md](workshop/follow-along.md) has the order. For the rest of the week (follow-ups, investor update, contracts): [prompts 8 to 12](workshop/prompts.md#after-the-workshop-not-in-the-live-build).
 4. Learn why long chats get worse and what to do instead: [context.md §7](guides/context.md#7-practical-rules-for-the-audience-one-slide), then [tricks 1 and 8 to 13](guides/tricks.md#prompting-and-talking-to-the-agent).
 5. Before you talk to investors: [fundraising.md](guides/fundraising.md) on the "thin wrapper" question, and [succeed.md §7](guides/succeed.md#7-the-few-numbers-that-matter-early) for the numbers that matter early.
 
@@ -46,7 +46,7 @@ Pick the row closest to you and do the five steps in order. None of them needs m
 |---|---|
 | [`workshop/slides.pdf`](workshop/slides.pdf) | The deck (37 slides). Part 1, the talk: how building changed, context, how I build, raising money. Part 2: the live build, then where to start |
 | [`workshop/follow-along.md`](workshop/follow-along.md) | Laptop open? How to run the live build next to us: which assistant, a fresh Project, which prompts in which order |
-| [`workshop/prompts.md`](workshop/prompts.md) | Every prompt from the live build, in order: research real customer words, business case, one-page spec, red team, prototype with references, design rules, launch kit, ops automation |
+| [`workshop/prompts.md`](workshop/prompts.md) | Every prompt from the live build, in order: research real customer words, business case, one-page spec, red team, prototype with references, design rules, launch kit, ops automation; then five for after the workshop: sales follow-up, investor update, competitor teardown, meeting decisions, contract first read |
 | [`workshop/prompt-pack.pdf`](workshop/prompt-pack.pdf) | The 4-page handout |
 | [`workshop/faq.md`](workshop/faq.md) | The questions people ask, with short answers |
 | [`guides/context.md`](guides/context.md) | Context windows, tokens, context rot, why a million tokens is not a better memory, and what to do about it. Sourced. |

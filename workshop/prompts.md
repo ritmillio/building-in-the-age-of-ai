@@ -177,3 +177,51 @@ Slide 34. Everyone in the room does this one.
 I want to hand a task I hate to AI. The task: [describe it in 2-3 sentences].
 Interview me with 5 short questions, one at a time, about how I do it today, what good output looks like, and what must never go wrong.
 Then write: 1) the steps as a checklist, 2) the instructions for a Project / Gem that does it with me, 3) what I still check myself every time.
+
+---
+
+## After the workshop (not in the live build)
+
+Five prompts for the rest of the week, same shape as the live ones: role, context, task, format, check. Each one drafts; you read it, fix it and send it yourself. Customer interviews, pricing, a first sales message, partners and the weekly numbers are already in [guides/succeed.md](../guides/succeed.md) and on the handout, so they are not repeated here.
+
+### 8. After a sales call: the follow-up
+
+Role: a founder-led sales assistant.
+Context: my raw notes (or the transcript) from a call with [name, role, company]. [paste]
+Task: draft the follow-up email I send today.
+Format: one line thanking them for something specific they said; their problem in their own words (one quote); what we agreed, at most 3 bullets; the next step with a date and who does it. Under 150 words. Below the email, separately: anything they asked that I did not answer.
+Check: promise nothing that is not in my notes, and no feature that does not exist today. If the notes have no agreed next step, say so instead of inventing one.
+
+### 9. The monthly investor update
+
+Role: my chief of staff.
+Context: this month's numbers [paste], what went well, what went badly, what I need help with. Last month's update: [paste, or "this is the first one"].
+Task: draft this month's investor update in the short early-stage format Elad Gil recommends: asks first, then highlights, lowlights, milestones ([Investor Update Emails](https://blog.eladgil.com/p/investor-update-emails)).
+Format: asks at the top, at most 3, each concrete enough that one person could act on it (a named kind of company, a role to hire, a specific intro); 1-2 key numbers vs last month; 2-5 highlights; 2-5 lowlights; next month's milestones.
+Check: the lowlights stay in, in plain words. Every number matches what I pasted, with the calculation shown for any derived one. Flag any ask too vague to act on ("intros to customers").
+
+### 10. Competitor teardown
+
+Role: a skeptical market analyst.
+Context: my product in one paragraph: [...]. The competitor: [name, website].
+Task: a teardown from public sources only: their site, pricing page, docs, changelog, app store and review sites.
+Format: a table: who they sell to | what it does | price and plan structure | what customers praise | what customers complain about, every cell with a link and the date you saw it. Then 3 places we are clearly better, 3 where they are, and one question to ask our next customer about them.
+Check: praise and complaints are verbatim quotes, marked (opened) or (snippet) as in prompt 1. Anything you cannot find is "not public", not a guess. No claims about their revenue or customer count unless a source says it.
+
+### 11. Meeting notes into decisions and owners
+
+Role: a meticulous note-taker.
+Context: the transcript or my rough notes from [meeting]. [paste]
+Task: turn it into a record someone who was not there can act on.
+Format: decisions made (one line each, who decided); actions (what, owner, due date); open questions; anything discussed but left undecided.
+Check: an action without an owner or a date is listed as "no owner" or "no date"; do not assign one. A suggestion nobody agreed to is not a decision. Quote where the exact wording matters.
+
+### 12. Contract first read (not legal advice)
+
+Role: a careful reader preparing me for a conversation with my lawyer. You are not my lawyer and this is not legal advice.
+Context: a contract I am asked to sign: [type, my side, the other side]. [paste or attach]
+Task: help me understand what I would be agreeing to and what to ask.
+Format: 1) a 5-line plain-English summary; 2) a table: clause (section number and a short quote) | what it means for me | unusual or one-sided? | question for my lawyer. Cover at least term and termination, payment, liability caps, indemnities, IP ownership, data protection, auto-renewal, exclusivity; 3) the 3 questions I should ask first.
+Check: every point quotes the clause with its section number. A clause you would expect but cannot find is "not found". Do not tell me whether to sign.
+
+Before you paste a contract, check that your tool's data settings allow it (a business or team plan, with training on your data turned off). Anything that binds you to money, liability or IP still gets a real lawyer; this prompt makes that meeting shorter, not unnecessary.
