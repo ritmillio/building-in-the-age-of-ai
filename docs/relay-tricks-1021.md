@@ -60,9 +60,8 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 
 ## Backlog
 
-Ordered by value to the mission. T1-T14 and T16-T19 are done; T20-T25 come from the iteration 21 hunt. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
+Ordered by value to the mission. T1-T14 and T16-T20 are done; T21-T25 come from the iteration 21 hunt. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
 
-- [ ] **T20 Stale slide counts.** Repo `README.md:47` says "The deck (37 slides)" but `workshop/slides.pdf` is 40 pages (pdfinfo; 38-40 are Q&A backups). Desktop `rehearsal.html:33` says "deck v15 (37 slides)" and the 2:40 Q&A row (line 54) never mentions backups 38-40. Fix both, re-render `rehearsal.pdf`, view every page.
 - [ ] **T21 tricks.md "Fails when", batch 1 (tricks 3-27).** The intro promises every trick says **when it fails**; a regex over `**n. ...**` lines finds 63 of 73 with no `Fails when:`. Missing here: 3, 6, 7, 9, 11, 12, 13, 16, 17, 18, 19, 20, 21, 22, 24, 25, 26, 27. Add one real failure mode each (from war-stories.md or the memory notes, generalised), no renumbering.
 - [ ] **T22 tricks.md "Fails when", batch 2 (tricks 28-49).** Missing: 28-36, 38-49. Same rule as T21.
 - [ ] **T23 tricks.md "Fails when", batch 3 (tricks 50-73).** Missing: every trick 50-73. Same rule; after this batch the regex must report 0 missing (or soften the intro claim for the ones where no honest failure mode exists).
@@ -82,6 +81,7 @@ Ordered by value to the mission. T1-T14 and T16-T19 are done; T20-T25 come from 
 - 2f05a40 T19: all 99 inventory items mapped to tricks.md; only 43 (monorepo worktree borrowing node_modules), 50 (forgotten caffeinate) and 71 (sans for reading text) were publishable and missing. Folded into tricks 35, 39, 53 so numbering (README roles, slide notes #8/#28/#40) stays put; still 73 tricks. Wording checked against the memory notes; `caffeinate -t 1`, `-i true`, `-w <pid>` all ran EXIT 0; banned grep empty; gate 0.
 - Desktop 62d0760 T17: handout back-page pointer now names templates/ (AGENTS.md starter, never list, review prompt for a fresh session). Rendered: 2 pages (pdfinfo), page 1 unchanged, page 2 viewed at -r 110, line wraps in the footer with room to spare. No repo copy of the handout, so no repo file changed. Gate 0.
 - hunt (iteration 21): backlog was only T15, so hunted. Evidence: pdfinfo slides.pdf 40 pages vs README "37 slides"; rehearsal.html still "v15 (37 slides)"; tricks.md regex 63/73 without `Fails when:` against an intro that promises it; follow-along afterwards stops at prompt 7; context.md/scaffolding.md grep for tricks.md empty; Gemini Projects status via WebSearch (testing, unconfirmed). Prompts and faq/qa pairs diff clean. Gate 0. Added T20-T25.
+- 58f8b6a + Desktop 03c91da T20: repo README deck row now "37 slides plus 3 Q&A backup slides" (slides.pdf is 40 pages); rehearsal.html header says v16 (37 + 3 backups) and the 2:40 Q&A row says when to show 38-40 (titles from `backup` in slides.mjs). rehearsal.pdf re-rendered, still 2 pages, both viewed at -r 70. grep for "37 slides" now only hits correct lines (README, Desktop README, script.html, rehearsal). Gate 0.
 
 ## Landed
 
