@@ -57,12 +57,12 @@ Script time (T6, 140 wpm vs slot): Opening 230w 1.6/10 min, Perspective 674w 4.8
 - Print HTML (prompt pack, handout): wrap each heading with its block in a `break-inside: avoid` div, or Chrome leaves a heading alone at the page foot. Prompt pack is 5 pages now; `README.md` (repo + Desktop) state the page count.
 - Inventory coverage is complete (T19): every publishable inventory item is in tricks.md, war-stories.md or a template. New tricks from now on come from fresh sources, not the inventory. Prefer folding a small habit into an existing trick over renumbering.
 - When the ledger script inserts text before a heading, anchor on `\n## Heading\n`, not the bare heading text: the "How to read this" line names every section in backticks.
+- Missing "Fails when" check: `python3 - <<'E'` splitting tricks.md on `(?m)^(?=\*\*\d+\. )` and listing paragraphs without `Fails when`. Insert the clause before a trailing ` Template: ` if the paragraph has one, else at the end. A failure mode that names vendor behaviour gets its doc link.
 
 ## Backlog
 
-Ordered by value to the mission. T1-T14 and T16-T20 are done; T21-T25 come from the iteration 21 hunt. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
+Ordered by value to the mission. T1-T14 and T16-T21 are done; T21-T25 come from the iteration 21 hunt. T15 is for the last iteration only; before then, an empty backlog means a hunt (append 3-6 evidence-backed items).
 
-- [ ] **T21 tricks.md "Fails when", batch 1 (tricks 3-27).** The intro promises every trick says **when it fails**; a regex over `**n. ...**` lines finds 63 of 73 with no `Fails when:`. Missing here: 3, 6, 7, 9, 11, 12, 13, 16, 17, 18, 19, 20, 21, 22, 24, 25, 26, 27. Add one real failure mode each (from war-stories.md or the memory notes, generalised), no renumbering.
 - [ ] **T22 tricks.md "Fails when", batch 2 (tricks 28-49).** Missing: 28-36, 38-49. Same rule as T21.
 - [ ] **T23 tricks.md "Fails when", batch 3 (tricks 50-73).** Missing: every trick 50-73. Same rule; after this batch the regex must report 0 missing (or soften the intro claim for the ones where no honest failure mode exists).
 - [ ] **T24 follow-along.md afterwards + Gemini Projects.** "Afterwards" points only to prompt 7; add prompts 8-12, tricks.md and succeed.md. Line 8 says "in Gemini, a new chat is fine": press reports (Android Authority, dataconomy 2026-04-07) say Gemini Projects (maybe renamed Notebooks) was in limited testing; no Google announcement found by search. Check the Google help page, date it, fix the line if Projects shipped.
@@ -82,6 +82,7 @@ Ordered by value to the mission. T1-T14 and T16-T20 are done; T21-T25 come from 
 - Desktop 62d0760 T17: handout back-page pointer now names templates/ (AGENTS.md starter, never list, review prompt for a fresh session). Rendered: 2 pages (pdfinfo), page 1 unchanged, page 2 viewed at -r 110, line wraps in the footer with room to spare. No repo copy of the handout, so no repo file changed. Gate 0.
 - hunt (iteration 21): backlog was only T15, so hunted. Evidence: pdfinfo slides.pdf 40 pages vs README "37 slides"; rehearsal.html still "v15 (37 slides)"; tricks.md regex 63/73 without `Fails when:` against an intro that promises it; follow-along afterwards stops at prompt 7; context.md/scaffolding.md grep for tricks.md empty; Gemini Projects status via WebSearch (testing, unconfirmed). Prompts and faq/qa pairs diff clean. Gate 0. Added T20-T25.
 - 58f8b6a + Desktop 03c91da T20: repo README deck row now "37 slides plus 3 Q&A backup slides" (slides.pdf is 40 pages); rehearsal.html header says v16 (37 + 3 backups) and the 2:40 Q&A row says when to show 38-40 (titles from `backup` in slides.mjs). rehearsal.pdf re-rendered, still 2 pages, both viewed at -r 70. grep for "37 slides" now only hits correct lines (README, Desktop README, script.html, rehearsal). Gate 0.
+- 33cb94a T21: tricks 3, 6, 7, 9, 11-13, 16-22, 24-27 get one *Fails when:* each (18), grounded in war stories and memory notes (versions, English keys, model price). Regex now 45 missing (28-36, 38-73), exactly T22+T23. New claims sourced: git-config core.symlinks (200, anchor id present) on 19, Claude Code skills page (200, "description helps Claude decide when to load") on 24; war-stories anchor slug ok; no em dash, banned grep empty; gate 0.
 
 ## Landed
 
