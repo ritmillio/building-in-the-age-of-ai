@@ -120,61 +120,61 @@ New to all this? Read [how-i-build.md](how-i-build.md) first (the loop), then co
 
 ## Design
 
-**50. Design from real screens.** Collect several real screens per screen you are designing ([Mobbin](https://mobbin.com) is our source), group them into directions, and pick per screen. Show them as a labelled contact sheet before asking anyone to choose; text descriptions of a design get rejected. More in [my-stack.md](my-stack.md).
+**50. Design from real screens.** Collect several real screens per screen you are designing ([Mobbin](https://mobbin.com) is our source), group them into directions, and pick per screen. Show them as a labelled contact sheet before asking anyone to choose; text descriptions of a design get rejected. More in [my-stack.md](my-stack.md). *Fails when:* the references sit in a doc and the pick is made from text or a sketch. We built a sidebar from a sketch pick and it was rejected on sight; shown the real screens on a sheet, the pick was a different direction, made in one go. Mobbin has no desktop-app screens: say so and use the web equivalents.
 
-**51. Marketing pages use the real product components.** Mount the actual components on sample data. *Why:* drawn replicas look fake and drift from the product within weeks.
+**51. Marketing pages use the real product components.** Mount the actual components on sample data. *Why:* drawn replicas look fake and drift from the product within weeks. *Fails when:* the real components land inside a page with a different type system. They look bolted on, and the fix is trick 52, not more components.
 
-**52. Rebuild whole pages, don't patch.** Compare the whole page to the reference and rebuild it in the reference's system. Patching an old page section by section never converges.
+**52. Rebuild whole pages, don't patch.** Compare the whole page to the reference and rebuild it in the reference's system. Patching an old page section by section never converges. *Fails when:* nobody agreed which page is the reference. Then a rebuild only adds a third style. Name the reference page first.
 
-**53. Write the taste down, then test for it.** A design rules file (corner radius tiers, one button style, fonts, banned patterns) plus a test that fails when a banned pattern appears. Template: [design-rules.md](../templates/design-rules.md). When something "looks wrong", it is usually inconsistency (mismatched corners, three different greys), not the effect itself. One rule worth stealing: reading text in a sans font, a serif only for the one big display title per screen; a book serif in a chat answer tires the eye.
+**53. Write the taste down, then test for it.** A design rules file (corner radius tiers, one button style, fonts, banned patterns) plus a test that fails when a banned pattern appears. Template: [design-rules.md](../templates/design-rules.md). When something "looks wrong", it is usually inconsistency (mismatched corners, three different greys), not the effect itself. One rule worth stealing: reading text in a sans font, a serif only for the one big display title per screen; a book serif in a chat answer tires the eye. *Fails when:* the test matches one spelling of a banned pattern and the agent writes another (a class name built from a variable, an inline style). When a banned pattern gets through anyway, add that spelling to the test the same day.
 
-**54. Build it in the real app, not a mock.** At a real URL, with real navigation. And never put a placeholder where the picture you asked for should go: show nothing, or the real thing.
+**54. Build it in the real app, not a mock.** At a real URL, with real navigation. And never put a placeholder where the picture you asked for should go: show nothing, or the real thing. *Fails when:* the agent builds from an old branch of the app because it was handy. The real app means the version you are actually shipping next; say which branch.
 
 ## Shipping and ops
 
-**55. Agents never touch the production database.** All agent work runs on development branches or local copies. [Neon branching](https://neon.com/docs/introduction/branching) makes a full copy cheap.
+**55. Agents never touch the production database.** All agent work runs on development branches or local copies. [Neon branching](https://neon.com/docs/introduction/branching) makes a full copy cheap. *Fails when:* the copy carries more than data. A branch of production holds real customer emails and phone numbers; if it runs with live keys for email, payments or texts, an agent can still reach real people. Point every copy at test keys.
 
-**56. Schema change and migration in the same commit.** Never push a schema straight to a shared database; write idempotent SQL (`CREATE TABLE IF NOT EXISTS`). [Drizzle migrations](https://orm.drizzle.team/docs/migrations) as one example. *Why:* a column dropped by hand and left in the schema broke production.
+**56. Schema change and migration in the same commit.** Never push a schema straight to a shared database; write idempotent SQL (`CREATE TABLE IF NOT EXISTS`). [Drizzle migrations](https://orm.drizzle.team/docs/migrations) as one example. *Why:* a column dropped by hand and left in the schema broke production. *Fails when:* the migration runs twice (a retried deploy, two environments) and is not idempotent. Use `IF NOT EXISTS` on columns too ([`ADD COLUMN IF NOT EXISTS`](https://www.postgresql.org/docs/current/sql-altertable.html)), so the second run does nothing.
 
-**57. Deploy, check, then promote.** Deploy without moving the domain, check it, then promote, and keep the previous deployment as a rollback target ([promoting](https://vercel.com/docs/deployments/promoting-a-deployment), [instant rollback](https://vercel.com/docs/instant-rollback)). Anything that changes shared hosting settings (environment variables, domains) waits for a human's explicit yes for that exact action.
+**57. Deploy, check, then promote.** Deploy without moving the domain, check it, then promote, and keep the previous deployment as a rollback target ([promoting](https://vercel.com/docs/deployments/promoting-a-deployment), [instant rollback](https://vercel.com/docs/instant-rollback)). Anything that changes shared hosting settings (environment variables, domains) waits for a human's explicit yes for that exact action. *Fails when:* the change is in environment variables. Vercel applies them only to new deployments ([environment variables](https://vercel.com/docs/environment-variables)), so a running site looks fine and a bad value only shows on the next build, hours later. After any change to them, compare the production variable list before and after.
 
-**58. Read production errors before saying "ready".** `vercel logs --environment production --level error` ([CLI docs](https://vercel.com/docs/cli/logs)). Check production health after every merge.
+**58. Read production errors before saying "ready".** `vercel logs --environment production --level error` ([CLI docs](https://vercel.com/docs/cli/logs)). Check production health after every merge. *Fails when:* you read the logs before any traffic has hit the new version. Open the main pages yourself (or call a health check) first, then read the errors.
 
-**59. Agree a spend limit, then let small overruns through.** "Under about a dollar over the limit: go ahead and tell me. Anything bigger or irreversible: ask." *Why:* stopping a long run for cents costs more than the cents.
+**59. Agree a spend limit, then let small overruns through.** "Under about a dollar over the limit: go ahead and tell me. Anything bigger or irreversible: ask." *Why:* stopping a long run for cents costs more than the cents. *Fails when:* nobody adds the overruns up. Twenty small ones are one big one: keep a running total in the report.
 
 ## Team and process
 
-**60. One record per unit of work.** What, why, how it was verified (or "not verified"), links, next steps. Search before creating one; update the existing record. No secrets, tokens or customer data in it. Skill: [`log-work`](../skills/log-work/SKILL.md).
+**60. One record per unit of work.** What, why, how it was verified (or "not verified"), links, next steps. Search before creating one; update the existing record. No secrets, tokens or customer data in it. Skill: [`log-work`](../skills/log-work/SKILL.md). *Fails when:* the "how it was verified" line says "tests pass" for a change nobody opened. Write what was actually seen, or "not verified live".
 
-**61. One task list, not two.** Two lists means one of them is wrong.
+**61. One task list, not two.** Two lists means one of them is wrong. *Fails when:* an agent keeps its plan in a to-do list that lives only in its session. Anything that should outlive the session goes on the one list.
 
-**62. Link the release, not the draft.** Tasks folded into one release all link to the pull request a human actually merged.
+**62. Link the release, not the draft.** Tasks folded into one release all link to the pull request a human actually merged. *Fails when:* the draft was folded into a release after the tasks were linked. Re-point every task at the release when the fold happens, not at the end.
 
-**63. Team pages read like normal pages.** No agent narration ("overnight run", "as requested"). Write for the colleague who opens it next month.
+**63. Team pages read like normal pages.** No agent narration ("overnight run", "as requested"). Write for the colleague who opens it next month. *Fails when:* the page is produced by a script that still writes the narration. Regenerating it brings the "as requested" lines back; fix the script, not only the page.
 
-**64. Open questions go to the human as options at the next conversation.** An unattended run's questions are never left parked in a doc nobody opens.
+**64. Open questions go to the human as options at the next conversation.** An unattended run's questions are never left parked in a doc nobody opens. *Fails when:* the questions arrive as a wall of twenty. Group them, lead each with a recommendation, and keep only what blocks work. Template: [ask-with-options.md](../templates/ask-with-options.md).
 
 ## Money and models
 
-**65. Bake-off on your own data before switching.** Real tasks with known right answers, several runs per model. *Why:* benchmarks are not your workload, and newer is not always better or cheaper for your task.
+**65. Bake-off on your own data before switching.** Real tasks with known right answers, several runs per model. *Why:* benchmarks are not your workload, and newer is not always better or cheaper for your task. *Fails when:* you grade the answers knowing which model wrote them. Hide the model names while grading.
 
-**66. Measure cost per task, not per token.** Reasoning models bill their thinking as output, so a cheap per-token price can be an expensive task. Some cheap models also return an empty answer when the reasoning budget runs out: set the reasoning effort explicitly and check for empty output.
+**66. Measure cost per task, not per token.** Reasoning models bill their thinking as output, so a cheap per-token price can be an expensive task. Some cheap models also return an empty answer when the reasoning budget runs out: set the reasoning effort explicitly and check for empty output. *Fails when:* you count only the final call. Retries, tool calls and long system prompts are part of the task: add up the usage for the whole task, not one response.
 
-**67. Use the slow, cheap tier for work that can wait.** Batch and flex tiers cost less ([Anthropic batch](https://platform.claude.com/docs/en/build-with-claude/batch-processing): half price; [OpenAI flex](https://platform.openai.com/docs/guides/flex-processing): batch rates). Check in the response metadata that the discount was actually applied.
+**67. Use the slow, cheap tier for work that can wait.** Batch and flex tiers cost less ([Anthropic batch](https://platform.claude.com/docs/en/build-with-claude/batch-processing): half price; [OpenAI flex](https://platform.openai.com/docs/guides/flex-processing): batch rates). Check in the response metadata that the discount was actually applied. *Fails when:* the work could not really wait. An Anthropic batch can take up to 24 hours and expires if it is not done by then ([batch processing](https://platform.claude.com/docs/en/build-with-claude/batch-processing)); keep anything a person is waiting on in the normal tier.
 
-**68. Product videos from code.** [Remotion](https://www.remotion.dev) renders video from React, with text-to-speech narration. Listen to the result: a voice model can silently fall back to a different voice.
+**68. Product videos from code.** [Remotion](https://www.remotion.dev) renders video from React, with text-to-speech narration. *Fails when:* nobody listens to the result. A voice model can silently fall back to a different voice.
 
 ## If you build AI products
 
-**69. Let the model decide when to use a tool.** Forcing a search on every turn wastes time on off-topic research.
+**69. Let the model decide when to use a tool.** Forcing a search on every turn wastes time on off-topic research. *Fails when:* you remove the tool instead of unforcing it. Then the questions that need it go without. Keep the tool available and force it only where the topic clearly needs it.
 
-**70. Check only the risky sentences.** Quotes and numbers with a citation get checked against the source and repaired only on mismatch. A blanket second pass over everything is slow and rarely finds more.
+**70. Check only the risky sentences.** Quotes and numbers with a citation get checked against the source and repaired only on mismatch. A blanket second pass over everything is slow and rarely finds more. *Fails when:* a number has no citation, so nothing checks it. Count an uncited number as risky too.
 
-**71. One-click sign-in over pasted API keys.** Setup friction kills adoption with small businesses. Offer OAuth connections by default.
+**71. One-click sign-in over pasted API keys.** Setup friction kills adoption with small businesses. Offer OAuth connections by default. *Fails when:* the vendor has no OAuth, which is common with small local vendors. Keep a pasted-key path for those, with a short guide.
 
-**72. Don't send users away.** Open sources and documents inside the product instead of a new tab somewhere else.
+**72. Don't send users away.** Open sources and documents inside the product instead of a new tab somewhere else. *Fails when:* the source is a web page you cannot show inside the product. Then label the link clearly as external rather than hiding it.
 
-**73. Proactive agents act, with an undo.** Let the agent act by default, each action with accept/undo and an off switch. Anything irreversible or outward-facing (sending, paying, deleting) still waits for approval.
+**73. Proactive agents act, with an undo.** Let the agent act by default, each action with accept/undo and an off switch. Anything irreversible or outward-facing (sending, paying, deleting) still waits for approval. *Fails when:* the actions turn into a row of suggestions the user has to click. That is asking, not acting: do the action and show it as one card with undo.
 
 ---
 
