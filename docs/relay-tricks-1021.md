@@ -23,6 +23,7 @@
 - `docs/tricks-inventory.md` is internal raw material (private source paths). Delete it with the ledger before going public.
 - Inventory items tagged `[S]` (env var outage story, startup credit amounts) stay out of public files unless you OK a generalised version. Model vetoes and the runtime model ruling are listed under "Not for publication" there.
 - Ledger file `docs/relay-tricks-1021.md` lives in the repo branch; delete it (or squash it out) before flipping the repo public.
+- `handout.pdf` (Desktop) is new and printable: skim both pages; the print count is "one per seat plus ten" because the seat count is not in any file. Its QR 404s until the repo is public.
 
 ## Health
 
@@ -47,6 +48,7 @@ Baseline 2026-10-21 01:30: `.loop/gates/check.sh` GATE_EXIT=0 (confidentiality c
 - War stories exist in `guides/war-stories.md`; T6 script lines and T8 backup slides can borrow from them (stories 2, 6, 10 tell well out loud).
 - The inventory is gate-excluded; scan it by hand before relying on it, and never copy a `src:` path into a public file.
 - The YC Startup Library pages render client-side (WebFetch sees only the title); cite the YC YouTube video (title via `curl https://www.youtube.com/oembed?url=...`) and link the library page as secondary.
+- The handout's PDF and other PDFs are gitignored in the Desktop repo; commit the `.html` source and re-render. Handout must stay 2 pages: re-check `pdfinfo handout.pdf | grep Pages` after any edit.
 
 ## Backlog
 
@@ -54,7 +56,7 @@ Baseline 2026-10-21 01:30: `.loop/gates/check.sh` GATE_EXIT=0 (confidentiality c
 - [x] **T2 `guides/tricks.md` field guide.** Done in 882602b: 73 tricks (68 + 5 for AI-product builders) in 10 groups, linked from README table and how-i-build.md. Skipped inventory items 75-76, 92 ([S]), 72 (talk-only), 99. Over the 40-60 target on purpose; T15 may trim.
 - [x] **T3 War stories.** Done in 9177a68: `guides/war-stories.md`, 12 incidents + 1 money story, each what/cost/rule with links to trick numbers; README row, tricks.md intro link. Left out: env var incident ([S]), the 'decisions never asked' story (already 1 line in trick 8), versions/scope stories (no incident detail in source).
 - [x] **T4 Succeed guide.** Done in 39767f5: `guides/succeed.md`, 7 sections, 8 prompts, 12 sources (Mom Test, YC talks, PG, First Round, Lenny, Buffer, a16z). Partner section is reasoning + prompt, no external source (none found that fits); T13 can borrow its prompts for qa.md.
-- [ ] **T5 Printable handout.** `~/Desktop/building-in-the-age-of-ai/handout.html` → `handout.pdf`, 2 pages A4: the 25 best tricks + 5 prompts + the repo QR (`.assets/repo-qr.png`). Plain, legible, no numbers-as-stats. Mention in rehearsal.html's day-before list (print N copies).
+- [x] **T5 Printable handout.** Done in Desktop 811818e: `handout.html` → `handout.pdf` (2 pages A4): 25 tricks in 6 groups (non-coder wording, audience is founders/product/operators), 5 instruction lines to paste, 5 selling prompts from succeed.md (not duplicating the prompt pack), repo QR. rehearsal.html day-before list + Desktop README mention it.
 - [ ] **T6 Speaker script weave.** Add the strongest 1-2 tricks per part into `script.html` as spoken lines on the slides they fit, cut weaker lines to keep time; re-render `script.pdf`. Add a word-count/time table per part at the end.
 - [ ] **T7 Speaker notes sync.** Mirror the script's new lines into the deck NOTES (v16 build), rebuild, gate passes (notes == slides).
 - [ ] **T8 Q&A backup slides.** 3-5 slides AFTER 37 (section "Backup"), Excalidraw, no numbers: e.g. "My daily setup", "The verify loop", "Five prompts to steal", "Templates I start from". Only if they read well; otherwise drop and note why.
@@ -75,5 +77,7 @@ Baseline 2026-10-21 01:30: `.loop/gates/check.sh` GATE_EXIT=0 (confidentiality c
 - 9177a68 T3: `guides/war-stories.md` (12 stories + 1 on model price), sources = 12 memory notes + migrations README incident log, generalised (no model names, no spend, no internal names, 'the founder' rewritten to 'we'). Gate EXIT=0; no external links in the file; trick numbers cross-checked against tricks.md headings.
 
 - 39767f5 T4: `guides/succeed.md` (7 sections: validate, decide, price, first ten customers, partners, stay small, early metrics; 8 paste-ready prompts), README row, fundraising.md cross-link. Gate EXIT=0; all 12 external links curl 200 on 2026-10-21; claims read on page (Superhuman 4 questions + Ellis 40%, Lenny B2B channels + press quote, PG quotes, Buffer pricing-page test); YC talk titles confirmed via YouTube oEmbed; 7 anchors checked by script.
+
+- Desktop 811818e T5: `handout.html`/`handout.pdf` 2-page A4 tricks handout + print line in rehearsal day-before list + README row. Rendered with pdf.mjs: handout 2 pages (first render was 4, tightened), rehearsal still 2 pages; all pages viewed as PNG. Repo gate EXIT=0; handout grep for banned words clean. No new external links.
 
 ## Landed
