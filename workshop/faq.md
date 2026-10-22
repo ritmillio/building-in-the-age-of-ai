@@ -55,7 +55,7 @@ For drafts, summaries and analysis, yes, the big models handle Hungarian well. A
 The prototype, the landing page and the first user test: yes, today. Production with payments, security and customer data: bring in an engineer to review the fundamentals. Your prototype is input for them, not a replacement.
 
 **16. When do I need to hire engineers?**
-When real users and real money depend on it: security, data, payments, scaling. AI made the first version cheap; it didn't make the fundamentals cheap (backup slide 43).
+When real users and real money depend on it: security, data, payments, scaling. AI made the first version cheap; it didn't make the fundamentals cheap (backup slide 42).
 
 **17. Will AI replace developers and designers?**
 It replaced the waiting and the cheap parts: boilerplate, first drafts. Taste, judgment, architecture and knowing what not to build became more valuable. Small teams that use it well will outrun bigger ones that don't.
