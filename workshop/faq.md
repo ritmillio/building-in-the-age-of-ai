@@ -10,7 +10,7 @@ Any of the big three is good enough to start. Pick one, and build one Project (i
 It changes every few months, so don't marry one. Keep your context in plain files (rules, docs, prompts) so switching is cheap. We use different models for different jobs.
 
 **3. Where do I start in my own company?**
-With the task you hate most (slide 34). You know it inside out, so you can judge the output; it comes back every week, so it pays back; and you feel the win on day one. Not with a strategy deck.
+With the task you hate most (slide 35). You know it inside out, so you can judge the output; it comes back every week, so it pays back; and you feel the win on day one. Not with a strategy deck.
 
 **4. How do I get my team to actually use it?**
 Show a win on a real task, not a demo. Get everyone to level 2: one shared Project with the team's context. Give them two weeks on one hated task each, then compare notes. People adopt what saves them pain, not what they're told to use.
@@ -27,7 +27,7 @@ Ask for sources and links, explicitly allow "no data" as an answer, verify every
 It is a fast first pass over what people already said in public: reviews, forums, competitors. It does not replace talking to customers. Use it to find the questions worth asking, then go and ask real people.
 
 **8. What happens when it's wrong in front of a customer?**
-That's why anything that sends, pays or deletes waits for a human (slide 33). The AI drafts, you decide. Start with internal work before anything customer-facing.
+That's why anything that sends, pays or deletes waits for a human (slide 34). The AI drafts, you decide. Start with internal work before anything customer-facing.
 
 **9. How do you check AI-written code?**
 The same way you check a junior colleague's code: tests, review, and a human makes the merge decision. Our overnight runs end with a result to review, not a deploy.
@@ -55,13 +55,13 @@ For drafts, summaries and analysis, yes, the big models handle Hungarian well. A
 The prototype, the landing page and the first user test: yes, today. Production with payments, security and customer data: bring in an engineer to review the fundamentals. Your prototype is input for them, not a replacement.
 
 **16. When do I need to hire engineers?**
-When real users and real money depend on it: security, data, payments, scaling. AI made the first version cheap; it didn't make the fundamentals cheap (backup slide 41).
+When real users and real money depend on it: security, data, payments, scaling. AI made the first version cheap; it didn't make the fundamentals cheap (backup slide 42).
 
 **17. Will AI replace developers and designers?**
 It replaced the waiting and the cheap parts: boilerplate, first drafts. Taste, judgment, architecture and knowing what not to build became more valuable. Small teams that use it well will outrun bigger ones that don't.
 
 **18. How do I get design that doesn't look like every other AI app?**
-Don't describe it in adjectives. Show it real reference screens, ask for three variants, pick one, and write your rules down in one file that every request uses (slides 31-32).
+Don't describe it in adjectives. Show it real reference screens, ask for three variants, pick one, and write your rules down in one file that every request uses, including what is banned: gradients, sparkles, filler copy, fake data. Then ask it what on the screen looks AI-generated and remove that (slides 31-33).
 
 **19. How do your overnight runs work? Can I do that without a terminal?**
 One command in the evening starts a loop; each lap is a fresh session that leaves a log, and in the morning there's a result to review. Without a terminal: scheduled tasks in Claude (Cowork) or ChatGPT, with connectors. The relay skill is linked from the repo's skills page, but start with scheduled tasks if you don't use a terminal.

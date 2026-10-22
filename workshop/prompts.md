@@ -127,9 +127,13 @@ Share the data and the CSS across the three variants; keep the whole page under 
 Ask: "Which one, and what should we change?" Type what they say:
 We pick variant [A/B/C]. Change: [the room's request]. Show only that variant from now on.
 
-### 4c. Write the taste down (slide 32)
+### 4s. The slop check (slide 32, optional, one minute)
 
-From the chosen variant, write a short design-rules.md. Read every value from the variant's code and add nothing that is not there: colours (with hex), font family and sizes, spacing scale, corner radius for controls and for cards, what is banned (for example gradients, heavy shadows), and a rule that every screen has an empty state. At most 15 lines. I will attach this file to every future design request.
+List everything on the chosen variant that looks AI-generated or generic: colours, gradients, shadows, icons, emoji, layout, copy, fake data. For each, one line: what it is and what to do instead. Then show the variant again with all of it removed.
+
+### 4c. Write the taste down (slide 33)
+
+From the chosen variant, write a short design-rules.md. Read every value from the variant's code and add nothing that is not there: colours (with hex), font family and sizes, spacing scale, corner radius for controls and for cards, what is banned (for example gradients, heavy shadows, and everything the slop check removed), and a rule that every screen has an empty state. At most 15 lines. I will attach this file to every future design request.
 
 ### 0b. Apply the room's look (second window, right after 4c)
 
@@ -158,7 +162,7 @@ Then: reveal the live build from the second window. "This wasn't a question, it 
 
 ---
 
-## 6. Ops automation example (slide 33, show, don't run)
+## 6. Ops automation example (slide 34, show, don't run)
 
 Shown as a scheduled task (Claude Cowork scheduled task, or a ChatGPT scheduled task with connectors):
 
@@ -174,7 +178,7 @@ Anything that sends, pays or deletes waits for my approval.
 
 ## 7. The task you hate most
 
-Slide 34. Everyone in the room does this one.
+Slide 35. Everyone in the room does this one.
 
 I want to hand a task I hate to AI. The task: [describe it in 2-3 sentences].
 Interview me with 5 short questions, one at a time, about how I do it today, what good output looks like, and what must never go wrong.

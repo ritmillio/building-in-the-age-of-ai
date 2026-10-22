@@ -23,7 +23,7 @@ Then run the prompts in [prompts.md](prompts.md) in order, at your own pace:
 | Validate | 1, 1b, 1c | What real users say, with links you can open, and ideas backed by quotes |
 | Decide | 2, 3 | A simple business case, a one-page spec |
 | Red team | 3b | The spec attacked by an engineer, a customer who says no, an investor and a risk officer, then fixed |
-| Design | 4, 4b, 4c | Three clickable variants from reference screenshots, then your design rules in one file |
+| Design | 4, 4b, 4s, 4c | Three clickable variants from reference screenshots, a check for what looks AI-made, then your design rules in one file |
 | Launch | 5 | A release note and subject lines |
 
 Tips while you go:
