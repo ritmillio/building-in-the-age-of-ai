@@ -44,7 +44,7 @@ Pick the row closest to you and do the five steps in order. None of them needs m
 
 | | |
 |---|---|
-| [`workshop/slides.pdf`](workshop/slides.pdf) | The deck: 38 slides plus 4 Q&A backup slides (small tricks, five prompts to steal, files I never start without, code got cheap). Part 1, the talk: how building changed, context, how I build, raising money. Part 2: the live build, then where to start |
+| [`workshop/slides.pdf`](workshop/slides.pdf) | The deck: 39 slides plus 4 Q&A backup slides (small tricks, five prompts to steal, files I never start without, code got cheap). Part 1, the talk: how building changed, context, how I build, raising money. Part 2: the live build, then where to start |
 | [`workshop/follow-along.md`](workshop/follow-along.md) | Laptop open? How to run the live build next to us: which assistant, a fresh Project, which prompts in which order |
 | [`workshop/prompts.md`](workshop/prompts.md) | Every prompt from the live build, in order: research real customer words, business case, one-page spec, red team, prototype with references, design rules, launch kit, ops automation; then five for after the workshop: sales follow-up, investor update, competitor teardown, meeting decisions, contract first read |
 | [`workshop/prompt-pack.pdf`](workshop/prompt-pack.pdf) | The 5-page prompt pack: the live-build prompts plus prompts 8-12 for after the workshop |
